@@ -56,3 +56,21 @@ Every component/system is researched using the same two-part framework:
 
 ## 4. Progress Tracking
 This project uses a GitHub Projects board to track research progress.
+ [Github Projects Board](https://github.com/orgs/MIE243/projects/2)
+## 5. Management
+### 5.1 Team
+
+| Name              | Github                                                     |
+| ----------------- | ---------------------------------------------------------- |
+| Mo Zhou           | [@MoZ200701](https://github.com/MoZ200701)                 |
+| Shangkai Ji (Tom) | [@richelieuji77-hub](https://github.com/richelieuji77-hub) |
+| Hongru Liu (Liu)  | [@Postfes](https://github.com/Postfes)                     |
+### 5.2 Repository Structure
+| Path | Contents |
+|---|---|
+| `Preliminary Research.md` | Main research document, organized by the scope in Section 3 |
+| `attachments/` | Figures and diagrams referenced in the document |
+| `.obsidian/` | Obsidian vault settings (can be ignored) |
+### 5.3 Setup
+1. Install Obsidian
+2. In Obsidian **Open folder as vault** and select 'Preliminary-Research' folder (do not open individual .md files directly)
