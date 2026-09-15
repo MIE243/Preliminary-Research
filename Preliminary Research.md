@@ -4,28 +4,30 @@
 ## Couplings, Drive Shafts, CV Shafts
 
 ## Differentials, Transfer Cases, CVTs
-### What it is
-#### Description
+### Differentials
+
+#### What it is
+##### Description
 A differential is a set of gears with 3 drive shafts that allows you to turn the rotational speed of one shaft as the average speed of the others. 
 - In cars, a differential allow wheels on either end of a drive axle (both back wheels for example) to rotate at different speeds. This helps with cornering because the outer wheel of a vehicle travels more distance than the inner wheels (difference in radius).  
 - If you do not have a differential (like go-karts), you will have to rely on wheel slip when cornering. 
 In a common configuration:
 - Driving in a straight line:
-	- ![](Pasted%20image%2020260915133646.png)
+	- ![](attachments/Pasted%20image%2020260915133646.png)
 	- Input applied to the purple gear, rotating it at one speed. In a straight line the resistance from both wheels are equal. The green ("planet") gear doesn't rotate on its axis. Meaning the sun gears (red and yellow, connected to wheels) rotate at the same speed. 
 - Turning (left):
-	- ![](Pasted%20image%2020260915133835.png)
+	- ![](attachments/Pasted%20image%2020260915133835.png)
 	- Ring gear (purple) gets input, rotating the purple gear at one speed. Left sun gear (red) has more resistance than the right sun gear (yellow). Difference in resistance causes planet gear (green) to spin, leading to slower rotation in the left sun gear than the right, meaning the right wheel would travel further. 
-#### Types of Differentials
+##### Types of Differentials
 
 | Differential Type | Common Use                                           | Advantage                                                                    | Disadvantage                                                              | Image                                    |
 | ----------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------- |
-| Ring-and-pinion   | RWD                                                  | Simple; turns drive 90° (propshaft to half shafts) and adds a gear reduction | Can send most power to the wheel with less grip, causing wheelspin        | ![](Pasted%20image%2020260915134310.png) |
-| Epicyclic Design  | AWD                                                  | Compact width; can split torque unevenly between front and rear axles        | High bearing loads, needs constant lubrication, complex to design         | ![](Pasted%20image%2020260915134347.png) |
-| Spur-gear         | Some FWD cars                                        | Only spur gears on parallel shafts (no bevel gears)                          | Open type, so same wheelspin problem on a low-grip wheel                  | ![](Pasted%20image%2020260915134954.png) |
-| Locking           | Off-road vehicles                                    | Both wheels driven regardless of traction; unlocks to act as open            | Tire scrub, understeer and heavier steering when locked; can slide on ice | ![](Pasted%20image%2020260915135037.png) |
-| Limited-slip      | Low-grip road driving; AWD crossovers (viscous type) | Limits power difference between wheels, less wheelspin on low-grip side      | No full lockup; viscous type loses power and wears to open-diff behaviour | ![](Pasted%20image%2020260915135103.png) |
-#### Part List
+| Ring-and-pinion   | RWD                                                  | Simple; turns drive 90° (propshaft to half shafts) and adds a gear reduction | Can send most power to the wheel with less grip, causing wheelspin        | ![](attachments/Pasted%20image%2020260915134310.png) |
+| Epicyclic Design  | AWD                                                  | Compact width; can split torque unevenly between front and rear axles        | High bearing loads, needs constant lubrication, complex to design         | ![](attachments/Pasted%20image%2020260915134347.png) |
+| Spur-gear         | Some FWD cars                                        | Only spur gears on parallel shafts (no bevel gears)                          | Open type, so same wheelspin problem on a low-grip wheel                  | ![](attachments/Pasted%20image%2020260915134954.png) |
+| Locking           | Off-road vehicles                                    | Both wheels driven regardless of traction; unlocks to act as open            | Tire scrub, understeer and heavier steering when locked; can slide on ice | ![](attachments/Pasted%20image%2020260915135037.png) |
+| Limited-slip      | Low-grip road driving; AWD crossovers (viscous type) | Limits power difference between wheels, less wheelspin on low-grip side      | No full lockup; viscous type loses power and wears to open-diff behaviour | ![](attachments/Pasted%20image%2020260915135103.png) |
+##### Part List
 
 | Make (3D print / laser cut)                 | Buy                                     |
 | ------------------------------------------- | --------------------------------------- |
@@ -34,7 +36,7 @@ In a common configuration:
 | 2 side gears + 2–4 spider gears             | Steel output shafts (D-shaft or keyed)  |
 | Housing / chassis mount, axle couplers      | Fasteners, set screws, grease           |
 
-### Teaching Platform
+#### Teaching Platform
 Manufacture
 - 3D printed bevel gears have some limitations, if you want it to be durable 3D printed you cannot make it too small and there are also some angle limitations for the gear.
 - Will probably have to work with steel axle parts.
