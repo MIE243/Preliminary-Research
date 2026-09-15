@@ -40,19 +40,19 @@ Every component/system is researched using the same two-part framework:
 
 ### 3.3 EV Configurations
 
-| Configuration | Owner |
-|---------------|-------|
-| Single-motor, single-axle (FWD — SM1ST, SM2ST, etc.) | Liu |
-| Dual-motor, single-axle | TOM |
-| Dual-motor, dual-axle | Mo |
+| Configuration                                        | Owner |
+| ---------------------------------------------------- | ----- |
+| Single-motor, single-axle (FWD — SM1ST, SM2ST, etc.) | Liu   |
+| Dual-motor, single-axle                              | TOM   |
+| Dual-motor, dual-axle                                | Mo    |
 
 ### 3.4 Advanced Systems
 
-| System | Owner |
-|--------|-------|
-| Torque vectoring | Mo |
-| ABS and traction control | Liu |
-| Dynamic suspensions | TOM |
+| System                   | Owner |
+| ------------------------ | ----- |
+| Torque vectoring         | Mo    |
+| ABS and traction control | Liu   |
+| Dynamic suspensions      | TOM   |
 
 ## 4. Progress Tracking
 This project uses a GitHub Projects board to track research progress.

@@ -1,0 +1,40 @@
+/* Purple shades: H1 is the most vivid, lower levels fade toward muted grey-purple */
+body {
+  --h1-size: 2.2em;
+  --h2-size: 1.8em;
+  --h3-size: 1.5em;
+  --h4-size: 1.3em;
+  --h5-size: 1.15em;
+  --h6-size: 1.05em;
+
+  --h1-weight: 800;
+  --h2-weight: 700;
+  --h3-weight: 700;
+}
+
+/* Dark mode: brighter = more prominent */
+.theme-dark {
+  --h1-color: #c4a1ff;
+  --h2-color: #b18cf2;
+  --h3-color: #9f7ae0;
+  --h4-color: #8e6fc4;
+  --h5-color: #8a7aa8;
+  --h6-color: #857d94;
+}
+
+/* Light mode: deeper = more prominent */
+.theme-light {
+  --h1-color: #5b21b6;
+  --h2-color: #6d28d9;
+  --h3-color: #7c3aed;
+  --h4-color: #8b5cf6;
+  --h5-color: #8b7aa8;
+  --h6-color: #8a8496;
+}
+
+/* Underline H1 and H2 for extra separation */
+.markdown-rendered h1, .markdown-rendered h2,
+.HyperMD-header-1, .HyperMD-header-2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+}
