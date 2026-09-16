@@ -518,3 +518,128 @@ Build a large, guarded **single-plate dry clutch** with two supported shafts, a 
 - [Single-plate diaphragm clutch](https://commons.wikimedia.org/wiki/File:Embrague2.png) by Enrique A. Chaparro, Free Art License.
 - [Multiple Disk Clutch](https://commons.wikimedia.org/wiki/File:Multiple_Disk_Clutch.gif) by Oguraclutch, public domain.
 - [Centrifugal clutch patent drawing](https://commons.wikimedia.org/wiki/File:US_Patent_598314_detail_centrifugal_clutch.png) by W. A. Crowdus, public domain.
+
+---
+
+# Drivetrain Layouts
+
+## Front-Wheel Drive
+
+### What it is
+
+#### Description and rough working principle
+
+Front-wheel drive (FWD) means that propulsion torque is delivered to the two front wheels. Those wheels must drive the vehicle while also steering and moving through the suspension travel.
+
+- In a conventional FWD car, the engine sends torque through a clutch or torque converter into a **transaxle**. The transaxle combines the transmission, final reduction and differential in one compact front-mounted assembly.[^13]
+- The final-drive gears reduce speed and increase torque. The differential then divides torque between the left and right front outputs while allowing the two wheels to rotate at different speeds in a turn.
+- Two short half-shafts carry torque from the differential to the wheel hubs. Each normally has an inboard plunging CV joint and an outboard fixed CV joint, so it can transmit torque while the suspension moves and the wheels steer.[^14]
+- A battery-electric FWD vehicle replaces the engine and multi-ratio transmission with a front electric drive unit. The motor, power electronics, reduction gears, differential and drive shafts may be integrated into one e-axle or electric transaxle.[^15][^16]
+
+The power path is:
+
+**engine or motor → clutch/torque converter or inverter control → transmission/reduction gear → final drive and differential → CV half-shafts → front hubs → front tyres**
+
+#### Why a car needs or uses front-wheel drive
+
+- Packages the power unit, transmission and driven axle together at the front, leaving more cabin and luggage space and usually avoiding a long propeller shaft and rear differential.
+- Reduces the number, mass and cost of separate driveline assemblies in many small and medium passenger cars.
+- Places the powertrain mass over the driven wheels, which can help launch traction on low- or moderate-grip surfaces.
+- Produces predictable understeer near the handling limit, which is generally easier for an average driver to manage than sudden oversteer.
+- Works well with transverse engines and compact electric drive units.
+
+FWD also has compromises: the front tyres share acceleration, steering and most braking work; hard acceleration transfers load rearward; unequal half-shafts and suspension geometry can contribute to torque steer; and tight packaging can make service difficult.
+
+#### Types of Front-Wheel-Drive Layouts
+
+| FWD Layout | Common Use | Advantage | Disadvantage | Image |
+| --- | --- | --- | --- | --- |
+| Transverse-engine FWD | Most modern compact and mid-size combustion-engine cars; manual, automatic, DCT or CVT transaxles | Very compact front power module; short vehicle length; no longitudinal propeller shaft | Crowded engine bay; unequal half-shaft lengths can worsen torque steer; engine width limits packaging | ![Transverse-engine front-wheel-drive transaxle and half-shafts](attachments/fwd-transverse-layout.png) |
+| Longitudinal-engine FWD | Less common passenger-car platforms and some historic designs | Engine and gearbox lie along the vehicle centreline; can suit long engines and platform families related to AWD | Longer front overhang and more complex final-drive packaging; uncommon and less suitable for a simple model | ![Longitudinal front-mid-engine front-wheel-drive layout](attachments/fwd-longitudinal-layout.svg) |
+| Single-motor electric FWD | Compact and mass-market battery-electric vehicles | Motor, inverter, reduction gear and differential can form one compact unit; no clutch or multi-speed gearbox is normally required | Front tyres still handle drive and steering; high-voltage controls and cooling make a realistic working model difficult | ![Nissan Leaf electric motor, inverter and front transaxle assembly](attachments/fwd-electric-powertrain.jpg) |
+
+### Part List
+
+#### Main parts in a road-car FWD system
+
+| Main Part | Function |
+| --- | --- |
+| Engine or electric motor | Produces the input torque |
+| Clutch and flywheel, or torque converter | Connects a combustion engine to the transaxle and permits launch |
+| Transmission or EV reduction gears | Match power-unit speed and torque to road requirements |
+| Final drive and differential | Provide the last reduction and divide torque between the front wheels |
+| Left and right half-shafts | Carry torque from the differential to the wheel hubs |
+| Inboard plunging CV joints | Allow half-shaft length change as the suspension moves |
+| Outboard fixed CV joints | Transmit torque through the large angle required for steering |
+| Wheel hubs, bearings and steering knuckles | Support the driven wheels and connect drivetrain, steering and suspension |
+| Engine/transaxle mounts or e-drive mounts | React drive torque and locate the power unit in the chassis |
+| Lubricant, seals and CV boots | Lubricate gears/joints and exclude dirt while retaining oil or grease |
+
+#### Teaching demonstrator
+
+| Make (3D print / laser cut) | Buy |
+| --- | --- |
+| Transverse motor/transaxle shell and labelled mounting frame | Low-voltage geared motor or hand crank |
+| Spur-gear reduction and open bevel-gear differential carrier | Steel shafts, bearings/pillow blocks and shaft collars |
+| Two half-shafts with colour-coded input/output markers | Small commercial CV joints, universal joints or model-car drive shafts |
+| Steerable knuckles, hubs and adjustable steering linkage | Fasteners, threaded inserts, washers and retaining clips |
+| Sliding suspension guides and transparent gear guard | Two wheels/tyres and a small controllable output load |
+| Optional equal- and unequal-length half-shafts for comparison | Optional commercial model-car differential for validation |
+
+### Teaching Platform
+
+#### 3D printing / manufacturing easiness
+
+- **Static FWD layout — easy:** the engine/motor, transaxle, half-shafts and driven wheels can be simplified into colour-coded blocks and shafts.
+- **Working fixed-wheel drivetrain — moderate:** a printed reduction stage and open differential work at low speed, but gear spacing, shaft alignment, bearing fits and backlash must be controlled.
+- **Working steerable and suspended front axle — moderate to hard:** both half-shafts need joints that articulate during steering and plunge during suspension travel.
+- **Realistic CV joints — hard:** ball tracks, cages, hardened surfaces, grease retention and boots are poor candidates for ordinary FDM printing. Buy small CV joints or use visible universal/sliding joints as a labelled approximation.
+- **Road-capable hardware — very hard and unsafe to print:** real shafts, hubs, gears and knuckles carry cyclic torque, bending and impact loads. Printed parts are for guarded low-speed teaching only.
+
+#### Demonstratability
+
+- The recommended model needs **no external fluid**. Use dry printed gears and purchased bearings at hand-crank or low-motor speed.
+- Turn the input and show the final reduction, differential, half-shafts and both front wheels rotating. Hold one wheel lightly to show an open differential allowing the other wheel to turn faster.
+- Steer the front hubs while rotating them to show why flexible constant-velocity joints are required. Move one hub vertically on a guide to demonstrate suspension travel and inboard plunge.
+- Place matching marks on both half-shafts to compare their speed and add arrows showing the complete torque path.
+- A realistic transaxle would require lubricant and seals, while a working EV drive would also require an inverter, battery, controller and cooling. Neither is necessary for the basic demonstrator.
+- All gears, shafts and joints must be covered by a clear guard when motor-driven.
+
+#### Works with what
+
+- **Power source:** transverse or longitudinal combustion engine, hybrid power unit, or front electric motor/inverter.
+- **Torque connection:** manual clutch, DCT clutch, torque converter, or direct EV reduction input.
+- **Front transaxle:** transmission/reduction gears, final drive, open or limited-slip differential and parking lock where required.
+- **Wheel drive:** left/right half-shafts, inboard plunging joints, outboard fixed CV joints, hubs and wheel bearings.[^14]
+- **Steering and suspension:** steering rack/tie rods, knuckles, struts/control arms and geometry that limits CV-joint angles throughout wheel travel.
+- **Vehicle control:** ABS/traction-control wheel-speed sensing, engine or inverter torque control and, where fitted, electronic limited-slip braking.
+- **Structure:** subframe and powertrain mounts strong enough to react motor/engine torque without excessive movement.
+
+#### CAD easiness
+
+- **Easy:** top-view packaging model with engine/motor, transaxle, half-shafts and front wheels.
+- **Moderate:** working spur reduction and bevel-gear open differential with fixed wheel hubs.
+- **Moderate to hard:** steerable hubs, unequal half-shafts, sliding joints, suspension motion and a compact transverse housing without interference.
+- **Very hard:** true Rzeppa/tripod CV-joint tracks, production gear tooth geometry, bearing preload, lubrication, seals, mount compliance, durability and torque-steer optimisation.
+- CAD the assembly from the wheel-centre locations inward. Define steering angle and suspension travel first, then check half-shaft articulation, plunge and interference through the full motion range.
+
+#### Recommended front-wheel-drive demonstrator
+
+Build a guarded, low-speed **transverse FWD module** with a hand crank or geared motor, one visible reduction stage, an open differential, two half-shafts and steerable front hubs. Purchase small model-car CV shafts if available; otherwise use clearly labelled universal-and-sliding joints as an approximation. This model shows the complete power path, differential action, steering articulation and suspension plunge without oil, high voltage or specialist tools.
+
+---
+
+### Front-Wheel Drive: Sources and Image Credits
+
+#### Technical sources
+
+[^13]: West Virginia Department of Transportation, [Crawford's Guide to Beginners Auto Maintenance & Repair](https://transportation.wv.gov/highways/training/TrainingDocuments/Crawfords_Auto_Repair_Guide.pdf), explaining that an FWD transaxle combines the transmission and differential and sends power to the front wheels.
+[^14]: GKN Automotive, [Countertrack principle for CV joints explained](https://www.gknautomotive.com/media/woyls0y4/gkn-automotives-countertrack-principle-for-cv-joints-explained.pdf), describing the two CV joints on FWD sideshafts and their rotation, articulation and plunge requirements.
+[^15]: Bosch Mobility, [Electric drive](https://www.bosch-mobility.com/en/solutions/powertrain/battery-electric/electric-drive/), describing compact eAxles that combine power electronics, electric motor and transmission.
+[^16]: ZF, [Electric Axle Drive 200 kW](https://www.zf.com/products/en/cars/products_79234.html), listing an integrated e-drive system with motor, power electronics, differential and drive shafts.
+
+#### Image credits
+
+- [Transverse engine layout](https://commons.wikimedia.org/wiki/File:Transverse_engine_layout.png) by Hoikka1, CC BY-SA 3.0.
+- [Front-mid-engine front-wheel-drive diagram](https://commons.wikimedia.org/wiki/File:Engine_fmf002.svg) by Teccirio and Malyszkz, CC BY 2.5.
+- [Nissan Leaf ZE1 powertrain](https://commons.wikimedia.org/wiki/File:Nissan_Leaf_ZE1_powertrain_01.jpg) by TTTNIS, CC0.
