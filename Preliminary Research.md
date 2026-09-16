@@ -60,6 +60,8 @@ Youtube: [Understanding your Car's Steering & Power Steering !](https://www.yout
     - Hold one wheel fixed and turn the steering wheel: the other wheel still moves, showing the linkage motion.
         
     - Push the steering wheel to full lock: the rack stops, showing the travel limit.
+
+# Drivetrain Layouts
 ## Front-Wheel Drive
 
 ## Rear-Wheel Drive
