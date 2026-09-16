@@ -71,6 +71,147 @@ Works with what
 - **Dual-motor, dual-axle EV**: each motor-to-reduction-unit connection can use the same coupling design; no centre drive-shaft coupling is needed when the axles are independent.
 - **Torque vectoring**: clutch couplings can vary how much torque reaches each axle or wheel; separate wheel motors replace these mechanical couplings with electronic motor control.
 - **ABS and traction control**: no direct link for a fixed shaft coupling, but an active AWD coupling can be commanded open during some ABS or stability-control events.
+
+### Drive Shafts
+
+#### What it is
+##### Description
+A drive shaft (propeller shaft, propshaft or Cardan shaft) is a long rotating shaft that carries torque between driveline parts that are too far apart to bolt together, most often from the transmission or transfer case to a differential.
+- It is loaded mainly in torsion. 
+- The axle moves up and down with the suspension, so the shaft's **angle and length keep changing**. A universal joint (U-joint) at each end handles the angle, and a sliding spline (slip yoke) handles the length.
+- **A single U-joint at an angle does not turn at a constant speed.** With a steady input, the output speeds up and slows down twice per revolution, more the bigger the angle. Two U-joints with equal angles and their yokes lined up (in phase) cancel this out, so the output matches the input.
+- A long, thin shaft whips and vibrates badly at its **critical speed**. The critical speed goes down as the shaft gets longer and up as it gets larger in diameter or stiffer for its weight.
+In a common configuration:
+- On a machine:
+	- ![](attachments/ds-cardan-shaft.jpg)
+	- Tube with a U-joint at each end, bolted to the driving and driven flanges.
+- Universal joint:
+	- ![](attachments/ds-ujoint.gif)
+	- Two yokes at 90° to each other are joined by a cross (spider) that pivots on bearings, so the shaft can turn through an angle.
+- Complete shaft with slip joint:
+	- ![](attachments/ds-slip-anim.gif)
+	- U-joints at both ends with a splined section in the middle that slides in and out as the ends move. Both yokes on the middle shaft line up, so the speed changes of the two joints cancel.
+##### Types of Drive Shafts
+
+| Drive Shaft Type                      | Common Use                                         | Advantage                                                                                                          | Disadvantage                                                            | Image                                    |
+| ------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ---------------------------------------- |
+| One-piece steel tube                  | Most RWD cars and short-wheelbase pickups and SUVs | Cheap, strong and simple                                                                                           | Heaviest; length limited by critical speed                              | ![](attachments/ds-cardan-shaft.jpg)     |
+| Two-piece with centre support bearing | Long-wheelbase trucks and vans                     | Each section is shorter, so critical speed is higher; can follow a lower path under the floor                      | More joints and parts; centre bearing rubber wears and causes vibration | ![](Pasted%20image%2020260916125440.png) |
+| Double cardan (CV) shaft              | Lifted 4x4s with steep drive shaft angles          | Two U-joints back to back at one end give near-constant speed even at large angles                                 | Bulkier and more expensive; more joints to wear                         | ![](attachments/ds-double-cardan.gif)    |
+| Torque tube                           | Ford Model T, Chevrolet Corvette (C5 and later)    | Shaft runs inside a rigid tube that holds the axle in place (no axle wrap) or joins the engine to a rear transaxle | Heavier; harder to service; limits suspension design                    |                                          |
+##### Part List
+
+| Make (3D print / laser cut)                                  | Buy                                                             |
+| ------------------------------------------------------------ | --------------------------------------------------------------- |
+| Input and output stands with adjustable angle (and angle scale) | Small steel universal joints (2–3)                           |
+| Yokes / end adapters                                         | Aluminium or steel tube / rod for the shaft                     |
+| Slip joint (hex, D-profile or spline telescoping section)    | Ball bearings or pillow blocks                                  |
+| Centre support bracket (two-piece version)                   | Centre support bearing (two-piece version)                      |
+| Pointer dials on input and output shafts                     | Motor (or hand crank), shaft collars, set screws, fasteners     |
+| Clear safety guard                                           | Optional: encoders or a tachometer to measure input/output speed |
+
+#### Teaching Platform
+Manufacture
+- Easy to CAD: it is mostly a tube with two joints, and small steel U-joints are cheap standard parts.
+- Printed yokes and dials are fine, but printed U-joint crosses wear quickly, so buy the joints.
+- Use a metal tube or rod for the shaft itself; a long printed shaft twists and sags.
+- A telescoping slip joint is easy to print as a hex or D-shaped profile, but it needs enough clearance to slide under load without jamming.
+- The shaft must be straight and balanced if driven by a motor; keep the speed low and use a guard.
+Demonstratability
+- No fluids needed; can be turned by hand or by a small electric motor.
+- Easy to see in action:
+  - One U-joint at 30–45°: turn the input steadily and watch the output dial run ahead and fall behind twice per turn.
+  - Add a second joint with equal angles and yokes in phase: the output dial now matches the input exactly.
+  - Turn one yoke 90° out of phase: the speed change gets worse instead of cancelling.
+  - Move the output stand up and down (like an axle on its suspension): the angle changes and the slip joint slides in and out.
+  - Compare a solid rod and a hollow tube of similar weight: the tube is much harder to twist.
+Works with what
+- **Gearboxes / transmissions / torque converters**: the drive shaft connects to the transmission output, usually through a slip yoke that slides on the output shaft splines.
+- **Couplings, CV shafts**: flange, flex-disc or splined couplings attach the shaft ends; CV joints replace U-joints where the angle is large or the wheels steer (half shafts).
+- **Differentials**: the rear end of the shaft drives the differential pinion.
+- **Transfer cases**: a 4x4 needs two drive shafts from the transfer case, one to each axle; a divorced transfer case needs an extra short shaft from the transmission.
+- **Brakes and clutches**: some trucks and 4x4s (e.g. Land Rover Defender) have a parking brake drum on the transmission output that brakes the drive shaft.
+- **Steering and suspension**: with a solid rear axle, the axle moves, so the shaft angle and length change; with independent suspension the differential is fixed to the body, so the shaft angle barely changes and the half shafts take the movement.
+- **FWD**: no long drive shaft; the transaxle drives the front wheels directly through CV half shafts.
+- **RWD**: one drive shaft from the front-mounted transmission to the rear differential.
+- **AWD**: FWD-based AWD adds a drive shaft to the rear axle; RWD-based AWD adds one to the front axle.
+- **4x4**: two drive shafts from the transfer case; the front one is short and steep, and lifted trucks often use a double cardan joint there.
+- **Single-motor, single-axle EV**: not needed, the motor, reduction gear and differential are one unit on the driven axle.
+- **Dual-motor, single-axle EV**: not needed, the motors sit on the driven axle.
+- **Dual-motor, dual-axle EV**: not needed, a motor on each axle replaces the front-to-rear drive shaft, which frees the floor for the battery.
+- **Torque vectoring**: no direct link, torque vectoring happens at the differentials or couplings.
+- **ABS and traction control**: no direct link, wheel speed sensors are at the wheels, not on the drive shaft.
+
+### CV Shafts
+
+#### What it is
+##### Description
+A CV shaft (CV axle or half shaft) is a short shaft with a constant-velocity (CV) joint at each end. It carries torque from the differential to a wheel while the wheel moves up and down and, at the front, steers.
+- A **CV joint** keeps the output turning at exactly the same speed as the input even when the two shafts are at an angle. A single U-joint can't do this (its output speeds up and slows down twice per turn), so CV joints are used where the angle is large or keeps changing.
+- **Why FWD needs them:** the front wheels both steer and are driven, so the joint at the wheel has to work at large angles (about 45°) while carrying full torque. U-joints at that angle would make the steering shake.
+- A CV shaft normally has two different joints:
+  - **Outboard (wheel end):** a fixed joint (usually Rzeppa) that handles the large steering angle but can't change length.
+  - **Inboard (differential end):** a plunging joint (usually tripod) with a smaller angle that can slide in and out, because the distance to the wheel changes as the suspension moves.
+In a common configuration:
+- Complete CV shaft:
+	- ![](attachments/cv-half-axle.jpg)
+- On the car (driven front wheel):
+	- ![](attachments/cv-front-axle.jpg)
+	- (a) CV shaft, (b) CV boot, (c) steering knuckle, (d) ball joint, (e) control arm, (f) strut, (g) brake caliper, (h) brake hose. Top: wheels straight. Bottom: steered, and the outboard joint bends to follow the knuckle.
+- Rzeppa joint:
+	- ![](attachments/cv-rzeppa-anim.gif)
+	- Six steel balls sit in grooves between an inner race (on the shaft) and an outer housing (on the wheel), held in place by a cage. The balls always stay in the plane that splits the angle between the two shafts in half, which is what keeps the speed constant.
+##### Types of CV Joints
+![](Pasted%20image%2020260916174636.png)
+
+| CV Joint Type            | Common Use                                                                | Advantage                                                                                                   | Disadvantage                                                                        | Image                                 |
+| ------------------------ | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------- |
+| Rzeppa / Birfield (ball) | Outboard (wheel end) joint of almost every FWD and AWD car                | Large angle (about 45°–48°); smooth and strong                                                              | Little or no plunge; complex, precise hardened parts; needs its boot and grease     | ![](attachments/cv-rzeppa-anim.gif)   |
+| Tripod (tripode)         | Inboard (differential end) joint of FWD cars; rear independent suspension | Simple and cheap; slides in and out by up to about 50 mm                                                    | Angle limited to about 22°–26°, so it can't be used at the steered wheel            | ![](attachments/cv-tripod.png)        |
+| Double offset (DOJ)      | Inboard joint, often on heavier or AWD vehicles                           | Ball-type joint that can both bend and plunge                                                               | Angle about 22°; less plunge than a tripod                                          |                                       |
+| Cross groove             | Inboard joints and propshafts on RWD / AWD cars                           | Compact and light; plunges with little play (backlash)                                                      | Small angle and plunge; only used inboard                                           |                                       |
+| Double cardan            | Steering columns; 4x4 drive shafts and some solid front axles             | Two U-joints back to back; handles large angles and shock loads with simple, cheap parts                    | Only close to constant velocity; bulky; vibrates at high speed                      | ![](attachments/ds-double-cardan.gif) |
+| Tracta                   | Early FWD cars (e.g. 1931 DKW F1)                                         | Sliding tongue-and-groove parts instead of balls; strong                                                    | Sliding contact makes more friction and wear; replaced by Rzeppa joints             | ![](attachments/cv-tracta.jpg)        |
+| Thompson coupling        | Specialised uses                                                          | Two U-joints kept aligned by a scissor linkage, with no shaft between them; true constant velocity; compact | Complex; wears quickly if run perfectly straight (needs at least about 2° of angle) | ![](attachments/cv-thompson.jpg)      |
+##### Part List
+
+| Make (3D print / laser cut)                                     | Buy                                                                  |
+| --------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Outboard joint housing and inner race (large-scale Rzeppa model) | Steel balls (6 per Rzeppa joint)                                    |
+| Ball cage                                                       | Ready-made small CV joints or CV axles (e.g. 1/10 RC car parts)       |
+| Tripod spider and grooved cup (inboard joint)                   | Small bearings or rollers for the tripod                              |
+| Steering knuckle / hub, and a stand that steers and moves up/down | Steel bar for the shaft, splined or D-shaft ends                   |
+| Pointer dials on input and output                               | Ball bearings, shaft collars, set screws, fasteners                   |
+| Clear cover or boot (optional)                                  | Grease; optional U-joint to compare against                           |
+
+#### Teaching Platform
+Manufacture
+- A tripod joint is fairly easy to print: a three-armed spider with rollers inside a cup with three straight grooves.
+- A Rzeppa joint is much harder: the ball grooves are curved, the cage must fit closely, and tolerances matter. 
+Demonstratability
+- No fluids needed; can be turned by hand or by a small electric motor.
+- Easy to see in action:
+  - Put a pointer dial on the input and the output. Set the joint to 30–45° and turn the input steadily: the output dial stays exactly in step.
+  - Swap in a single U-joint at the same angle: the output dial runs ahead and falls behind twice per turn.
+  - Steer the knuckle while turning the input: the outboard joint keeps driving the wheel at full lock.
+  - Move the wheel up and down: the inboard tripod joint slides in and out.
+  - Open a large printed Rzeppa model: the balls stay in the plane halfway between the two shafts.
+Works with what
+- **Gearboxes / transmissions / torque converters**: in a FWD transaxle the CV shafts plug straight into the transmission/differential housing.
+- **Couplings, drive shafts**: the shaft ends are splined into the differential and wheel hub; CV joints are also used on some drive shafts in place of U-joints.
+- **Differentials**: the inboard joints connect to the differential side gears, one CV shaft per wheel.
+- **Transfer cases**: a 4x4 with independent front suspension needs CV shafts from the front differential to the wheels.
+- **Brakes and clutches**: the outboard joint sits inside the wheel hub next to the brakes, and the wheel hub/bearing is splined onto the CV shaft.
+- **Steering and suspension**: the main reason CV shafts exist; the outboard joint follows the steering and both joints follow the suspension travel.
+- **FWD**: two CV shafts, one to each front wheel; this is where CV shafts are used the most.
+- **RWD**: needed only with independent rear suspension; a solid rear axle uses straight axle shafts instead.
+- **AWD**: CV shafts on every driven wheel that has independent suspension (usually all four).
+- **4x4**: CV shafts at the front with independent front suspension; a solid front axle uses U-joints or a Birfield joint in the axle housing instead.
+- **Single-motor, single-axle EV**: two CV shafts from the motor/differential unit to the driven wheels.
+- **Dual-motor, single-axle EV**: each motor drives its own wheel through its own CV shaft.
+- **Dual-motor, dual-axle EV**: two CV shafts on each axle, one to each wheel.
+- **Torque vectoring**: a torque vectoring differential or separate motors change how much torque goes down each CV shaft.
+- **ABS and traction control**: the ABS tone ring is often mounted on the outboard CV joint, next to the wheel speed sensor.
 ## Differentials, Transfer Cases, CVTs
 ### Differentials
 
