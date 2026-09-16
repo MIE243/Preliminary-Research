@@ -155,7 +155,7 @@ In a common configuration:
 | Cone / friction             | Old line-shaft machine drives (Evans), simple demonstration models        | Simplest to understand; slide a belt or ring along two opposite cones to change ratio                      | Power only carried by friction, so it slips and wears; low torque                          | ![](attachments/cvt-evans-cone.jpg)             |
 | Planetary ball (NuVinci)    | Bicycle and e-bike hubs                                                   | Sealed and compact; ratio can be changed while stopped                                                     | Heavier and less efficient than a derailleur; needs traction fluid                         | ![](attachments/cvt-nuvinci-internals.jpg)      |
 | Hydrostatic                 | Lawn tractors, zero-turn mowers, combine harvesters                       | Engine-driven pump feeds hydraulic motors; easy to control, reverses easily, one motor per wheel can steer | Often under 65% efficient; needs hydraulic fluid; heavy and costly                         |                                                 |
-| Ratcheting                  | Rare, mostly experimental                                                 | One-way clutches instead of friction, so no slip; can reach zero output speed (IVT)                        | Vibration from the ratcheting motion                                                       |                                                 |
+| Ratcheting                  | Rare, mostly experimental                                                 | One-way clutches instead of friction, so no slip; can reach zero output speed (IVT)                        | Vibration from the ratcheting motion                                                       | ![](Pasted%20image%2020260916104813.png)        |
 | eCVT (power-split)          | Hybrids (e.g. Toyota Prius, Ford Escape Hybrid)                           | No belt; a planetary gear set blends engine and two motor-generators; very durable                         | Needs two motor-generators, a battery and electronic control; only makes sense in a hybrid | ![](attachments/cvt-toyota-ecvt.jpg)            |
 ##### Part List
 
@@ -316,6 +316,7 @@ The working principle relies on two components working together:
         
     - Compress and release: the damper prevents the spring from bouncing endlessly.
 # Drivetrain Layouts
+![](Pasted%20image%2020260916114058.png)
 ## Front-Wheel Drive
 
 ## Rear-Wheel Drive
@@ -330,6 +331,69 @@ The working principle relies on two components working together:
 ## All-Wheel Drive
 
 ## 4x4 (4-Wheel) Drive
+
+### What it is
+#### Description
+A 4x4 (four-wheel drive, 4WD) is a drivetrain layout where the engine can drive all four wheels. It is built mainly for off-road and low-grip driving.
+- **4x4 vs AWD:** a 4x4 usually has a transfer case, lets the driver pick 2WD or 4WD, and has a low range. AWD is always on and is tuned for grip on the road, not for off-road use.
+- Power flow: engine → transmission → transfer case → front and rear drive shafts → front and rear differentials → half shafts → wheels.
+- Most 4x4s drive only the rear wheels in normal driving (2H). The front axle is added when needed (4H), and the low range (4L, typically about 2:1 to 4:1) gives much more torque at the wheels for steep, slow off-road driving.
+- **Why it exists:** off-road, one or more wheels often lose grip (mud, snow, loose rock, a wheel in the air). Driving both axles, and locking the differentials, keeps the vehicle moving as long as some wheels still have grip.
+In a common configuration:
+- Layout (part-time 4x4):
+	- ![](attachments/4x4-layout.svg)
+	- The transfer case sits behind the transmission. In 2H only the rear drive shaft turns. In 4H the transfer case locks the front drive shaft to the rear one, so both axles turn at the same speed. Locking hubs on the front wheels connect or disconnect the wheels from the front axle.
+##### Types of 4x4 Systems
+
+| 4x4 System Type                      | Common Use                                                                    | Advantage                                                                                                        | Disadvantage                                                                                                 | Image                                       |
+| ------------------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
+| Part-time 4WD                        | Most 4x4 pickups and off-roaders (e.g. Jeep Wrangler, Toyota Tacoma)          | Simple and strong; axles locked together for maximum off-road traction; runs as RWD on the road to save fuel     | No center differential, so 4WD can't be used on dry pavement (driveline windup); driver has to pick the mode | ![](Pasted%20image%2020260916113906.png)    |
+| Full-time 4WD                        | e.g. Toyota Land Cruiser, Mercedes G-Class, Jeep Grand Cherokee (Quadra-Trac) | Centre differential lets 4WD run on any surface; centre diff can be locked for off-road                          | Always driving both axles, so more drivetrain losses; open centre diff needs locking or traction control     | ![](Pasted%20image%2020260916113907.png)    |
+| Automatic / on-demand 4WD (4A)       | Full-size pickups (e.g. Ford F-150 "4A", Chevrolet Silverado "Auto")          | Runs RWD until the rear slips, then a clutch in the transfer case sends torque to the front; still has 4H and 4L | Clutch can overheat with heavy use; needs sensors and electronic control                                     |                                             |
+| Selectable (part-/full-time)         | e.g. Mitsubishi Pajero (Super Select), Jeep Grand Cherokee (Selec-Trac)       | 2WD, full-time 4WD and locked part-time 4WD all in one vehicle                                                   | More complex and expensive transfer case                                                                     |                                             |
+| Manual locking hubs                  | Older 4x4 trucks and SUVs (e.g. Toyota Land Cruiser J60)                      | In 2WD the front axle shafts and differential stop turning: less wear, better fuel economy; simple and robust    | Driver has to get out and turn each hub before using 4WD                                                     | ![](attachments/4x4-manual-hub.jpg)         |
+| Automatic locking hubs               | 1980s–90s pickups and SUVs (e.g. Mitsubishi Pajero)                           | Lock by themselves when 4WD is selected, no need to leave the vehicle                                            | Often need to drive a short distance (sometimes backward) to lock or unlock; may not lock once already stuck |                                             |
+| Axle lockers (locking differentials) | Serious off-roaders (e.g. Jeep Wrangler Rubicon, Mercedes G-Class)            | Both wheels on an axle turn together, so a wheel in the air doesn't stop the vehicle                             | Hard to steer with the front locked; only for slow off-road driving                                          | ![](attachments/4x4-diff-lock-switches.png) |
+##### Part List
+
+| Make (3D print / laser cut)                                   | Buy                                                                   |
+| ------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Chassis / frame plate (laser cut)                             | Motor + gearbox (or a hand crank) for the "engine"                     |
+| Transfer case housing, gears and shift collar                 | Steel shafts for the drive shafts and half shafts                     |
+| Front and rear differential housings and gears                | Universal joints for the drive shafts                                 |
+| Front steering knuckles / uprights                            | CV joints or small U-joints for the steered front wheels              |
+| Locking hub dials (dog clutch between axle and wheel hub)     | Ball bearings, wheels and tires                                       |
+| Axle housings, suspension links and mounts                    | Fasteners, set screws, grease (or RC crawler axles and transfer case) |
+
+#### Teaching Platform
+Manufacture
+- A 4x4 is not a stand-alone system, so it is the transfer case and two differentials put together. 
+- The front axle has to both steer and be driven, so it needs CV or universal joints at the knuckles. 
+- It is a full vehicle model, so it is bigger than a single component. 
+Demonstratability
+- No fluids needed; one motor or a hand crank can drive the whole model.
+- Easy to see in action:
+  - In 2H only the rear wheels are driven; shift to 4H and the front drive shaft and front wheels start turning.
+  - Shift to 4L: the wheels turn noticeably slower for the same input. Count turns to measure the low range ratio.
+  - Put one wheel on a slippery surface or lift it off the ground: with open differentials the model stops; lock the differentials and it keeps going.
+  - In 4H on a grippy surface, steer and push the model: the tires scrub and hop, which shows driveline windup.
+  - Unlock the front hubs in 2H: the front wheels roll freely while the front axle stays still.
+Works with what
+- **Gearboxes / transmissions (incl. CVTs)**: a manual or automatic transmission sits before the transfer case; CVTs are rare in 4x4s because of their torque limit, except in UTVs.
+- **Couplings, drive shafts, CV shafts**: needs front and rear drive shafts with universal joints, and CV or universal joints on the front half shafts because the front wheels steer.
+- **Differentials**: one on each axle, often with lockers; full-time 4WD also needs a centre differential.
+- **Transfer cases**: required, it is the core of the layout (part-time case with 2H/4H/4L).
+- **Brakes and clutches**: dog clutches in the transfer case and locking hubs; automatic 4WD uses a clutch pack; the low range gives more engine braking going downhill.
+- **Steering and suspension**: the front axle steers and is driven. Solid axles (e.g. Jeep Wrangler) are strong and let the wheels travel far; independent front suspension (most pickups) rides better. Locked 4WD makes tight turns hard on pavement.
+- **FWD**: not used, 4x4s are built on a RWD layout.
+- **RWD**: a part-time 4x4 in 2H is a RWD vehicle.
+- **AWD**: similar hardware, but AWD is always on and usually has no low range; full-time 4WD sits between the two.
+- **Single-motor, single-axle EV**: not a 4x4, only one axle is driven.
+- **Dual-motor, single-axle EV**: not a 4x4, only one axle is driven.
+- **Dual-motor, dual-axle EV**: electric 4x4s (e.g. Rivian R1T) use a motor on each axle instead of a transfer case, and need no low range because motors give full torque from zero speed.
+- **Torque vectoring**: some electric 4x4s with a motor per wheel (e.g. Rivian quad-motor) vary torque between wheels to steer and climb.
+- **ABS and traction control**: brake-based traction control (e.g. Toyota A-TRAC) brakes a spinning wheel to act like a locker; stability control is often reduced or turned off in 4L.
+
 # EV Configurations
 
 ## Single-Motor, Single-Axle (FWD — SM1ST, SM2ST, etc.)
