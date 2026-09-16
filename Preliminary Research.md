@@ -305,3 +305,216 @@ Use the labelled cross-section plus a purchased used/cutaway converter. If motio
 - [Dual-clutch transmission schematic](https://commons.wikimedia.org/wiki/File:Dual-clutch_transmission.svg) by Xavax/C-Lover, public domain.
 - [Aisin integrated electric drive unit](https://commons.wikimedia.org/wiki/File:Aisin_Xin1_Electric_Drive_Unit.jpg) by TTTNIS, CC0.
 - [Torque-converter cross-section](https://commons.wikimedia.org/wiki/File:Torque_converter_a_cross_section.png) by Toshinori baba, CC BY-SA 4.0.
+
+---
+
+## Brakes and Clutches
+
+Brakes and clutches both use controlled friction, but they do different jobs. A **brake** connects a rotating part to the stationary vehicle structure so the vehicle slows or stops. A **clutch** connects or disconnects two rotating parts so engine torque can be transmitted smoothly or interrupted.
+
+---
+
+### Brakes
+
+#### What it is
+
+##### Description and rough working principle
+
+A vehicle brake converts the vehicle's kinetic energy into another form so wheel speed decreases.
+
+- In a hydraulic **disc brake**, the pedal moves a master-cylinder piston. Brake-fluid pressure travels through the lines to the caliper pistons, which squeeze two pads against a rotor fixed to the wheel. Friction produces braking torque and heat.[^8]
+- In a **drum brake**, a hydraulic wheel cylinder pushes two curved shoes outward against the inside of a rotating drum. Return springs retract the shoes when pressure is released.[^9]
+- In an EV or hybrid, **regenerative braking** makes the traction motor operate as a generator. Vehicle energy is converted to electrical energy and returned to the high-voltage battery; friction brakes still provide stronger braking, very-low-speed braking and stationary holding.[^10]
+- ABS can rapidly reduce and restore hydraulic pressure at an individual wheel to prevent sustained wheel lock. ABS changes how braking force is controlled; it does not replace the service brake.
+
+##### Why a car needs brakes
+
+- Slow the vehicle predictably and stop it within a safe distance.
+- Hold the vehicle stationary when parked or stopped on a slope.
+- Control speed on descents and during manoeuvres.
+- Provide the wheel-torque control used by ABS, traction control and stability control.
+- In an EV or hybrid, recover some energy while retaining a friction-brake backup when regeneration is unavailable or insufficient.
+
+##### Types of Brakes
+
+| Brake Type | Common Use | Advantage | Disadvantage | Image |
+| --- | --- | --- | --- | --- |
+| Hydraulic disc brake | Front brakes on most passenger cars; often all four wheels | Good heat rejection; pads are accessible; clamping action is easy to see and demonstrate | Rotor and caliper must be aligned; a realistic hydraulic model needs fluid, seals and bleeding | ![Animated hydraulic disc-brake operation](attachments/brake-disc.gif) |
+| Drum brake | Rear brakes on some small cars and trucks; parking-brake duty | Compact parking-brake integration; large friction area; self-energising shoe geometry can reduce actuation force | Enclosed drum retains heat; springs and adjuster are less visible and more complicated to assemble | ![Leading-trailing and other drum-brake shoe arrangements](attachments/brake-drum-types.svg) |
+| Regenerative brake | Battery-electric and hybrid vehicles | Recovers energy; reduces friction-pad wear; motor torque is electronically controllable | Braking depends on motor, inverter, battery limits and vehicle speed; friction brakes are still required | ![Electric-vehicle regenerative braking system](attachments/brake-regenerative.png) |
+
+#### Part List
+
+##### Main parts in a road-car brake system
+
+| Main Part | Function |
+| --- | --- |
+| Brake pedal, booster and master cylinder | Create and amplify the driver's hydraulic command |
+| Reservoir, brake fluid, rigid lines and flexible hoses | Store and transmit hydraulic pressure |
+| Rotor and caliper, or drum and wheel cylinder | Convert hydraulic force into friction torque at each wheel |
+| Pads or shoes and friction lining | Provide the replaceable friction surfaces |
+| Return springs, slide pins and adjusters | Release the brake and maintain operating clearance |
+| Parking-brake lever/actuator and cable or motor | Hold the vehicle independently of the normal pedal system |
+| Wheel-speed sensors, ABS modulator and controller | Detect wheel slip and modulate individual brake pressure |
+| EV motor, inverter and high-voltage battery | Provide and absorb regenerative braking power where fitted |
+
+##### Teaching demonstrator
+
+| Make (3D print / laser cut) | Buy |
+| --- | --- |
+| Large rotor, caliper shell and replaceable pad carriers | Steel input shaft, bearings/pillow blocks and shaft collars |
+| Cable- or screw-operated piston/lever mechanism | Commercial friction material or small bicycle brake pads |
+| Pedal/hand lever, mounting plate and adjustable pad-clearance features | Bowden cable, springs, fasteners and threaded inserts |
+| Colour-coded pressure/force arrows and wheel-speed markers | Clear polycarbonate guard and low-speed hand crank or geared motor |
+| Optional drum, shoes and removable cover for comparison | Optional master/slave cylinder set, compatible brake fluid and catch tray |
+
+#### Teaching Platform
+
+##### 3D printing / manufacturing easiness
+
+- **Dry mechanical disc-brake model — easy to moderate:** the rotor, caliper body, pad carriers and lever can be printed. Flatness, concentricity and sufficient shaft support matter more than fine surface detail.
+- **Drum-brake model — moderate:** the circular parts are easy to CAD, but shoe pivots, return springs and the adjuster add small parts and assembly work.
+- **Hydraulic disc-brake model — moderate to hard:** use commercial cylinders, hose and seals. Printed pressure-containing parts can leak or fail and should not be used.
+- **Regenerative-brake rig — hard:** it needs a motor/generator, drive electronics, a safe electrical load or battery, sensing and control logic.
+- A printed demonstrator is for low-speed teaching only and must never be installed on a vehicle.
+
+##### Demonstratability
+
+- The simplest demonstration needs **no external fluid**: turn a guarded rotor by hand or with a low-speed motor, pull a cable/screw actuator and observe the pads clamp the rotor.
+- Put coloured marks on the shaft and rotor, and add a spring scale at the lever to compare input force with braking effect.
+- A hydraulic demonstration does require compatible brake fluid, sealed commercial cylinders, hose, bleeding equipment and a catch tray.
+- A drum model should use a removable or transparent cover so shoe movement remains visible.
+- Regenerative braking needs a motor/generator, controller and electrical load or battery; an energy meter makes recovered power visible.
+
+##### Works with what
+
+- **Wheel end:** wheel hub, rotor or drum, bearings and tyre-road contact.
+- **Driver input:** pedal, booster, master cylinder and hydraulic lines, or an electronic brake-by-wire command.
+- **Control systems:** wheel-speed sensors, ABS hydraulic modulator, traction control and stability control.
+- **Parking system:** cable or electric parking-brake actuator and a mechanical holding feature.
+- **EV/hybrid system:** traction motor, inverter, battery-management limits and blended-braking controller; friction brakes remain necessary.[^10]
+
+##### CAD easiness
+
+- **Easy:** simplified rotor, pads, cable lever, mounting plate and open caliper shell.
+- **Moderate:** drum shoes, adjuster, return-spring anchors and a visually accurate floating caliper.
+- **Hard:** pressure-tight hydraulics, ABS modulator or a functional regenerative/brake-blending system.
+- For a clear teaching model, enlarge pad travel and clearances slightly, use different colours for fixed and moving parts, and expose the force path.
+
+##### Recommended brake demonstrator
+
+Build a large, guarded **dry disc-brake model** with a hand crank or low-speed geared motor and a cable- or screw-operated caliper. It is easy to print and CAD, shows the braking action immediately, and needs no fluid. Add a removable drum-brake model or a separate motor/generator rig only if the project needs a comparison.
+
+---
+
+### Clutches
+
+#### What it is
+
+##### Description and rough working principle
+
+A clutch is a controllable connection between a driving shaft and a driven shaft.
+
+- In a conventional single-plate dry clutch, a diaphragm spring pushes the pressure plate against the clutch disc and flywheel. Friction locks the three together so engine torque reaches the gearbox input shaft.[^11]
+- Pressing the clutch pedal moves a cable or hydraulic release system. The release bearing deflects the diaphragm spring, the pressure plate unloads the disc and the engine can rotate independently of the gearbox.
+- During launch the disc is allowed to slip briefly, letting the engine and stationary drivetrain approach the same speed smoothly. A torsional damper in the disc reduces vibration and shock.[^12]
+- Multi-plate clutches stack alternating driving and driven plates to obtain more torque capacity in a small diameter. Centrifugal clutches use speed-sensitive shoes or weights to engage automatically.
+
+##### Why a car needs a clutch
+
+- Disconnect the engine from the drivetrain while starting, stopping or selecting a gear.
+- Allow controlled slip when launching from rest so the engine does not stall and the vehicle does not jerk.
+- Reconnect power smoothly after a gear change.
+- Reduce torsional shock and protect gears, shafts and joints from sudden torque changes.
+- In DCTs, hybrids and automatic transmissions, multiple controlled clutches select power paths even though the driver may not operate a clutch pedal.
+
+##### Types of Clutches
+
+| Clutch Type | Common Use | Advantage | Disadvantage | Image |
+| --- | --- | --- | --- | --- |
+| Single-plate dry diaphragm clutch | Manual-transmission passenger cars and light trucks | Compact; efficient when fully engaged; operation and release mechanism are easy to understand | Friction lining wears; poor control causes heat, judder or stalling; needs axial release travel | ![Single-plate diaphragm clutch in engaged and released positions](attachments/clutch-single-plate.png) |
+| Multi-plate wet or dry clutch | Motorcycles, dual-clutch transmissions, automatic transmissions and performance cars | High torque capacity in a small diameter; several interfaces share the load | More plates, tight tolerances and heat management; a wet clutch needs oil, sealing and drag control | ![Animated multi-plate clutch operation](attachments/clutch-multi-plate.gif) |
+| Centrifugal clutch | Scooters, small utility vehicles and simple automatic drives | Engages automatically as speed rises; no clutch pedal or external release actuator | Engagement speed depends on springs, mass and wear; slipping creates heat; guarded rotation is required for a demo | ![Centrifugal clutch patent drawing](attachments/clutch-centrifugal.png) |
+
+#### Part List
+
+##### Main parts in a single-plate automotive clutch
+
+| Main Part | Function |
+| --- | --- |
+| Flywheel | Provides the engine-side friction surface and rotational inertia |
+| Clutch disc, friction linings and splined hub | Carries torque to the gearbox input shaft while permitting axial release |
+| Torsional damper springs | Filter engine torque pulses and driveline shock |
+| Pressure plate and clutch cover | Clamp the disc to the flywheel |
+| Diaphragm spring | Supplies clamp load and acts as the release lever system |
+| Release bearing and guide tube | Apply axial force to the diaphragm while allowing rotation |
+| Release fork, pedal and cable or hydraulic cylinders | Carry the driver's command to the release bearing |
+| Pilot bearing and gearbox input shaft | Support and align the driven shaft |
+
+##### Teaching demonstrator
+
+| Make (3D print / laser cut) | Buy |
+| --- | --- |
+| Enlarged flywheel, pressure plate, clutch disc and transparent cover | Two steel shafts, bearings/pillow blocks and shaft collars |
+| Simplified splined or keyed disc hub | Friction sheet, cork/rubber lining or a small commercial clutch disc |
+| Release fork, pedal/hand lever and adjustable pressure-plate guides | Compression springs, thrust bearing, cable and fasteners |
+| Colour-coded torsional-damper insert and shaft-speed markers | Hand crank or guarded low-speed geared motor and controllable load |
+| Optional interchangeable single- and multi-plate stacks | Clear polycarbonate safety guard and threaded inserts |
+
+#### Teaching Platform
+
+##### 3D printing / manufacturing easiness
+
+- **Simplified single-plate dry clutch — moderate:** large circular parts are easy to print, but the pressure plate must move axially without tilting and the disc must remain centred.
+- **Multi-plate dry stack — moderate:** plates are simple, but flatness, alternating tabs and controlled stack clearance matter.
+- **Wet multi-plate clutch — hard:** it needs a sealed oil housing, compatible friction material, lubrication and heat management.
+- **Centrifugal clutch — moderate to hard:** pivots and shoes are straightforward, but spring selection, balance, engagement speed and containment require care.
+- A real vehicle clutch requires heat-resistant lining, accurately ground surfaces, controlled clamp load and high-speed balance; printed parts are suitable only for a guarded low-speed model.
+
+##### Demonstratability
+
+- The recommended dry model needs **no external fluid**. Turn the input shaft by hand, clamp the disc, and show both shafts rotate together; pull the release lever and show the input turn while the output stops.
+- Mark both shafts to make slip, engagement and relative speed visible. An adjustable spring preload can demonstrate the relationship between clamp force and torque capacity.
+- Apply a small controllable output load to show why partial engagement slips and generates heat, but keep speed and contact temperature low.
+- A wet clutch requires oil and a leak-proof case. A centrifugal clutch requires a motor, speed controller, tachometer and strong transparent guard.
+- Do not touch rotating parts or use an unguarded printed flywheel, shoe or pressure plate.
+
+##### Works with what
+
+- **Input side:** engine crankshaft, flywheel and usually a pilot bearing.
+- **Output side:** splined gearbox input shaft, transmission gears and the rest of the drivetrain.
+- **Release system:** pedal plus cable, or master/slave hydraulic cylinders, release fork and release bearing.
+- **Supporting systems:** bellhousing, bearings, mounts and sometimes a dual-mass flywheel.
+- **Automated systems:** clutch actuator, transmission control unit and shaft-speed/temperature sensing; a DCT needs two clutches and two gear-train input paths.
+
+##### CAD easiness
+
+- **Easy:** non-functional exploded display, flat clutch disc and simple flywheel.
+- **Moderate:** moving single-plate model with pressure-plate guides, release lever, keyed hub and adjustable spring preload.
+- **Moderate to hard:** multi-plate stack or centrifugal shoes with realistic clearances and balance.
+- **Very hard:** vehicle-grade diaphragm-spring geometry, friction/thermal design, torsional damper, spline standards, fatigue life and high-speed containment.
+
+##### Recommended clutch demonstrator
+
+Build a large, guarded **single-plate dry clutch** with two supported shafts, a spring-loaded pressure plate and a hand-operated release fork. Use visible shaft marks and adjustable clamp load. It clearly demonstrates engaged, slipping and disengaged states without oil, hydraulics or specialist tools.
+
+---
+
+### Brakes and Clutches: Sources and Image Credits
+
+#### Technical sources
+
+[^8]: Brembo, [Brake caliper technology and operation](https://www.bremboparts.com/america/en/support/car/insights/brake-caliper-technology-and-operation-324333), describing hydraulic pressure, pistons, pads, rotors and fixed/floating calipers.
+[^9]: Continental, [Drum Brakes](https://www.continental-automotive.com/en/components/brake-systems/drum-brakes.html), describing hydraulic wheel-cylinder actuation of brake shoes against a drum.
+[^10]: Bosch Mobility, [Regenerative braking systems](https://www.bosch-mobility.com/en/solutions/driving-safety/regenerative-braking-systems/), explaining motor-generator energy recovery and the continuing role of friction brakes.
+[^11]: MIT 2.972, [Clutch](https://web.mit.edu/2.972/www/reports/clutch/clutch.html), explaining engagement of the friction disc between flywheel and pressure plate.
+[^12]: ZF, [Clutch Systems](https://www.zf.com/products/en/cv/products_65885.html), describing diaphragm-spring clamp load, the clutch disc and torsional vibration damping.
+
+#### Image credits
+
+- [Hydraulic disc brake diagram](https://commons.wikimedia.org/wiki/File:Hydraulic_disc_brake_diagram.gif) by KDS444, CC BY-SA 3.0.
+- [Drum-brake arrangements](https://commons.wikimedia.org/wiki/File:Tipologia_tamburo.svg) by A7N8X, CC BY-SA 4.0.
+- [Electric car diagram](https://commons.wikimedia.org/wiki/File:Electric_car_diagram.svg) by Ian Furst, CC BY-SA 4.0.
+- [Single-plate diaphragm clutch](https://commons.wikimedia.org/wiki/File:Embrague2.png) by Enrique A. Chaparro, Free Art License.
+- [Multiple Disk Clutch](https://commons.wikimedia.org/wiki/File:Multiple_Disk_Clutch.gif) by Oguraclutch, public domain.
+- [Centrifugal clutch patent drawing](https://commons.wikimedia.org/wiki/File:US_Patent_598314_detail_centrifugal_clutch.png) by W. A. Crowdus, public domain.
