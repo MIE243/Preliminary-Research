@@ -74,7 +74,7 @@ The working principle relies on two components working together:
 - **Springs** absorb the energy from road impacts by compressing and extending. They store this energy temporarily but do not dissipate it — a spring alone would bounce forever.
     
 - **Dampers (shock absorbers)** convert the spring‘s oscillation energy into heat through hydraulic resistance. They control the rate at which the spring returns to its resting position, preventing endless bouncing.
-![](attachments/屏幕录制%202026-09-15%20233929.mp4)
+![](attachments/2026-09-15233929-ezgif.com-video-to-gif-converter.gif)
 ##### Types of Suspension
 
 | Suspension Type           | Common Use                             | Advantage                                                              | Disadvantage                                                       | Image                                                |
