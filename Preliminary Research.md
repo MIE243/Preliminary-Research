@@ -2,7 +2,75 @@
 ## Gearboxes, Transmissions, Torque Converters
 
 ## Couplings, Drive Shafts, CV Shafts
+### Couplings
 
+#### What it is
+##### Description
+A coupling is a device that joins two rotating shafts or driveline components so torque can pass from the driving side to the driven side.
+- A **rigid coupling** holds two shafts in a fixed relationship and needs accurate alignment. A **flexible coupling** contains a sliding, bending or elastic element that permits a small amount of axial, parallel or angular misalignment.
+- An elastomer coupling also twists slightly under load. This cushions sudden torque changes and reduces the vibration and noise passed between components.
+- A coupling is not the same as a clutch. A normal shaft coupling stays connected while running, while a clutch is designed to engage and disengage power. It is also not a replacement for a universal or CV joint when the shafts operate at a large or continuously changing angle.
+In a common configuration:
+- Flexible jaw coupling:
+	- ![](attachments/coupling-jaw-spider.jpg)
+	- One hub is fixed to the input shaft and the other is fixed to the output shaft. The jaws do not touch each other directly; the input jaws compress the dark elastomer spider visible between the hubs, which pushes the output jaws and transmits torque. The spider deforms enough to absorb shock and small alignment errors. 
+##### Types of Couplings
+
+| Coupling Type                    | Common Use                                                        | Advantage                                                                                               | Disadvantage                                                                                                                        | Image                                      |
+| -------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Rigid sleeve / flange            | Accurately aligned shafts, test rigs, fixed gearbox connections   | Simple, compact, inexpensive and has no intentional backlash                                            | Cannot absorb misalignment or vibration; poor alignment puts bending load on shafts/bearings                                        | ![](attachments/coupling-rigid-flange.jpg) |
+| Jaw / spider                     | Electric motors, pumps                                            | Simple three-piece design; damps shock and vibration; tolerates small alignment errors                  | Elastomer spider wears and can create backlash; limited angle and temperature                                                       | ![](attachments/coupling-jaw-spider.jpg)   |
+| Flexible rubber disc (flex disc) | Automotive propeller shafts and some steering columns             | Absorbs torsional shock and noise; allows small axial, radial and angular displacement                  | Rubber cracks with age, heat or oil; larger angles still require a universal or CV joint                                            | ![](attachments/coupling-flex-disc.jpg)    |
+| Oldham                           | Servo drives, encoders and compact mechanisms with offset shafts  | Floating centre disc makes parallel misalignment easy to see; compact and nearly backlash-free when new | Centre disc slides on every turn, so it wears; limited torque and high-speed capability                                             | ![](attachments/coupling-oldham.jpg)       |
+| Beam / helical                   | Encoders, sensors and small electric motors                       | One-piece construction; no lubrication; low backlash; accepts small angular and axial error             | Low torque capacity; repeated bending can cause fatigue                                                                             | ![](attachments/coupling-beam.png)         |
+| Disc / bellows                   | High-speed or high-precision motor-to-gearbox connections         | Torsionally stiff, low backlash and no lubrication; tolerates heat better than elastomers               | More expensive; thin metal elements can fatigue if misalignment exceeds their rating                                                | ![](attachments/coupling-bellows.png)      |
+| Splined / slip coupling          | Vehicle drive shafts, half shafts and telescoping steering shafts | High torque capacity; sliding splines allow the shaft length to change as suspension or mounts move     | Needs lubrication and usually a seal/boot; spline clearance creates some backlash; does not accommodate a large angle by itself     | ![](attachments/coupling-slip-spline.jpg)  |
+| Fluid coupling                   | Smooth starting of heavy vehicles and industrial machinery        | No direct mechanical contact between input and output; gives smooth starts and overload protection      | Always has some slip and heat loss; needs fluid and a sealed housing; a torque converter is more complex and also multiplies torque | ![](attachments/coupling-fluid.jpg)        |
+
+
+##### Part List
+
+| Make (3D print / laser cut)                              | Buy                                                        |
+| -------------------------------------------------------- | ---------------------------------------------------------- |
+| Two coupling hubs with jaws                              | Steel input and output shafts (D-shaft or keyed)           |
+| Interchangeable centre elements (rigid, soft and medium) | Elastomer spider or rubber insert                          |
+| Clear safety guard and mounting brackets                 | Ball bearings / pillow blocks                              |
+| Adjustable motor and load plates                         | Shaft collars, keys, set screws and fasteners              |
+| Alignment blocks or sliding offset stage                 | Optional commercial jaw or Oldham coupling for comparison |
+
+#### Teaching Platform
+Manufacture
+- Easy to print and CAD: 
+	- Rigid sleeve coupling
+	- Jaw coupling (Spider should be bought probably)
+	- Oldham coupling (surface finish matters)
+- Printed bores and set-screw threads wear quickly.
+- A fluid coupling needs a leak-proof housing, balanced impellers and fluid. 
+- Metal disc or bellows couplings need thin fatigue-resistant parts.
+Demonstratability
+- No fluid or special tools are needed for a jaw or Oldham coupling. It can be turned by hand or driven slowly with a small electric motor.
+- Mount one bearing block on slots so the input and output shafts can be moved out of alignment by a measured amount.
+- Easy to see in action:
+  - Start with a rigid coupling and offset one shaft slightly: the assembly becomes hard to turn and the shafts/bearings deflect.
+  - Replace it with a jaw coupling: the elastomer deforms and the output continues to turn with less vibration.
+  - Fit spiders made from different TPU hardnesses: a softer spider twists more and cushions shock, while a harder spider gives a more immediate output response.
+  - Apply a sudden load to the output: mark both hubs to show the small torsional deflection across the elastomer.
+  - Use an Oldham coupling with two visibly offset shafts: the centre disc slides in two perpendicular directions during each revolution.
+Works with what
+- **Gearboxes / transmissions / torque converters**: joins a motor or engine simulator to the gearbox input, or the gearbox output to the next shaft. A flexible coupling protects gears and bearings from small alignment errors and torque shock.
+- **Drive shafts / CV shafts**: flange, flexible-disc and splined couplings attach shafts to the transmission, transfer case or differential. The joints on the shaft handle the larger operating angles.
+- **Differentials**: connects the drive shaft or motor output to the differential pinion/input shaft.
+- **Transfer cases**: flange or splined couplings connect the transmission input and front/rear drive-shaft outputs.
+- **Brakes and clutches**: a fixed coupling cannot disconnect power. Add a clutch when the platform must start, stop or change modes without stopping the motor.
+- **Steering and suspension**: flexible or splined steering-shaft couplings reduce vibration and allow small movement; suspension travel changes shaft length and angle, so driven wheels still need plunging CV joints or slip splines.
+- **FWD**: the engine and transaxle are normally bolted together; splines couple the differential side gears to the two CV half shafts.
+- **RWD**: a flange, flexible disc or splined slip joint connects the transmission to the propeller shaft, which then connects to the rear differential.
+- **AWD / 4x4**: needs additional flange and spline connections around the transfer case, front/rear drive shafts and differentials. Some on-demand AWD systems also use an electronically controlled multi-plate coupling to connect the second axle.
+- **Single-motor, single-axle EV**: a short rigid or flexible coupling can connect the motor to a reduction gearbox/differential when they are separate units.
+- **Dual-motor, single-axle EV**: each motor needs its own coupling or geared connection to its wheel/half shaft.
+- **Dual-motor, dual-axle EV**: each motor-to-reduction-unit connection can use the same coupling design; no centre drive-shaft coupling is needed when the axles are independent.
+- **Torque vectoring**: clutch couplings can vary how much torque reaches each axle or wheel; separate wheel motors replace these mechanical couplings with electronic motor control.
+- **ABS and traction control**: no direct link for a fixed shaft coupling, but an active AWD coupling can be commanded open during some ABS or stability-control events.
 ## Differentials, Transfer Cases, CVTs
 ### Differentials
 
