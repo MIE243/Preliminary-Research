@@ -21,13 +21,13 @@ Every component/system is researched using the same two-part framework:
 
 ### 3.1 Core Components
 
-| Component | Owner |
-|-----------|-------|
-| Gearboxes, transmissions, torque converters | TOM |
-| Couplings, drive shafts, CV shafts | Mo |
-| Differentials, transfer cases, CVTs | Mo |
-| Brakes and clutches | TOM |
-| Steering and suspension | Liu |
+| Component                                   | Owner |
+| ------------------------------------------- | ----- |
+| Gearboxes, transmissions, torque converters | TOM   |
+| Couplings, drive shafts, CV shafts          | Mo    |
+| Differentials, transfer cases, CVTs         | Mo    |
+| Brakes and clutches                         | TOM   |
+| Steering and suspension                     | Liu   |
 
 ### 3.2 Drivetrain Layouts
 

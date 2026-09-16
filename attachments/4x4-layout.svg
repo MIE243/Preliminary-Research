@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="640" height="400" fill="#ffffff"/>
+  <text x="320" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Part-time 4x4 layout (top view, front at top)</text>
+  <!-- front axle -->
+  <line x1="130" y1="80" x2="510" y2="80" stroke="#c0392b" stroke-width="5"/>
+  <!-- rear axle -->
+  <line x1="130" y1="340" x2="510" y2="340" stroke="#c0392b" stroke-width="5"/>
+  <!-- drive shafts -->
+  <line x1="320" y1="98" x2="320" y2="248" stroke="#2c7fb8" stroke-width="5"/>
+  <line x1="320" y1="232" x2="340" y2="232" stroke="#2c7fb8" stroke-width="5"/>
+  <line x1="350" y1="268" x2="350" y2="322" stroke="#2c7fb8" stroke-width="5"/>
+  <!-- wheels -->
+  <g fill="#333">
+    <rect x="80" y="50" width="40" height="60" rx="6"/>
+    <rect x="520" y="50" width="40" height="60" rx="6"/>
+    <rect x="80" y="310" width="40" height="60" rx="6"/>
+    <rect x="520" y="310" width="40" height="60" rx="6"/>
+  </g>
+  <!-- locking hubs -->
+  <g fill="#f39c12" stroke="#222">
+    <circle cx="128" cy="80" r="8"/>
+    <circle cx="512" cy="80" r="8"/>
+  </g>
+  <!-- boxes -->
+  <g stroke="#222" stroke-width="1.5">
+    <rect x="290" y="62" width="60" height="36" rx="4" fill="#fadbd8"/>
+    <rect x="320" y="322" width="60" height="36" rx="4" fill="#fadbd8"/>
+    <rect x="345" y="120" width="90" height="46" rx="4" fill="#d5e8d4"/>
+    <rect x="345" y="172" width="90" height="46" rx="4" fill="#dae8fc"/>
+    <rect x="310" y="228" width="80" height="40" rx="4" fill="#fff2cc"/>
+  </g>
+  <g fill="#222" text-anchor="middle">
+    <text x="320" y="85">Front diff</text>
+    <text x="350" y="345">Rear diff</text>
+    <text x="390" y="148">Engine</text>
+    <text x="390" y="200">Transmission</text>
+    <text x="350" y="245">Transfer</text>
+    <text x="350" y="260">case</text>
+  </g>
+  <!-- engine to transmission to transfer case -->
+  <line x1="390" y1="166" x2="390" y2="172" stroke="#222" stroke-width="3"/>
+  <line x1="370" y1="218" x2="370" y2="228" stroke="#222" stroke-width="3"/>
+  <!-- labels -->
+  <g fill="#555" font-size="12">
+    <text x="130" y="132">Locking hub (frees front</text>
+    <text x="130" y="147">wheel in 2WD)</text>
+    <line x1="140" y1="120" x2="130" y2="90" stroke="#555"/>
+    <text x="180" y="200" text-anchor="middle">Front drive shaft</text>
+    <line x1="245" y1="196" x2="316" y2="190" stroke="#555"/>
+    <text x="470" y="298" text-anchor="middle">Rear drive shaft</text>
+    <line x1="420" y1="294" x2="355" y2="296" stroke="#555"/>
+    <text x="200" y="330" text-anchor="middle">Half shafts</text>
+    <text x="430" y="52" text-anchor="middle">Front half shafts</text>
+    <text x="430" y="68" text-anchor="middle">(CV / U-joints, wheels steer)</text>
+  </g>
+  <!-- legend -->
+  <g font-size="12" fill="#222">
+    <text x="20" y="388"><tspan font-weight="bold">2H</tspan> rear shaft only</text>
+    <text x="180" y="388"><tspan font-weight="bold">4H</tspan> both shafts locked together</text>
+    <text x="410" y="388"><tspan font-weight="bold">4L</tspan> both shafts, low-range reduction</text>
+  </g>
+</svg>
