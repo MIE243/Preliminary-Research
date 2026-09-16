@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="640" height="420" fill="#ffffff"/>
+  <text x="320" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Dual-motor, dual-axle EV (top view, front at top)</text>
+  <!-- battery -->
+  <rect x="190" y="140" width="260" height="140" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="320" y="200" text-anchor="middle" fill="#1b5e20" font-weight="bold">Battery pack</text>
+  <text x="320" y="218" text-anchor="middle" fill="#1b5e20" font-size="12">(in the floor, between the axles)</text>
+  <!-- axles -->
+  <line x1="130" y1="80" x2="510" y2="80" stroke="#c0392b" stroke-width="5"/>
+  <line x1="130" y1="340" x2="510" y2="340" stroke="#c0392b" stroke-width="5"/>
+  <!-- wheels -->
+  <g fill="#333">
+    <rect x="80" y="50" width="40" height="60" rx="6"/>
+    <rect x="520" y="50" width="40" height="60" rx="6"/>
+    <rect x="80" y="310" width="40" height="60" rx="6"/>
+    <rect x="520" y="310" width="40" height="60" rx="6"/>
+  </g>
+  <!-- drive units -->
+  <g stroke="#222" stroke-width="1.5">
+    <rect x="235" y="56" width="170" height="48" rx="5" fill="#dae8fc"/>
+    <rect x="235" y="316" width="170" height="48" rx="5" fill="#dae8fc"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="320" y="76" font-weight="bold">Front drive unit</text>
+    <text x="320" y="93" font-size="11">motor + gear + diff + inverter</text>
+    <text x="320" y="336" font-weight="bold">Rear drive unit</text>
+    <text x="320" y="353" font-size="11">motor + gear + diff + inverter</text>
+  </g>
+  <!-- HV cables -->
+  <g stroke="#f39c12" stroke-width="3" fill="none">
+    <line x1="300" y1="104" x2="300" y2="140"/>
+    <line x1="300" y1="280" x2="300" y2="316"/>
+  </g>
+  <!-- control signals -->
+  <g stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="5 4" fill="none">
+    <path d="M 470 210 L 480 210 L 480 96 L 405 96"/>
+    <path d="M 480 210 L 480 324 L 405 324"/>
+  </g>
+  <rect x="455" y="190" width="100" height="40" rx="5" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="505" y="207" text-anchor="middle" fill="#4a148c" font-size="12">Controller</text>
+  <text x="505" y="222" text-anchor="middle" fill="#4a148c" font-size="11">(torque split)</text>
+  <!-- labels -->
+  <g fill="#555" font-size="12">
+    <text x="190" y="52" text-anchor="middle">CV half shafts</text>
+    <text x="190" y="385" text-anchor="middle">CV half shafts</text>
+    <text x="235" y="126" text-anchor="middle">HV cable</text>
+    <text x="95" y="215">No drive shaft,</text>
+    <text x="95" y="231">no transfer case,</text>
+    <text x="95" y="247">no centre diff</text>
+  </g>
+  <!-- legend -->
+  <g font-size="12" fill="#222">
+    <line x1="20" y1="405" x2="44" y2="405" stroke="#c0392b" stroke-width="4"/>
+    <text x="50" y="409">mechanical drive</text>
+    <line x1="180" y1="405" x2="204" y2="405" stroke="#f39c12" stroke-width="3"/>
+    <text x="210" y="409">high-voltage power</text>
+    <line x1="350" y1="405" x2="374" y2="405" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="380" y="409">torque command (each axle set separately)</text>
+  </g>
+</svg>

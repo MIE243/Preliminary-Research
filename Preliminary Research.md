@@ -611,6 +611,75 @@ Works with what
 
 ## Dual-Motor, Dual-Axle
 
+### What it is
+#### Description
+A dual-motor, dual-axle EV has one electric motor driving the front axle and a second driving the rear axle. It is the standard way electric cars get all-wheel drive.
+- Each axle has its own **electric drive unit** (also called an e-axle): a motor, a single-speed reduction gear, an open differential and usually the inverter, all in one housing. CV half shafts take the drive out to the wheels.
+- There is **no mechanical link between the axles**: no drive shaft, no transfer case and no centre differential. A controller decides how much torque each axle gets, and can change the split in a few hundredths of a second.
+- **Why it exists:**
+  - More grip and stability on snow, rain and gravel, like AWD.
+  - Faster acceleration, because the torque is spread over four tires.
+  - Regenerative braking on both axles recovers more energy.
+  - Removing the drive shaft tunnel leaves a flat floor for the battery.
+- To save energy, many cars drive mostly on one motor and bring in the other when more torque or grip is needed. The idle motor must not drag; this is why the two motors are often different types, or the front one has a disconnect (see the table).
+In a common configuration:
+- Layout:
+	- ![](attachments/ev-dual-motor-layout.svg)
+	- The battery sits in the floor between the two drive units. Power goes to each drive unit through high-voltage cables, and the controller sends each one its own torque command.
+- In the vehicle:
+	- ![](attachments/ev-tesla-p85d-chassis.jpg)
+	- Tesla Model S P85D chassis: drive units at the front and rear axles, battery pack filling the floor between them.
+- Drive unit:
+	- ![](attachments/ev-aisin-eaxle.jpg)
+	- An e-axle combines the motor, reduction gear, differential and power electronics in one box that bolts in between the wheels.
+##### Types of Dual-Motor, Dual-Axle Systems
+
+| System Type                                                 | Common Use                                              | Advantage                                                                                                                  | Disadvantage                                                                                              | Image                                          |
+| ----------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Permanent-magnet rear + induction front                     | Tesla Model 3 / Y Dual Motor, Volkswagen ID.4 AWD       | Efficient magnet motor does most of the work; unpowered induction motor spins freely with almost no drag, so no clutch needed | Induction motor is less efficient at low speed; two different motor designs to build                      | ![](attachments/ev-tesla-front-drive-unit.jpg) |
+| Two permanent-magnet motors with front disconnect           | Hyundai Ioniq 5, Kia EV6 (AWD)                          | Both motors efficient; disconnector unhooks the front motor when not needed, improving efficiency by up to about 7%          | Magnet motors drag when spun unpowered, so the extra disconnect unit (actuator and clutch) is needed      | ![](attachments/ev-hyundai-egmp.jpg)           |
+| Electrically excited (wound-rotor) motors                   | BMW iX, Nissan Ariya e-4ORCE                            | No rare-earth magnets; the rotor's magnetic field can be turned off, so an idle motor doesn't drag                          | Rotor needs power through brushes / slip rings; rotor coils make heat                                     |                                                |
+| Tri- / quad-motor (extension)                               | Tesla Model S Plaid (1 front, 2 rear), Rivian quad-motor | Two motors on one axle can send different torque to each wheel (torque vectoring)                                          | More cost, weight and control complexity                                                                  | ![](attachments/ev-tesla-plaid-rear-unit.jpg)  |
+| Two-speed rear unit                                         | Porsche Taycan, Audi e-tron GT                          | Short 1st gear for acceleration, taller 2nd gear for efficiency and top speed                                              | Heavier and more complex than a single-speed reduction gear                                               |                                                |
+##### Part List
+
+| Make (3D print / laser cut)                                | Buy                                                                         |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Chassis / floor plate with battery tray (laser cut)        | 2 DC or brushless motors (ideally different sizes, like front/rear)          |
+| Two drive unit housings (motor mount + reduction gears)    | 2 motor drivers / ESCs                                                      |
+| Two differentials (see Differentials section)              | Microcontroller (e.g. Arduino), throttle potentiometer and torque-split knob |
+| Front steering knuckles, suspension mounts, wheel hubs     | Battery pack (e.g. RC LiPo) with fuse and switch                            |
+| Control panel / display mount                              | Wheel encoders or speed sensors; CV joints / half shafts (RC parts)          |
+| Clear cover over the electronics                           | Ball bearings, wheels and tires, wiring, fasteners                          |
+
+#### Teaching Platform
+Manufacture
+- Mechanically simpler than a 4x4 or ICE AWD: no transfer case, drive shaft or centre differential to make.
+- Each drive unit is just a motor, a printed reduction gear set and a differential, which reuses the Differentials design.
+- Electronics and code are harder
+Demonstratability
+- Needs a battery or bench power supply and a microcontroller, so it depends more on electronics than the mechanical sections, but no fluids are needed.
+- Easy to see in action:
+  - Turn the torque-split knob from 100% rear to 50:50 to 100% front and watch which wheels drive.
+  - Put the rear wheels on a slippery surface: with rear-only drive the model spins its wheels; send torque to the front and it moves.
+  - Turn one motor off and spin its wheels by hand: compare the drag of a connected motor with a disconnected one.
+  - Regenerative braking: spin the wheels by hand with a motor unpowered and light an LED or show the voltage it makes.
+  - Take the covers off to show there is no drive shaft between the axles.
+Works with what
+- **Gearboxes / transmissions / torque converters**: each motor needs only a single-speed reduction gear (some performance cars use a two-speed rear unit); no torque converter or multi-speed gearbox.
+- **Couplings, drive shafts, CV shafts**: no drive shaft between the axles; each axle needs two CV half shafts; some front units add a disconnect clutch.
+- **Differentials**: one open differential on each axle; no centre differential.
+- **Transfer cases / CVTs**: not needed.
+- **Brakes and clutches**: regenerative braking on both axles plus normal friction brakes; some cars use a disconnect clutch on the front unit.
+- **Steering and suspension**: usually independent suspension at both ends; the front drive unit sits between the steered wheels, and the heavy floor battery gives a low centre of gravity.
+- **FWD / RWD**: each axle on its own is a single-motor EV drive; most dual-motor EVs drive mainly through the rear (or front) motor and add the other one when needed.
+- **AWD**: this is electric AWD, with the front/rear split done in software instead of by a centre differential or coupling.
+- **4x4**: electric 4x4s (e.g. Rivian R1T) use this layout; no low range is needed because motors give full torque from zero speed.
+- **Single-motor, single-axle EV**: uses the same drive unit; the AWD version of a car often just adds a second unit on the other axle.
+- **Dual-motor, single-axle EV**: different layout (both motors on one axle); adding a third motor combines the two (e.g. Tesla Model S Plaid).
+- **Torque vectoring**: front/rear torque vectoring comes for free; left/right vectoring needs a torque vectoring differential, brakes, or a motor per wheel.
+- **ABS and traction control**: motor torque can be cut or changed within milliseconds, much faster than an engine, so traction control is very quick; regenerative braking has to be blended with the friction brakes when ABS works.
+
 # Advanced Systems
 
 ## Torque Vectoring
