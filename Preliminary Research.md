@@ -281,7 +281,7 @@ A steering system is a set of linkages and gears with one input shaft (the steer
 
 Youtube: [Understanding your Car's Steering & Power Steering !](https://www.youtube.com/watch?v=em1O8mz7sF0) 3:00-6:40
 
-![](attachments/屏幕截图%202026-09-15%20222917.png)
+![](attachments/steering.png)
 
 ##### Types of Steerings
 
@@ -305,27 +305,35 @@ Youtube: [Understanding your Car's Steering & Power Steering !](https://www.yout
 **Manufacture**
 
 - 3D printed gears for the rack-and-pinion are possible, but the pinion and rack mesh must be accurate. If printed too small, the teeth wear quickly and the steering feels loose. A bought pinion-and-rack set is more reliable.
-    
 - The steering knuckle and tie rods can be 3D printed or laser cut, but they carry bending loads. Use thicker sections or steel inserts at the pivot points.
-    
 - Ball joints and rod ends should be bought, not printed. They need to rotate freely in multiple axes and take both push and pull loads.
-    
 - Otherwise it is mostly simple 3D printing and laser cutting for the housing, brackets, and mounting plates.
 
 **Demonstratability**
 
 - No need for external tools. Can be powered by hand or by a small electric motor.
-    
 - Easy to see in action:
-    
     - Turn the steering wheel: the rack moves sideways and the front wheels turn left or right.
-        
     - Turn the wheel fully left and fully right: the inner wheel and outer wheel turn by different angles (Ackermann effect).
-        
     - Hold one wheel fixed and turn the steering wheel: the other wheel still moves, showing the linkage motion.
-        
     - Push the steering wheel to full lock: the rack stops, showing the travel limit.
 
+Works with what
+- **Gearboxes / transmissions / torque converters**: no direct link. The steering system is driven by the driver, not by the transmission. But in FWD cars, the steering knuckle must fit around the transaxle and the CV half shafts, so the gearbox layout affects the steering geometry.
+- **Couplings, drive shafts, CV shafts**: in FWD cars, the front wheels both steer and drive, so the half shafts must use CV joints to allow the wheels to turn while transmitting torque. In RWD cars, the front wheels only steer, so no CV shafts are needed at the front.
+- **Differentials**: in FWD cars, the differential is usually in the same housing as the transaxle, and the CV half shafts pass through the steering knuckle. In RWD cars, the differential is at the rear and has no direct link to the steering system.
+- **Transfer cases**: in AWD and 4x4 vehicles, the front axle still steers, so the front differential and CV shafts must fit around the steering linkage and control arms. The transfer case itself has no direct link to the steering.
+- **Brakes and clutches**: the brake caliper and disc mount on the steering knuckle, so the knuckle must carry both steering loads and braking torque. The steering column is separate from the clutch and brake pedals, but the driver uses all three together.
+- **Steering and suspension**: the steering knuckle and tie rod connect directly to the suspension upright. The suspension geometry (camber, caster, kingpin inclination, bump steer) determines how the wheel behaves as it steers and moves up and down.
+- **FWD**: the steering knuckle also carries the drive shaft and CV joint, so it is more complex. The steering rack is often mounted behind the engine, and the tie rods connect to the knuckle at a point that must clear the CV boot.
+- **RWD**: the steering knuckle only carries the wheel hub and brake, so it is simpler. The steering rack can be mounted in front of or behind the front axle line, depending on the suspension layout.
+- **AWD**: the front axle still steers, so the front differential and CV shafts must fit around the steering linkage. The steering system is the same as FWD at the front, with the rear axle driven separately.
+- **4x4**: same as AWD at the front. In off-road use, the steering system must handle larger wheel travel and higher loads, so the tie rods and ball joints are usually stronger.
+- **Single-motor, single-axle EV**: if the motor drives the front axle, the layout is the same as FWD, with CV shafts through the steering knuckle. If it drives the rear axle, the front wheels only steer, so the layout is the same as RWD.
+- **Dual-motor, single-axle EV**: same as single-motor, single-axle. The steering system is unchanged; the motors only affect the drivetrain.
+- **Dual-motor, dual-axle EV**: each axle can drive independently, but the front wheels still steer. The steering system is still needed for the front wheels, and the front knuckles must accommodate both steering and drive.
+- **Torque vectoring**: independent motors or torque vectoring differentials can change wheel speed left and right, but they do not replace the steering system. Steering still sets the wheel angle; torque vectoring only adjusts the yaw moment after the wheels are turned.
+- **ABS and traction control**: these systems brake individual wheels, but they do not steer. The steering system remains the driver's main directional control. ABS and traction control work best when the steering geometry is correct and the tires maintain contact with the road.
 ### Suspension
 #### What it is
 ##### Description
@@ -347,6 +355,14 @@ The working principle relies on two components working together:
 | Double wishbone           | Performance cars, SUVs, FSAE race cars | Excellent camber control; high lateral rigidity; precise steering feel | Complex; more parts; higher cost; requires careful geometry design | ![](attachments/Pasted%20image%2020260915234207.png) |
 | Multilink                 | Luxury car rear suspensions            | Excellent ride comfort; good handling; adjustable alignment            | Very complex; large space requirement; high cost                   | ![](attachments/Pasted%20image%2020260916000508.png) |
 | Trailing arm / twist beam | Budget car rear suspensions            | Simple; low cost; compact; durable                                     | Wheels are not fully independent; limited ride quality             | ![](attachments/Pasted%20image%2020260915235852.png) |
+##### Types of Springs
+
+| Spring Type               | Common Use                                        | Advantage                                                                   | Disadvantage                                                                | Image                                                |
+| ------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Coil spring               | Most passenger car suspensions                    | Simple; compact; wide range of rates; easy to replace; cheap                | Carries only vertical load; needs separate location linkage                 | ![](attachments/Pasted%20image%2020260916133705.png) |
+| Leaf spring               | Trucks, older RWD cars, trailers                  | Simple; carries load and locates the axle; cheap; durable                   | Heavy; poor ride comfort; limited geometry control; friction between leaves | ![](attachments/Pasted%20image%2020260916133607.png) |
+| Torsion bar               | Some trucks, older cars, performance applications | Compact; adjustable ride height via anchor bolt; no coil bind               | Needs a reaction point; limited travel; harder to package                   | ![](attachments/Pasted%20image%2020260916134210.png) |
+| Air spring                | Luxury cars, buses, trucks, some SUVs             | Adjustable ride height and stiffness; excellent load levelling; smooth ride | Needs compressor, air lines, valves; leaks; complex control                 | ![](attachments/Pasted%20image%2020260916133631.png) |
 ##### Part List
 
 |Make (3D print / laser cut)|Buy|
@@ -356,46 +372,108 @@ The working principle relies on two components working together:
 |Chassis mounting brackets|Steel shafts (arm pivots)|
 |Arm bushings / spacers|Fasteners, bolts, nuts|
 |Wheel hub adapters|Wheel bearings (if using real wheels)|
-
-#### Teaching Platform
-
+##### Teaching Platform
 **Manufacture**
-
 - 3D printed control arms are possible, but they carry bending and buckling loads. Use thick cross-sections, print orientation along the load path, and consider steel inserts at the ball joint mounting points.
-    
 - The steering knuckle is a highly stressed part — it carries both suspension loads and steering loads. 3D printed plastic may work for a hand-operated demo but should be over-designed.
-    
 - Ball joints and rod ends should be bought, not printed. They need to rotate freely in multiple axes and withstand repeated cycling without loosening.
-    
 - Otherwise it is mostly simple 3D printing and laser cutting for the brackets, spacers, and mounting plates.
-    
-
 **Demonstratability**
-
 - No need for external tools. Can be operated by hand or with a simple fixture.
-    
 - Easy to see in action:
-    
     - Push one wheel up: the spring compresses, the damper resists, and the upper and lower arms pivot.
-        
     - Watch the camber angle: as the wheel moves up, the top of the wheel tilts inward or outward depending on the arm lengths.
-        
     - Compare left and right sides: pushing one wheel does not affect the other (independent suspension).
-        
     - Compress and release: the damper prevents the spring from bouncing endlessly.
+**Works with what**
+- **Gearboxes / transmissions / torque converters**: no direct link. The suspension holds the wheels and the drivetrain, but the transmission itself does not connect to the suspension. However, the weight of the gearbox affects the sprung mass and therefore the spring and damper tuning.
+- **Couplings, drive shafts, CV shafts**: in FWD and AWD cars, the front suspension must accommodate the CV half shafts, which pass through the steering knuckle and move with the suspension. The suspension travel must not pull the CV joint apart or cause the shaft to bind.
+- **Differentials**: in RWD cars, the rear differential is mounted on the chassis or the axle, and the suspension must control the axle position. In FWD cars, the differential is in the transaxle, and the CV shafts connect to the front hubs through the suspension.
+- **Transfer cases**: in AWD and 4x4 vehicles, the transfer case sends drive to the front and rear axles. Each axle has its own suspension, and the suspension must allow enough wheel travel for off-road use without causing the drive shafts to bind or the CV joints to over-angle.
+- **Brakes and clutches**: the brake caliper mounts on the steering knuckle or upright, so the suspension must carry braking torque as well as suspension loads. Brake dive and squat are controlled by the springs and dampers. The clutch is unrelated to the suspension.
+- **Steering and suspension**: the steering knuckle and tie rod connect directly to the suspension upright. The suspension geometry (camber, caster, kingpin inclination, roll center) affects steering feel, returnability, and bump steer. The steering rack is usually mounted on the chassis or subframe, and the tie rods must follow the suspension motion without binding.
+- **FWD**: the front suspension must accommodate both steering and drive, so the knuckle is complex and the CV shafts must pass through it. The rear suspension is often simpler (twist beam or multilink) because it only carries the load.
+- **RWD**: the front suspension only steers, so the knuckle is simpler. The rear suspension carries the drive axle, so it must control axle position under acceleration and braking. Double wishbone or multilink rear suspensions are common in performance cars.
+- **AWD**: both front and rear suspensions carry drive loads, so both knuckles (or uprights) need provisions for CV joints. The suspension must allow enough travel for all four wheels to stay in contact with the road.
+- **4x4**: the suspension must handle large wheel travel and high loads. Solid axles are common at the rear (and sometimes the front) because they are strong and simple, but they give a harsher ride and less precise geometry than independent suspension.
+- **Single-motor, single-axle EV**: the suspension layout matches the equivalent FWD or RWD setup. The battery weight is low and central, so the springs are often stiffer to handle the extra mass and keep ride height consistent.
+- **Dual-motor, single-axle EV**: same as single-motor, single-axle. The suspension is unchanged; the motors only affect the drivetrain.
+- **Dual-motor, dual-axle EV**: each axle has its own motor, but the suspension geometry remains similar. The extra weight of the motors may require stiffer springs and dampers.
+- **Torque vectoring**: independent motors can change wheel speed left and right, but the suspension still controls wheel position and camber. Torque vectoring works best when the suspension keeps the tires flat on the road.
+- **ABS and traction control**: these systems rely on consistent tire contact, which depends on proper suspension function. Worn dampers or bushings degrade ABS and traction control performance because the wheel can lose contact with the road under braking or acceleration.
 # Drivetrain Layouts
 ![](Pasted%20image%2020260916114058.png)
 ## Front-Wheel Drive
 
 ## Rear-Wheel Drive
+### What it is
+##### Description
+Rear-wheel drive (RWD) is a drivetrain layout in which the engine drives the rear wheels only, while the front wheels are free to steer. The most common form is front-engine, rear-wheel drive (FR).
 
+**How it works (roughly):**
+Engine → clutch/torque converter → gearbox → propshaft → rear differential → half shafts → rear wheels
+- The engine produces torque.
+- The clutch or torque converter connects the engine to the gearbox.
+- The gearbox changes speed and torque ratio.
+- The propshaft carries torque from the gearbox to the rear differential, using universal joints to handle suspension movement.
+- The rear differential turns the drive 90° and allows the left and right rear wheels to rotate at different speeds when cornering.
+- The half shafts carry torque from the differential to the rear wheels.
+![](attachments/Rear%20Wheel%20Drive.png)
+**Why a car needs it:**
+RWD separates steering from driving: the front wheels only steer, the rear wheels only drive. This lets each pair be optimised for its job — front for cornering feel, rear for acceleration traction. Under acceleration, weight transfers to the rear, which helps RWD put power down. It also avoids **torque steer**, a problem in high-power FWD cars.
+The trade-off is extra weight, cost, a centre tunnel that takes cabin space, and worse traction in snow or mud compared to FWD or AWD.
+##### Types of RWD Layouts
 
+| RWD Layout            | Common Use                                      | Advantage                                                | Disadvantage                                            | Image |
+| --------------------- | ----------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------- | ----- |
+| Front-engine RWD (FR) | Most classic sports cars, sedans, pickup trucks | Good weight distribution; simple layout; easy to service | Long propshaft; heavy; centre tunnel takes cabin space  |       |
+| Mid-engine RWD (MR)   | Supercars, some sports cars                     | Excellent weight distribution; sharp handling            | Very little cargo or rear seat space; complex packaging |       |
+| Rear-engine RWD (RR)  | Porsche 911, some city cars, buses              | Compact drivetrain; good traction under acceleration     | Rear-biased weight; tricky handling at the limit        |       |
+| Solid axle RWD        | Trucks, muscle cars, some SUVs                  | Strong; simple; cheap; good for heavy loads              | Heavy; poor ride comfort; limited geometry control      |       |
+| Independent rear RWD  | Modern sports cars, luxury sedans               | Better ride and handling; precise camber control         | More complex; more parts; higher cost                   |       |
 
+> Note: For a teaching platform, **front-engine RWD with a solid rear axle or a simple independent rear** is the easiest to build and demonstrate.
 
+##### Part List
 
-
-
-
+|Make (3D print / laser cut)|Buy|
+|---|---|
+|Chassis / frame|Electric motor or small engine|
+|Motor mounts, gearbox mounts|Gearbox / transmission (or simple gear reduction)|
+|Propshaft bearing supports, mounts|Drive shaft (or steel rod / tube)|
+|Differential housing / case|Differential gear set (bevel gears)|
+|Half shaft couplers, wheel hubs|Bearings, ball joints, fasteners|
+|Suspension arms, brackets|Wheels and tires|
+#### Teaching Platform
+**3D printing / manufacturing easiness:**
+- **Easy:** chassis, mounts, brackets, spacers, differential housing — all simple 3D prints or laser-cut parts.
+- **Medium:** propshaft and half shafts carry torque. A 3D printed shaft with a steel core works for low-speed demo; a plain plastic shaft may twist or strip.
+- **Hard:** differential gear set. Printed bevel gears wear quickly and are difficult to print with good tooth accuracy. Buy a small bevel gear set instead.
+**Overall:** easy to manufacture, as long as gears and bearings are bought and only the structure is printed.
+**Demonstratability:**
+- **External tools / consumables:** none for a hand-operated demo. With an electric motor, only a power supply is needed — no fluids, compressed air, or special gases.
+- **Intuitive to demonstrate:** yes. The power flow is visible:
+    - Run the motor: propshaft spins, differential turns the half shafts, rear wheels rotate.
+    - Hold one rear wheel: the other spins twice as fast (open differential).
+    - Hold the propshaft and turn one wheel: the other turns in the opposite direction.
+    - Put one wheel on a low-friction surface: the free wheel spins and the car does not move.
+    - Compare with a locked differential: both wheels turn together, but the car cannot corner smoothly.
+**Works with what (what else must be included):**
+- **Gearboxes / transmissions / torque converters**: the gearbox changes speed and torque ratio; its output goes to the propshaft. A clutch or torque converter connects the engine.
+- **Couplings, drive shafts, CV shafts**: the propshaft carries torque from the gearbox to the rear differential. The half shafts carry torque from the differential to the rear wheels; independent rear suspension needs CV joints.
+- **Differentials**: the rear differential is the core of the RWD layout. It turns the drive 90° and allows the rear wheels to rotate at different speeds.
+- **Transfer cases**: not used in pure RWD. Only needed in AWD or 4x4.
+- **Brakes and clutches**: the clutch connects the engine to the gearbox in a manual RWD car. The brakes mount on the rear knuckles or axle ends.
+- **Steering and suspension**: the front wheels only steer, so the front knuckle is simpler than in FWD. The rear suspension must control the rear axle position under acceleration and braking.
+- **FWD**: not applicable. RWD and FWD are different layouts.
+- **RWD**: the layout described here.
+- **AWD**: can be based on a RWD layout, with a transfer case or centre coupling that also sends torque to the front axle.
+- **4x4**: usually based on a RWD layout with a transfer case that can engage the front axle.
+- **Single-motor, single-axle EV**: if the motor drives the rear axle, the layout is similar to RWD but without engine, clutch, gearbox, or propshaft.
+- **Dual-motor, single-axle EV**: two motors drive the same axle, one per wheel, so no mechanical differential is needed.
+- **Dual-motor, dual-axle EV**: one motor per axle. No centre differential is needed, but each axle still needs its own differential or independent motors.
+- **Torque vectoring**: in RWD, done with a torque vectoring differential or independent rear motors.
+- **ABS and traction control**: these systems brake individual wheels to control slip. In RWD, traction control is important because the rear wheels can lose grip under acceleration.
 ## All-Wheel Drive
 
 ## 4x4 (4-Wheel) Drive
