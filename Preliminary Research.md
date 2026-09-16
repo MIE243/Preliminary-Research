@@ -122,35 +122,3 @@ Build a **modular three-shaft constant-mesh gearbox** with two forward ratios, n
 [^6]: Volkswagen service training document hosted by NHTSA, [The 02E Direct Shift Gearbox](https://static.nhtsa.gov/odi/tsbs/2012/MC-10157658-9999.pdf), describing two independent gear-train halves, two clutches and preselection of the next gear.
 
 Image credits: [manual transmission cutaway](https://commons.wikimedia.org/wiki/File:Engine_and_Gearbox_cutaway-001.jpg) by NJR ZA, CC BY-SA 3.0; [planetary gearset schematic](https://commons.wikimedia.org/wiki/File:Planetary_gear_set_schematic.svg) by DaveRcWiki, CC0; [torque-converter cross-section](https://commons.wikimedia.org/wiki/File:Torque_converter_a_cross_section.png) by Toshinori baba, CC BY-SA 4.0.
-
-## Couplings, Drive Shafts, CV Shafts
-
-## Differentials, Transfer Cases, CVTs
-
-## Brakes and Clutches
-
-## Steering and Suspension
-# Drivetrain Layouts
-
-## Front-Wheel Drive
-
-## Rear-Wheel Drive
-
-## All-Wheel Drive
-
-## 4x4 (4-Wheel) Drive
-# EV Configurations
-
-## Single-Motor, Single-Axle (FWD — SM1ST, SM2ST, etc.)
-
-## Dual-Motor, Single-Axle
-
-## Dual-Motor, Dual-Axle
-
-# Advanced Systems
-
-## Torque Vectoring
-
-## ABS and Traction Control
-
-## Dynamic Suspensions
