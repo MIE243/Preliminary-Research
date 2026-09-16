@@ -788,8 +788,6 @@ Build one complete guarded axle with **two identical low-voltage geared motors, 
 
 Dynamic suspension is **not the same topic as the basic steering-and-suspension hardware**. A conventional suspension uses fixed springs, dampers, arms and joints to support the vehicle and guide each wheel. A dynamic suspension adds sensors, electronic control and adjustable or powered hardware so its behaviour can change while the vehicle is moving.
 
-### Part 1
-
 #### What it is and how it works
 
 The suspension must let the wheels follow an uneven road while keeping the body controlled. A soft setup improves isolation from bumps but can allow excessive roll, pitch and bounce; a firm setup improves body control but can transmit more shock to the passengers. Dynamic systems reduce this compromise by changing damping, ride height, spring support or wheel force in real time.
@@ -844,8 +842,6 @@ The suspension must let the wheels follow an uneven road while keeping the body 
 | Adjustable actuator bracket and a simple lever/friction-damper mechanism | Two accelerometers and two distance or ride-height sensors |
 | Sensor mounts, scale markers, electronics enclosure and transparent guards | Bearings, shafts, fasteners, emergency-stop switch and wiring |
 | Mode labels and an LED/display panel for Comfort, Sport and Active | Optional data logger or computer for acceleration/displacement plots |
-
-### Part 2
 
 #### 3D printing / manufacturing easiness
 
