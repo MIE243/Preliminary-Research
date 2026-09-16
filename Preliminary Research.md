@@ -63,6 +63,144 @@ Works with what
 - **Torque vectoring**: varies torque to each half shaft electronically, either through a torque vectoring differential or separate motors.
 - **ABS and traction control**: traction control brakes the slipping wheel, which sends more power through an open differential to the wheel with grip.
 
+### Transfer Cases
+
+#### What it is
+##### Description
+A transfer case is an intermediate gearbox that takes power from the transmission and sends it through drive shafts to the front and rear axles of a 4WD / AWD vehicle.
+- It can send power to both axles or to just one (usually the rear). On off-road vehicles the driver picks 2WD or 4WD with a lever or an electronic switch.
+- Many contain low range gears for off-road use. The vehicle drives slower while the engine stays in its usable RPM range, which increases torque at the axles.
+- The front and rear wheels never turn at exactly the same speed (different tire wear, slightly different front and rear differential ratios). Transfer cases meant for road use let the axles turn at different speeds, the same way a differential does across one axle. A case that locks them together binds on dry pavement (driveline windup).
+In a common configuration:
+- In the vehicle:
+	- ![](attachments/tc-jeep-quadratrac-transfer-case.jpg)
+	- Power comes in from the transmission and leaves through two output shafts, one drive shaft to the rear axle and one to the front axle.
+- Inside (chain-driven, part-time):
+	- ![](attachments/tc-np231-inside.jpg)
+	- Input goes through a planetary gear set (sun, planets, ring gear fixed to the housing) that gives the low range. The shift fork slides a range sleeve to pick high (input connected straight through) or low (drive goes through the planetary). A chain and two sprockets carry drive from the rear output over to the front output, and a mode sleeve connects or disconnects it for 2WD or 4WD.
+##### Types of Transfer Cases
+
+| Transfer Case Type          | Common Use                                                   | Advantage                                                                                          | Disadvantage                                                                             | Image                                        |
+| --------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Part-time                   | 4x4 trucks, off-road and military vehicles                   | Driver picks 2WD/4WD and high/low range; axles locked together for off-road traction               | No centre differential, so it binds (driveline windup) on dry pavement                   | ![](Pasted%20image%2020260915142526.png)     |
+| Full-time                   | AWD sports cars, performance sedans, SUVs                    | Centre differential lets the axles turn at different speeds, so 4WD works on any surface           | Open centre diff sends power to a slipping wheel unless locked; low range often left out | ![](Pasted%20image%2020260915142530.png)     |
+| Part-/full-time hybrid      | e.g. Mitsubishi Super Select (Pajero)                        | Runs 2WD, full-time 4WD (open centre diff) and part-time 4WD (locked), in high and low range       | Locked modes still bind on pavement; low range can only be engaged when stopped          | ![](Pasted%20image%2020260915142600.png)     |
+| Gear-driven                 | Large trucks, some passenger cars                            | Strong                                                                                             | Heavy and noisy                                                                          | ![](attachments/tc-vaz-2121.jpg)             |
+| Chain-driven                | Compact and full-size trucks, Jeeps, SUVs                    | Quieter and lighter than gear-driven                                                               | Not as strong; chain can stretch under heavy torque                                      | ![](attachments/tc-morse-chain.jpg)          |
+| Married                     | AWD cars (e.g. Subaru, shares the transmission housing)      | Bolted straight to the transmission, no extra drive shaft                                          | Harder to change the engine or transmission separately                                   | ![](attachments/tc-toyota-uf1ae-married.jpg) |
+| Divorced / independent      | Long wheelbase commercial and military trucks, modified 4x4s | Separate from the transmission, so engine/transmission can be changed while keeping the 4WD system | Needs an extra short drive shaft from the transmission                                   |                                              |
+| Manual shift on-the-fly     | Pickups (e.g. 2004 Toyota Tacoma)                            | Mechanical floor lever, no transfer case motor; 4WD high engages while moving slowly               | Must stop and shift to neutral to engage 4WD low                                         |                                              |
+| Electronic shift on-the-fly | Pickups (e.g. 2026 Toyota Tacoma)                            | Dash switch or buttons instead of a lever                                                          | Needs a transfer case motor; must still stop and shift to neutral for 4WD low            | ![](Pasted%20image%2020260915142839.png)     |
+##### Part List
+
+| Make (3D print / laser cut)                           | Buy                                             |
+| ----------------------------------------------------- | ----------------------------------------------- |
+| Housing / case (two halves)                           | Ball bearings for all shafts                    |
+| Input gear and front/rear output gears (or sprockets) | Steel shafts (input, front output, rear output) |
+| Low-range gear set (planetary or a second gear pair)  | Chain and sprockets (if chain-driven)           |
+| Sliding range/mode collar (dog clutch) and shift fork | Steel shift rod (a dowel works)                 |
+| Shift lever and mount                                 | Fasteners, set screws, grease                   |
+
+#### Teaching Platform
+Manufacture
+- A gear-driven case uses spur/helical gears on parallel shafts, which is easier to 3D print than the bevel gears in a differential.
+- A planetary low range is the hardest part to print (small planet gears, tight tolerances). A second gear pair on a countershaft can give the low range instead.
+- Chain and sprockets are easier to buy than print.
+- Sliding collars and shift forks need enough clearance to slide without jamming, so tolerances matter.
+Demonstratability
+- No fluids or external power needed, can be turned by hand or by a small electric motor.
+- Easy to see in action:
+  - Shift from 2WD to 4WD: the front output starts turning.
+  - Shift from high to low: the outputs turn noticeably slower than the input (about half as fast for a ~2:1 low range).
+  - With 4WD locked, try to turn the front and rear outputs at different speeds: they can't, which shows why part-time 4WD binds on pavement.
+Works with what
+- **Gearboxes / transmissions (incl. CVTs)**: the transfer case takes its input from the transmission output, either bolted on (married) or through a short drive shaft (divorced).
+- **Couplings, drive shafts, CV shafts**: drive shafts carry power from the two outputs to the front and rear axles.
+- **Differentials**: each driven axle needs its own differential; full-time transfer cases also contain a centre differential.
+- **Brakes and clutches**: shifting between ranges and modes uses sliding dog clutches; on-demand systems use a transfer clutch to send torque to the second axle.
+- **Steering and suspension**: turning on dry pavement in part-time 4WD causes binding and hopping, because the front and rear axles can't turn at different speeds.
+- **FWD / RWD**: not needed, a transfer case is only used when both axles are driven.
+- **AWD**: full-time transfer case with a centre differential, often married to the transmission.
+- **4x4**: part-time transfer case with 2WD/4WD and high/low range is the standard for 4x4 trucks.
+- **Single-motor, single-axle EV**: not needed, only one axle is driven.
+- **Dual-motor, single-axle EV**: not needed, both motors drive the same axle.
+- **Dual-motor, dual-axle EV**: not needed, one motor per axle replaces the transfer case and centre differential, and the front/rear torque split is controlled electronically.
+- **Torque vectoring**: in AWD, a torque vectoring system can shift torque between front and rear (e.g. from 90:10 to 50:50) when needed.
+- **ABS and traction control**: some full-time systems with a non-locking centre differential use traction control (through ABS) to brake a slipping wheel instead of locking the centre diff.
+
+### CVTs
+
+#### What it is
+##### Description
+A continuously variable transmission (CVT) is a transmission that can change its gear ratio smoothly through any value between a lowest and a highest ratio, instead of stepping between a fixed set of gears.
+- In cars, this lets the engine stay at its most efficient (or most powerful) RPM while the vehicle speeds up or slows down, which improves fuel economy and gives smooth acceleration with **no gear shifts**.
+- The most common type uses two variable-diameter pulleys joined by a belt or chain. Each pulley is two cones (sheaves) facing each other. Pushing the cones together forces the belt to ride higher (larger radius); pulling them apart lets it sink lower (smaller radius). **The belt length is fixed**, so when one pulley gets bigger the other gets smaller.
+- The ratio is the driven pulley radius divided by the driver pulley radius. Small driver and large driven is a "low gear" (more torque, less speed); large driver and small driven is an "overdrive" (less torque, more speed).
+- **A belt CVT can't reverse or start from a stop on its own**, so car CVTs also have a launch device (torque converter or clutch) and a small planetary gear set for reverse.
+In a common configuration:
+- Pulley-based:
+	- ![](attachments/cvt-pulley-anim.gif)
+	- Input (engine) spins the left pulley at a constant speed. As the left sheaves close and the right sheaves open, the belt climbs on the left and drops on the right, so the output speeds up without any change in input speed.
+- Inside a car CVT:
+	- ![](attachments/cvt-toyota-super-cvti.jpg)
+	- Toyota Super CVT-i, cut away. Power goes through a small torque converter, a forward/reverse planetary set, then the two pulleys and a steel belt. An oil pump supplies the hydraulic pressure that squeezes the sheaves to set the ratio and clamp the belt.
+##### Types of CVTs
+
+| CVT Type                    | Common Use                                                                | Advantage                                                                                                  | Disadvantage                                                                               | Image                                           |
+| --------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------- |
+| Rubber V-belt (centrifugal) | Scooters, snowmobiles, UTVs, go-karts ("torque converter"), riding mowers | Simple and cheap; shifts itself using centrifugal weights (driver) and a spring (driven), no electronics   | Belt wears, stretches and slips; limited torque                                            | ![](attachments/cvt-scooter-belt.jpg)           |
+| Steel push-belt             | Most CVT cars (e.g. Nissan, Honda, Toyota)                                | Hydraulic clamping handles car-level torque; keeps the engine at its most efficient RPM                    | ~88% efficient (less than a manual); needs an oil pump and special fluid; torque limit     | ![](attachments/cvt-toyota-super-cvti.jpg)      |
+| Chain                       | Audi Multitronic, Subaru Lineartronic                                     | Handles more torque than a push-belt                                                                       | Noisier; same pulley losses; expensive to repair                                           | ![](attachments/cvt-audi-multitronic-chain.jpg) |
+| Toroidal                    | Nissan Cedric / Gloria (Extroid CVT)                                      | Rollers between two doughnut-shaped discs; handles higher torque than belts                                | Needs traction fluid and very hard, precise parts; heavy and expensive                     | ![](attachments/cvt-extroid-toroidal.jpg)       |
+| Cone / friction             | Old line-shaft machine drives (Evans), simple demonstration models        | Simplest to understand; slide a belt or ring along two opposite cones to change ratio                      | Power only carried by friction, so it slips and wears; low torque                          | ![](attachments/cvt-evans-cone.jpg)             |
+| Planetary ball (NuVinci)    | Bicycle and e-bike hubs                                                   | Sealed and compact; ratio can be changed while stopped                                                     | Heavier and less efficient than a derailleur; needs traction fluid                         | ![](attachments/cvt-nuvinci-internals.jpg)      |
+| Hydrostatic                 | Lawn tractors, zero-turn mowers, combine harvesters                       | Engine-driven pump feeds hydraulic motors; easy to control, reverses easily, one motor per wheel can steer | Often under 65% efficient; needs hydraulic fluid; heavy and costly                         |                                                 |
+| Ratcheting                  | Rare, mostly experimental                                                 | One-way clutches instead of friction, so no slip; can reach zero output speed (IVT)                        | Vibration from the ratcheting motion                                                       |                                                 |
+| eCVT (power-split)          | Hybrids (e.g. Toyota Prius, Ford Escape Hybrid)                           | No belt; a planetary gear set blends engine and two motor-generators; very durable                         | Needs two motor-generators, a battery and electronic control; only makes sense in a hybrid | ![](attachments/cvt-toyota-ecvt.jpg)            |
+##### Part List
+
+| Make (3D print / laser cut)                                  | Buy                                                            |
+| ------------------------------------------------------------ | -------------------------------------------------------------- |
+| Driver pulley: fixed sheave + sliding sheave                 | Rubber V-belt (small V-belt or go-kart/scooter CVT belt)       |
+| Driven pulley: fixed sheave + sliding sheave                 | Compression spring for the driven pulley                       |
+| Roller/weight ramp plate for the driver (centrifugal version) | Rollers or weights (steel balls or scooter variator rollers)  |
+| Torque cam / spring seat for the driven pulley               | Ball bearings, steel shafts (keyed or D-shaft)                 |
+| Frame / housing (open or clear sides)                        | Sliding bushings for the moving sheaves                        |
+| Shift lever or knob (manual version)                         | Fasteners, set screws                                          |
+
+#### Teaching Platform
+Manufacture
+- Sheaves are simple cones and easy to 3D print, but the belt rides on the cone faces, so layer lines should be sanded smooth.
+- The sliding sheave has to slide along the shaft while still turning with it, so it needs a key, spline or D-shaft and a bushing. Tolerances matter or it will jam.
+- Belt friction makes heat; PLA softens at around 60 °C, so PETG, ABS/ASA or nylon is better for the sheaves.
+- Buy the belt instead of printing it (a printed TPU belt stretches).
+- A cone CVT (rubber band between two printed cones) is the easiest version, and free 3D-printable models already exist. Toroidal, chain and steel push-belt types need precision metal parts; hydrostatic needs fluids; eCVT needs motors and control electronics.
+Demonstratability
+- Belt and cone types need no fluids, and can be turned by hand or by a small electric motor.
+- An open frame or clear sides lets students see the belt ride up and down the pulleys.
+- Easy to see in action:
+  - Set a low ratio and turn the input: the output turns slower than the input. Move to a high ratio: the output turns faster. Count turns to measure each ratio.
+  - Change the ratio while turning the input at a steady speed: the output speed changes smoothly with no steps.
+  - Centrifugal version with a motor: speed up the motor and the belt climbs the driver pulley by itself.
+  - Hold the output back by hand: the driven pulley's spring/cam shifts to a lower ratio, like a car going up a hill.
+- Toroidal and hydrostatic types need fluids, and eCVT needs electronics, so they are harder to demonstrate.
+Works with what
+- **Gearboxes / transmissions / torque converters**: a CVT replaces the stepped gearbox, but car CVTs still use a torque converter or clutch to launch and a planetary set for reverse.
+- **Couplings, drive shafts, CV shafts**: the output goes to the wheels through a drive shaft (RWD) or CV half shafts (FWD transaxle).
+- **Differentials**: the CVT output goes through a final drive reduction and differential, usually in the same housing.
+- **Transfer cases**: in AWD (e.g. Subaru Lineartronic), the CVT output also feeds a transfer clutch that sends torque to the rear axle.
+- **Brakes and clutches**: needs a launch device (centrifugal clutch on scooters and go-karts, torque converter or wet clutch in cars), and a clutch and brake in the forward/reverse planetary set.
+- **Steering and suspension**: no direct link.
+- **FWD**: most CVT cars are FWD, with the CVT and differential in one transaxle.
+- **RWD**: rare; the toroidal Nissan Extroid was used in RWD cars.
+- **AWD**: used in some AWD cars (e.g. Subaru), with a transfer clutch after the CVT.
+- **4x4**: rare in road 4x4s because of the torque limit; UTVs use a rubber belt CVT followed by a gearbox with high/low range.
+- **Single-motor, single-axle EV**: not needed, an electric motor works over a wide speed range, so a single-speed reduction gear is used.
+- **Dual-motor, single-axle EV**: not needed, same reason.
+- **Dual-motor, dual-axle EV**: not needed, same reason.
+- **Torque vectoring**: no direct link, torque vectoring happens after the CVT (in the differential or couplings).
+- **ABS and traction control**: traction control cuts engine torque when a wheel slips; the CVT has to keep the belt clamped hard enough that it doesn't slip when the spinning wheel suddenly grips again.
+
 ## Brakes and Clutches
 
 ## Steering and Suspension
