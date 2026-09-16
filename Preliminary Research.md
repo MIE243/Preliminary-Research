@@ -684,6 +684,75 @@ Works with what
 
 ## Torque Vectoring
 
+### What it is
+#### Description
+Torque vectoring is a system that sends different amounts of torque to the left and right wheels (and sometimes front and rear) to help the car turn, instead of splitting torque evenly like an open differential.
+- If the outer wheel in a corner pushes harder than the inner wheel, the difference in drive force creates a **yaw moment**: a twist about the vertical axis that helps rotate the car into the turn.
+- This reduces **understeer** (the car running wide even though the wheels are turned), so the car turns in more sharply and can hold a higher cornering speed. Sending torque the other way calms **oversteer**.
+- It also helps traction: torque can be taken away from a wheel that is slipping and given to the one with grip.
+- A controller decides the split using the steering angle, wheel speeds, yaw rate (from a gyro sensor), throttle and lateral acceleration.
+- **Why it exists:** an open differential always splits torque evenly, so it can't help the car turn and it sends power to the wheel with the least grip. Torque vectoring makes the car turn more sharply, adds stability and improves traction.
+In a common configuration:
+- How it turns the car:
+	- ![](attachments/tv-yaw-diagram.svg)
+	- In a left turn, the outer (right) rear wheel gets more torque than the inner (left) one. The unequal push makes a yaw moment that turns the car to the left.
+- Clutch-based systems (e.g. Ford Focus RS "Twinster"):
+	- The rear differential is replaced by two electronically controlled multi-plate clutches, one for each rear wheel. Tightening one clutch more than the other sends more torque to that wheel. The Focus RS can send up to 70% of torque to the rear and up to 100% of that to either rear wheel.
+- Brake-based systems:
+	- The ESC system lightly brakes the inner wheel. Through the open differential, this sends more torque to the outer wheel.
+##### Types of Torque Vectoring
+
+| Torque Vectoring Type                         | Common Use                                                                                  | Advantage                                                                                                               | Disadvantage                                                                              | Image                                         |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Brake-based (torque vectoring by braking)     | Many modern cars, including FWD (e.g. VW GTI "XDS")                                         | Uses the existing ABS/ESC hardware, so almost no extra cost or weight                                                   | Can only slow the inner wheel, not add torque; wastes energy as heat and wears the brakes |                                               |
+| Active / torque vectoring differential        | Mitsubishi Lancer Evolution (AYC), BMW Dynamic Performance Control, Audi sport differential | Clutch packs and extra gears can send more torque to the outer wheel even though it is turning faster                   | Heavy, complex and expensive; clutches heat up under heavy use                            |                                               |
+| Twin-clutch rear drive unit (no differential) | Ford Focus RS (GKN Twinster), Acura SH-AWD                                                  | Replaces the rear differential; up to 100% of rear torque to either wheel; can disconnect the rear axle                 | Only on the rear axle of an AWD car; clutches slip and heat up                            |                                               |
+| Front/rear split (axle-to-axle)               | AWD cars with an active centre coupling; dual-motor EVs                                     | Shifts the car's balance between understeer and oversteer                                                               | Weaker effect than left/right vectoring; can't create much yaw moment by itself           |                                               |
+| Two motors on one axle                        | Tesla Model S Plaid, Tesla Cybertruck (tri-motor)                                           | Each wheel on that axle has its own motor, so torque (and regenerative braking) is set exactly; no clutches             | Cost and weight of an extra motor and inverter                                            | ![](attachments/ev-tesla-plaid-rear-unit.jpg) |
+| One motor per wheel (quad-motor)              | Rivian R1T / R1S Quad, Mercedes G 580                                                       | Full control of every wheel; can even spin the two sides in opposite directions (Rivian "Kick Turn", Mercedes "G-Turn") | Most expensive and heaviest: four motors and four inverters                               |                                               |
+##### Part List
+
+| Make (3D print / laser cut)                                      | Buy                                                                    |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Chassis plate (laser cut) with steerable front axle              | 2 DC motors with motor drivers (one per rear wheel)                    |
+| Rear motor mounts and wheel hubs                                 | Microcontroller (e.g. Arduino)                                         |
+| Open differential with a brake disc on each side (brake-based version) | Small servos to press brake pads (brake-based version)           |
+| Brake pad holders / servo brackets                               | Gyro / IMU (e.g. MPU-6050) to measure yaw rate                         |
+| Control panel with steering and torque-split knobs               | Steering angle potentiometer, wheel encoders                           |
+| Clear cover over the electronics                                 | Battery pack with fuse and switch, wheels and tires, bearings, fasteners |
+
+#### Teaching Platform
+Manufacture
+- The easiest version is one motor per rear wheel (like the Dual-Motor, Single-Axle layout): no special mechanical parts, the torque split is set in code.
+- A brake-based version is also simple: a printed open differential with a printed disc on each side and a servo pressing a pad onto it.
+- A mechanical torque vectoring differential (clutch packs plus speed-up gears) is very hard to make.
+- Twin-clutch units need controllable wet clutches, which are hard to print; a model version would need electromagnetic clutches.
+- Most of the work is in the electronics and code (sensors, control loop, motor drivers).
+Demonstratability
+- Needs a battery and a microcontroller, but no fluids.
+- Showing the yaw rate from the gyro on a display makes the effect easy to see.
+- Easy to see in action:
+  - Steering straight, give the right wheel more torque than the left: the model turns left on its own.
+  - On a slippery surface, turn with an even split (the model runs wide), then with torque vectoring on (it follows the turn more tightly).
+  - Brake-based: brake the left wheel through the open differential and watch the right wheel speed up.
+  - Put one rear wheel on a slippery patch: torque moves to the wheel with grip.
+  - With a motor on each wheel, spin the left and right sides in opposite directions for a "tank turn".
+Works with what
+- **Gearboxes / transmissions / torque converters**: no direct link; torque vectoring works after the transmission, at the axles.
+- **Couplings, drive shafts, CV shafts**: each wheel needs its own CV half shaft; twin-clutch systems use clutch couplings instead of a differential.
+- **Differentials**: an active differential is one form of torque vectoring; brake-based systems need an open differential; per-wheel motors need no differential at all.
+- **Transfer cases / CVTs**: an active transfer case or centre coupling can do front/rear vectoring; no link to CVTs.
+- **Brakes and clutches**: brake-based systems use the normal brakes; differential and twin-clutch systems use multi-plate clutches.
+- **Steering and suspension**: reduces understeer, so the car needs less steering to take a corner; uses the steering angle sensor.
+- **FWD**: usually brake-based; Honda's ATTS was an early FWD active differential.
+- **RWD**: an active rear differential or brake-based system.
+- **AWD**: where the most complete systems are found (e.g. Acura SH-AWD, Ford Focus RS, BMW xDrive with Dynamic Performance Control).
+- **4x4**: brake-based systems act like a locker off-road; quad-motor electric trucks can vector torque at every wheel.
+- **Single-motor, single-axle EV**: only brake-based, since one motor drives both wheels through an open differential.
+- **Dual-motor, single-axle EV**: ideal for left/right torque vectoring, with one motor per wheel.
+- **Dual-motor, dual-axle EV**: front/rear vectoring only, unless brakes or extra motors are added.
+- **ABS and traction control**: shares the wheel speed sensors, yaw sensor and brake hydraulics; brake-based torque vectoring is part of the stability control (ESC) software.
+
 ## ABS and Traction Control
 
 ## Dynamic Suspensions
