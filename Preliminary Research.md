@@ -779,3 +779,127 @@ Build one complete guarded axle with **two identical low-voltage geared motors, 
 - [Individual-wheel-drive conceptual block diagram](https://commons.wikimedia.org/wiki/File:20210921_Individual_wheel_drive_-_conceptual_block_diagram.svg) by RCraig09, CC BY-SA 4.0.
 - [Lucid Air electric drive unit](https://commons.wikimedia.org/wiki/File:Lucid_Air_Electric_Drive_Unit.jpg) by DutchTreat, CC BY-SA 4.0.
 - [Volkswagen eT! concept hub motor](https://commons.wikimedia.org/wiki/File:Volkswagen_eT!_Concept_Hub_motor.JPG) by RudolfSimon, CC BY-SA 3.0.
+
+---
+
+# Advanced Systems
+
+## Dynamic Suspensions
+
+Dynamic suspension is **not the same topic as the basic steering-and-suspension hardware**. A conventional suspension uses fixed springs, dampers, arms and joints to support the vehicle and guide each wheel. A dynamic suspension adds sensors, electronic control and adjustable or powered hardware so its behaviour can change while the vehicle is moving.
+
+### Part 1
+
+#### What it is and how it works
+
+The suspension must let the wheels follow an uneven road while keeping the body controlled. A soft setup improves isolation from bumps but can allow excessive roll, pitch and bounce; a firm setup improves body control but can transmit more shock to the passengers. Dynamic systems reduce this compromise by changing damping, ride height, spring support or wheel force in real time.
+
+1. Accelerometers, ride-height sensors, wheel-speed sensors and vehicle signals such as steering, braking and speed describe what the body, wheels and driver are doing. A predictive system may also use a forward-looking camera.
+2. A suspension ECU calculates the desired response for each wheel.
+3. An electrically controlled valve, air valve, hydraulic pump or electromechanical actuator changes the suspension force.
+4. The sensors measure the result and the controller repeats the calculation many times per second. ZF's CDC system, for example, changes damping at each wheel in fractions of a second, while fully active systems can command a separate force at each corner.[^21][^22]
+
+- **Semi-active suspension** changes damper resistance. It can dissipate motion more or less strongly, but it does not continuously lift the body by adding mechanical energy.
+- **Self-levelling or adaptive air/hydropneumatic suspension** changes air pressure or fluid distribution to maintain ride height, carry different loads or select a different ground clearance.
+- **Fully active or predictive suspension** uses powered hydraulic or electromechanical actuators to push or pull at each wheel. It can counter body roll, pitch and heave instead of only resisting them. Some systems combine air springs with 48 V motor-pump units and road-preview sensing.[^22][^23]
+
+#### Why a car needs it
+
+- Keep the tyres in more consistent contact with a rough road while reducing body bounce.
+- Combine comfortable straight-line driving with firmer control during cornering, braking and acceleration.
+- Maintain ride height when passengers or cargo change the load.
+- Reduce roll, brake dive and acceleration squat.
+- Raise the vehicle for obstacles or lower it for stability and aerodynamic efficiency.
+- Prepare the suspension for an approaching bump when road-preview sensors are available.
+- Coordinate chassis motion with steering, brakes, stability control and driver-assistance systems.
+
+#### Types of dynamic suspension
+
+| System type | Common use | Advantage | Disadvantage | Image |
+| --- | --- | --- | --- | --- |
+| Semi-active variable damping | Passenger cars, performance cars and motorcycles | Fast, relatively energy-efficient and easier to package than a fully active system | Cannot independently support or lift the body; still needs good passive springs and dampers | ![Magnetorheological fluid particles forming chains under a magnetic field](attachments/dynamic-suspension-semi-active.gif) |
+| Self-levelling air or hydropneumatic suspension | Luxury cars, SUVs and load-carrying vehicles | Maintains ride height and can change clearance or effective spring behaviour | Compressor/pump, valves, seals and fluid or air lines add cost, leakage risk and maintenance | ![Hydropneumatic suspension operating diagram](attachments/dynamic-suspension-hydropneumatic.png) |
+| Fully active / predictive suspension | High-end performance and luxury vehicles | Can add force at each wheel to control roll, pitch and heave and react before or during a disturbance | Highest power demand, control complexity, cost and safety burden | ![Original fully active suspension control-loop diagram](attachments/dynamic-suspension-active-control.svg) |
+
+#### Rough parts list for a vehicle system
+
+| Subsystem | Typical parts and purpose |
+| --- | --- |
+| Base suspension | Control arms or struts, joints, wheel carriers and anti-roll hardware guide the wheel and carry loads |
+| Elastic elements | Coil springs, air springs or hydropneumatic spheres support vehicle weight |
+| Adjustable force element | Electronically valved damper, magnetorheological damper, hydraulic actuator or electric linear actuator changes wheel/body force |
+| Sensors | Body and wheel accelerometers, ride-height sensors, wheel-speed sensors, steering/brake inputs and optional road-preview camera |
+| Controller | Suspension ECU estimates body motion and commands each corner |
+| Power stage | Valve drivers, inverter, 12/48 V supply or high-voltage converter powers the adjustable hardware |
+| Fluid/air hardware where applicable | Compressor or pump, reservoir, accumulator, manifold, filters, hoses and pressure sensors |
+| Communications and safety | Wiring, CAN connection, fuses, fault monitoring and a fail-safe passive operating mode |
+
+#### Teaching demonstrator: make or buy
+
+| Make (3D print / laser cut) | Buy |
+| --- | --- |
+| Two matching quarter-car frames labelled Passive and Dynamic | Two equal coil springs and small linear guides or low-friction sliders |
+| Sprung- and unsprung-mass carriers with removable weights | Low-voltage servo or linear actuator for the dynamic side |
+| Eccentric cam or interchangeable bump profile to move both road platforms | Microcontroller, motor driver and protected low-voltage power supply |
+| Adjustable actuator bracket and a simple lever/friction-damper mechanism | Two accelerometers and two distance or ride-height sensors |
+| Sensor mounts, scale markers, electronics enclosure and transparent guards | Bearings, shafts, fasteners, emergency-stop switch and wiring |
+| Mode labels and an LED/display panel for Comfort, Sport and Active | Optional data logger or computer for acceleration/displacement plots |
+
+### Part 2
+
+#### 3D printing / manufacturing easiness
+
+- **Static cutaway or layout model — easy:** print labelled spring, damper, sensor, ECU and actuator blocks.
+- **Passive quarter-car mechanism — easy to moderate:** the main work is aligning the slider, spring and bump input so it moves freely.
+- **Servo-controlled semi-active analogy — moderate:** printed brackets and levers are straightforward, but sensor calibration, linkage clearance and control tuning take iteration.
+- **Working air suspension — hard:** it needs airtight bellows, a compressor, valves, fittings and safe pressure control; the flexible air spring should be purchased rather than printed.
+- **Working hydraulic or fully active unit — very hard:** precision bores, piston seals, low-leakage valves, accumulators and pressure-rated parts are unsuitable for ordinary FDM printing.
+- Printed parts are appropriate for low-speed structure, guards and linkages only. They must not be treated as road-vehicle suspension or pressure components.
+
+#### Demonstratability
+
+- The recommended rig needs **no external fluid**. Use a low-voltage servo-controlled friction damper or lever actuator to represent variable damping/active force.
+- Drive the Passive and Dynamic road platforms from the same slow eccentric cam. Equal removable masses make the comparison fair.
+- In **Comfort** mode, use a lower resisting force; in **Sport** mode, increase it; in **Active** mode, use ride-height and acceleration feedback to reduce body motion after the bump.
+- Show body displacement with scale markers and plot both accelerometer signals. The dynamic side should settle faster or move less, depending on the selected control goal.
+- Add or remove a mass to demonstrate self-levelling: the controller returns the dynamic body to its target height while the passive side remains lower.
+- A realistic air model needs compressed air; a realistic hydraulic model needs fluid, a pump, reservoir, accumulator, hoses and leak containment. Those additions improve realism but make a classroom demonstration less reliable and less safe.
+- Guard pinch points and stored spring energy, limit actuator current and travel, and provide an emergency stop.
+
+#### Works with what
+
+- A complete **base suspension**: arms or struts, springs, dampers, joints, hubs, bearings and tyres.
+- **Vehicle-state sensors** and a suspension ECU; dynamic hardware cannot choose a useful force without feedback and control logic.
+- A reliable **electrical supply** and communications network. High-force active systems may need a 48 V or high-voltage power stage.[^23]
+- **Steering, friction brakes, ABS, traction/stability control and powertrain torque control**, because all of them affect tyre force and body motion.
+- The vehicle structure and subframes, which must carry actuator loads without excessive flex.
+- For air/hydraulic versions: pumps or compressors, valves, reservoirs/accumulators, filters, hoses, pressure sensors and service procedures.
+
+#### CAD easiness
+
+- **Easy:** system block diagram or static cutaway with labelled energy and signal paths.
+- **Easy to moderate:** quarter-car frame, removable masses, cam road input and adjustable sensor brackets.
+- **Moderate:** servo lever, friction element, motion limits and transparent guards; check the entire suspension travel for collisions.
+- **Hard:** air spring packaging and hose routing with realistic joints and service clearances.
+- **Very hard:** vehicle-grade active strut or hydraulic valve body because sealing surfaces, fatigue, heat, pressure, noise and fail-safe behaviour must all be engineered.
+- Keep the passive and dynamic modules dimensionally identical in CAD. Parameterise mass position, spring preload, actuator ratio and travel so comparisons can be changed without rebuilding the whole assembly.
+
+#### Recommended dynamic-suspension demonstrator
+
+Build a guarded, low-speed **side-by-side quarter-car rig**. Both sides use the same spring, moving mass and cam-driven road bump. Leave one side passive; equip the other with a ride-height sensor, accelerometer and low-voltage servo-controlled damper/actuator. Provide Comfort, Sport and Active modes plus a removable payload. This clearly demonstrates variable damping, body-motion control and self-levelling without high-pressure hydraulics, compressed air or duplicated images from the basic Steering and Suspension section.
+
+---
+
+### Dynamic Suspensions: Sources and Image Credits
+
+#### Technical sources
+
+[^21]: ZF, [Continuous Damping Control (CDC)](https://www.zf.com/products/en/cars/stories/cdc.html), explaining individual electronic damping adjustment at each wheel in fractions of a second.
+[^22]: Porsche Newsroom, [Porsche Active Ride: The new dimension in suspension systems](https://newsroom.porsche.com/en/2024/innovation/porsche-active-ride-panamera-christophorus-409-34747.html), describing electrically driven hydraulic pumps at each damper, sensor feedback and actively controlled compression and rebound.
+[^23]: Mercedes-Benz, [E-ACTIVE BODY CONTROL suspension](https://media.mercedes-benz.com/en/article/c5164883-505b-42b5-8aca-4fa08e6490ae), describing air springs, more than 20 sensors and four individually controlled 48 V motor-pump units.
+
+#### Image credits
+
+- [Magnetorheological fluid chain formation](https://commons.wikimedia.org/wiki/File:MRF_Kettenbildung.gif) by INVENTUS Engineering GmbH, CC BY-SA 3.0.
+- [Hydropneumatic suspension diagram](https://commons.wikimedia.org/wiki/File:Sus_hydropneumatic_english.png) by Teccirio, CC BY 2.5.
+- Fully active suspension control-loop diagram created specifically for this research document.
