@@ -1,0 +1,26 @@
+---
+tags:
+  - component
+  - links/21-25
+---
+Types: [[Cross Groove Joint]], [[Double Cardan Joint]], [[Double Offset Joint]], [[Rzeppa Joint]], [[Thompson Coupling]], [[Tracta Joint]], [[Tripod Joint]]
+
+Connects to:
+- [[4x4]]
+- [[AWD]]
+- [[Brakes]]
+- [[Coupling]]
+- [[CVT]]
+- [[Differential]]
+- [[Drive Shaft]]
+- [[Dual-Motor Dual-Axle EV]]
+- [[FWD]]
+- [[Gearbox]]
+- [[RWD]]
+- [[Single-Motor Single-Axle EV]]
+- [[Slip Spline Coupling]]
+- [[Steering]]
+- [[Suspension]]
+- [[Torque Vectoring]]
+- [[Transfer Case]]
+- [[Wheels]]
