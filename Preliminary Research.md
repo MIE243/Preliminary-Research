@@ -643,3 +643,139 @@ Build a guarded, low-speed **transverse FWD module** with a hand crank or geared
 - [Transverse engine layout](https://commons.wikimedia.org/wiki/File:Transverse_engine_layout.png) by Hoikka1, CC BY-SA 3.0.
 - [Front-mid-engine front-wheel-drive diagram](https://commons.wikimedia.org/wiki/File:Engine_fmf002.svg) by Teccirio and Malyszkz, CC BY 2.5.
 - [Nissan Leaf ZE1 powertrain](https://commons.wikimedia.org/wiki/File:Nissan_Leaf_ZE1_powertrain_01.jpg) by TTTNIS, CC0.
+
+---
+
+# EV Configurations
+
+## Dual-Motor, Single-Axle
+
+This is **one complete vehicle configuration**: two traction motors drive the two wheels of the same axle. The driven axle may be the front or rear axle. It is not the common “dual-motor AWD” arrangement in which one motor drives the front axle and the other drives the rear axle.
+
+### What it is
+
+#### Description and rough working principle
+
+The clearest dual-motor, single-axle arrangement gives each driven wheel its own motor and reduction gear.
+
+- The battery supplies DC power to two inverters. Each inverter independently controls the speed and torque of one motor.
+- Motor A drives the left wheel through its reduction gears and half-shaft; Motor B independently drives the right wheel through a matching path.
+- Because the two wheel speeds are controlled electrically, the axle may not need a conventional mechanical differential. During a turn, the controller commands the outside wheel to rotate faster than the inside wheel.
+- The controller can also command different positive or negative torque at each wheel. This is **torque vectoring**: the torque difference can help the car rotate into a corner, remain stable, or regain traction.[^17]
+- During regenerative braking, either motor can operate as a generator. A sophisticated system can brake one wheel while continuing to drive the other.[^17]
+- Some production systems package two motors, two gearsets and two inverters into one central axle module; others mount one compact drive unit near each wheel or place the motors inside the wheel hubs.[^18][^19][^20]
+
+The power paths are:
+
+- Left: **battery → left inverter → left motor → left reduction gear → left half-shaft/hub → left tyre**
+- Right: **battery → right inverter → right motor → right reduction gear → right half-shaft/hub → right tyre**
+
+#### Why a car uses dual motors on one axle
+
+- Provides more axle power and torque than a single motor of similar individual size.
+- Allows genuinely independent left/right wheel torque instead of relying only on a mechanical differential or brake intervention.
+- Improves cornering response, traction and stability through active torque vectoring.
+- Allows independent regenerative braking at the two driven wheels.
+- Can remove the conventional differential when each motor has a separate wheel path.
+- Lets designers use two small, fast motors and compact gearsets instead of one very large motor.
+- May retain limited propulsion if one drive channel is safely shut down, although fault handling depends on the vehicle design.
+
+The disadvantages are additional motor/inverter cost, mass, wiring, cooling and control complexity. Both drive channels must coordinate precisely, and excessive left/right torque difference can destabilise the vehicle.
+
+#### Implementation Styles
+
+| Dual-Motor Single-Axle Style | Common Use | Advantage | Disadvantage | Image |
+| --- | --- | --- | --- | --- |
+| Independent central/near-wheel motors, one per wheel | Performance EV axles, off-road EVs and research vehicles | Direct left/right torque control; no conventional differential is required; easiest architecture for demonstrating torque vectoring | Requires two motor controls and accurate coordination; duplicated gears, bearings and cooling connections | ![Conceptual independent-wheel electric drive with separate motor controllers](attachments/dual-motor-single-axle-independent.svg) |
+| Twin compact drive units in one axle package | High-performance road EVs such as a twin rear-drive arrangement | High power density; compact modular units; central mounting keeps motor mass off the wheels | Tight packaging and thermal management; complex mounting, lubrication, software and high-current connections | ![Compact electric drive unit representative of a unit that can be paired on one axle](attachments/dual-motor-single-axle-drive-unit.jpg) |
+| Two in-wheel or wheel-end motors | Concept vehicles, urban vehicles and specialised platforms | Removes long half-shafts and gives the most direct independent wheel control | Adds unsprung mass; exposes motors to impact, water and heat; wheel/brake/suspension packaging is difficult | ![Wheel-hub motor in a Volkswagen electric concept](attachments/dual-motor-single-axle-in-wheel.jpg) |
+
+### Part List
+
+#### Main parts in a road-car system
+
+| Main Part | Function |
+| --- | --- |
+| High-voltage traction battery and contactors | Store energy and safely connect/disconnect the drive system |
+| Two traction inverters | Independently convert battery DC into controlled motor current |
+| Left and right traction motors | Produce separately controllable wheel torque |
+| Two reduction gearsets | Reduce motor speed and multiply torque for the wheels |
+| Half-shafts/CV joints or wheel-end couplings | Transfer each motor's torque while allowing suspension movement |
+| Wheel hubs, bearings and tyres | Support the vehicle and transmit longitudinal/lateral force to the road |
+| Vehicle control unit and torque-vectoring software | Calculate total axle torque and divide it safely between left and right motors |
+| Wheel-speed, motor-position, current and temperature sensors | Provide feedback for commutation, traction, stability and protection |
+| Cooling circuit | Remove heat from motors, inverters and sometimes gear oil |
+| Low-voltage supply and communications bus | Power controllers and exchange commands/status with ABS and stability control |
+| Mechanical brakes | Stop and hold the car when regenerative braking is insufficient or unavailable |
+
+#### Teaching demonstrator
+
+| Make (3D print / laser cut) | Buy |
+| --- | --- |
+| Axle frame, two motor mounts and transparent guards | Two identical low-voltage geared DC motors with encoders if possible |
+| Two matching spur-gear reductions and wheel hubs | Two H-bridge motor drivers and a low-voltage DC power supply |
+| Two wheels and interchangeable low/high-grip tyre sleeves | Microcontroller, wiring, switches and emergency-stop button |
+| Adjustable track-width brackets and small wheel-load arms | Wheel-speed sensors/encoders and current sensors |
+| LED torque/speed indicators and labelled left/right power paths | Bearings, steel shafts, shaft collars, fasteners and threaded inserts |
+| Optional small turntable or curved guide to represent cornering | Two potentiometers or a steering-angle sensor for command input |
+
+### Teaching Platform
+
+#### 3D printing / manufacturing easiness
+
+- **Static layout model — easy:** motors, inverters, battery and wheel paths can be represented by coloured blocks and two parallel drivetrains.
+- **Direct-drive two-motor model — easy to moderate:** use two purchased geared motors connected directly to two printed hubs. Alignment and guarding are the main mechanical tasks.
+- **Twin printed reduction gearsets — moderate:** both sides should have equal ratios, centre distances and backlash so differences in wheel behaviour come from control commands rather than mechanical mismatch.
+- **Central integrated axle housing — hard:** two motors, gears, bearings, seals, oil paths, inverters and cooling must fit without interference.
+- **In-wheel implementation — very hard:** it adds motor electromagnetic design, wheel-bearing loads, sealing, brake packaging and unsprung-mass concerns.
+- Printed gears, wheels and mounts are suitable only for a low-voltage, low-speed teaching rig—not a road vehicle.
+
+#### Demonstratability
+
+- No external fluid is needed for the recommended model. It does require a low-voltage power supply, two motor drivers and a controller or two manual speed controls.
+- **Straight-line mode:** command equal motor speeds/torques and show both wheels turning together.
+- **Cornering/electronic-differential mode:** use a steering knob to slow the inside wheel and speed the outside wheel. LEDs or a display can show both commands and measured speeds.
+- **Torque-vectoring mode:** apply more drive torque to the outside wheel and less to the inside wheel; mount the axle module on a low-friction turntable so the yaw reaction is visible.
+- **Split-traction mode:** put one wheel on a low-grip roller or smooth sleeve and show the controller limiting that motor while maintaining useful torque at the other wheel.
+- **Regeneration analogy:** electrically brake one motor while the other continues to drive. A resistor/LED load can make recovered electrical power visible; charging a battery requires proper battery-management hardware.
+- Use an emergency stop, current limits and clear guards. Never run exposed printed gears or wheels at high speed.
+
+#### Works with what
+
+- **Energy system:** traction battery, contactors, fuse, pre-charge circuit and battery-management system.
+- **Power electronics:** two inverters or one dual-channel inverter, DC bus and low-voltage control supply.
+- **Axle hardware:** two reductions, half-shafts/CV joints or wheel-end drives, hubs, bearings and tyres.
+- **Chassis systems:** suspension, steering if fitted to the driven axle, friction brakes and suitable subframe/mounts.
+- **Vehicle controls:** accelerator and brake requests, wheel-speed sensors, ABS, traction/stability control and torque-vectoring supervisor.
+- **Thermal system:** coolant pump, radiator/chiller, hoses and temperature monitoring for high-output systems.
+- The other axle can be non-driven; therefore this configuration by itself remains two-wheel drive, not AWD. A separate drive unit on the second axle would create a three- or four-motor AWD vehicle.
+
+#### CAD easiness
+
+- **Easy:** top-view packaging model showing battery, two motors, two controllers and two driven wheels.
+- **Easy to moderate:** direct-drive teaching axle with mirrored motor mounts and adjustable wheel spacing.
+- **Moderate:** two equal reduction gearsets, protected cables, sensor mounts and removable transparent guards.
+- **Hard:** compact twin-motor housing with realistic bearings, lubrication, cooling and service access.
+- **Very hard:** in-wheel motors or vehicle-grade design involving electromagnetic, structural, thermal, sealing, fatigue, NVH and crash-load requirements.
+- Model the two sides as linked mirrored subassemblies, but keep motor mounts and cable routing independently editable. Check wheel, suspension and brake clearance through full travel before finalising the housing.
+
+#### Recommended dual-motor, single-axle demonstrator
+
+Build one complete guarded axle with **two identical low-voltage geared motors, one motor per wheel**, controlled by a microcontroller and two motor drivers. Use a steering-angle knob to generate different left/right speed commands, add visible encoder readouts, and provide straight-line, cornering and split-traction modes. This avoids oil, high voltage and difficult CV-joint manufacture while clearly demonstrating why two motors on one axle are different from one motor plus a mechanical differential.
+
+---
+
+### Dual-Motor, Single-Axle: Sources and Image Credits
+
+#### Technical sources
+
+[^17]: Lucid Motors, [Introducing Sapphire: The pinnacle of electric performance](https://lucidmotors.com/de-de/stories/introducing-sapphire-pinnacle-electric-performance), describing a twin rear-drive unit that can drive and regeneratively brake the rear wheels independently for torque vectoring.
+[^18]: Rivian, [Investor Day 2024](https://downloads.rivian.com/2md5qhoeajym/29B1jJmErhGosTcyaS5Lci/4c04aba25a22778e3a9516cedaac2ddd/062724_Rivian_InvestorDay.pdf), identifying its Ascent drive unit as a production design with two motors per axle.
+[^19]: ZF, [With Integrated Systems in Volume Production, ZF Can Electrify all Vehicle Types](https://press.zf.com/press/en/releases/release_3005.html), describing an electric rear axle with one compact drive unit at each wheel and independent torque distribution.
+[^20]: ZF, [AxTrax 2 dual](https://www.zf.com/products/en/cv/products_75904.html), describing an integrated axle containing two motors, two inverters, transmission, actuators and an ECU.
+
+#### Image credits
+
+- [Individual-wheel-drive conceptual block diagram](https://commons.wikimedia.org/wiki/File:20210921_Individual_wheel_drive_-_conceptual_block_diagram.svg) by RCraig09, CC BY-SA 4.0.
+- [Lucid Air electric drive unit](https://commons.wikimedia.org/wiki/File:Lucid_Air_Electric_Drive_Unit.jpg) by DutchTreat, CC BY-SA 4.0.
+- [Volkswagen eT! concept hub motor](https://commons.wikimedia.org/wiki/File:Volkswagen_eT!_Concept_Hub_motor.JPG) by RudolfSimon, CC BY-SA 3.0.
