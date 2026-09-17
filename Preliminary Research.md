@@ -711,11 +711,11 @@ Youtube: [DON'T SUBSCRIBE | Understanding Anti-lock Braking System (ABS) !](http
 A locked wheel slides instead of rolling, and a sliding tire cannot steer. ABS lets the driver brake hard and still steer around an obstacle. On most surfaces, it also shortens stopping distance. On loose surfaces like gravel or deep snow, stopping distance may increase slightly, but steering control is maintained.
 ##### Types of ABS
 
-| ABS Type                    | Common Use                        | Advantage                                                                 | Disadvantage                                             | Image |
-| --------------------------- | --------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------- | ----- |
-| Four-channel, four-sensor   | Most modern passenger cars        | Each wheel controlled independently; best control                         | Can cause yaw on split-friction surfaces                 |       |
-| Three-channel, three-sensor | Many passenger cars               | Front wheels independent; rear wheels controlled together; good stability | Rear wheels share one channel; less precise rear control |       |
-| One-channel, one-sensor     | Older trucks, some light vehicles | Simple; low cost                                                          | Only controls rear wheels; front wheels can still lock   |       |
+| ABS Type                    | Common Use                        | Advantage                                                                 | Disadvantage                                             |
+| --------------------------- | --------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Four-channel, four-sensor   | Most modern passenger cars        | Each wheel controlled independently; best control                         | Can cause yaw on split-friction surfaces                 |
+| Three-channel, three-sensor | Many passenger cars               | Front wheels independent; rear wheels controlled together; good stability | Rear wheels share one channel; less precise rear control |
+| One-channel, one-sensor     | Older trucks, some light vehicles | Simple; low cost                                                          | Only controls rear wheels; front wheels can still lock   |
 Note: For a teaching platform, ABS is usually **too complex to build and not necessary**. It requires wheel speed sensors, an ECU, and hydraulic valves. A simple mechanical brake system demonstrates the core braking concept without ABS.
 
 ##### Part List
@@ -726,7 +726,7 @@ Note: For a teaching platform, ABS is usually **too complex to build and not nec
 | ECU mounting plate                  | ABS ECU (or use a simple Arduino-based controller) |
 | Valve block housing (if simulating) | Solenoid valves                                    |
 | —                                   | Hydraulic pump, brake lines, brake fluid           |
-#### Teaching Platform
+##### Teaching Platform
 **3D printing / manufacturing easiness:**
 - **Easy:** brackets, mounting plates, and a demonstration stand are all simple prints.
 - **Hard:** the hydraulic and electronic components. A real ABS needs brake fluid, sealed valves, and a controller. This is beyond what most teaching platforms need.
@@ -756,4 +756,69 @@ Note: For a teaching platform, ABS is usually **too complex to build and not nec
 - **Assembly complexity:** high if building a real hydraulic ABS. Low if building a simulated demonstration.
 - **Availability of standard parts:** wheel speed sensors, Arduino boards, and small solenoid valves are available, but building a working hydraulic system is still complex.
 - **CAD tips:** if simulating, model a single wheel on a stand with a motor, a speed sensor, and a solenoid valve controlled by an Arduino. Show the pulsing brake pressure on an LED or small display.
+
+### Traction Control System (TCS)
+
+#### What it is
+
+##### Description
+
+Traction control is an active safety system that prevents the driven wheels from spinning during acceleration. It works by reducing engine power or braking the spinning wheel so the tire regains grip. It is also called ASR (Acceleration Slip Regulation) or TRC, depending on the manufacturer.
+
+**How it works (roughly):**
+TCS uses the same wheel-speed sensors as ABS to compare driven wheel speed with non-driven wheel speed.
+**Wheel speed sensors → ECU → engine control or brake actuator**
+- **Wheel speed sensors** monitor how fast each wheel is rotating.
+- **ECU** detects when a driven wheel is spinning faster than the non-driven wheels, meaning it has lost grip.
+- **Engine torque control** reduces fuel injection, retards ignition timing, or closes the throttle to cut power to the slipping wheel.
+- **Brake torque control** applies the brake to the spinning wheel individually, which also sends torque to the wheel with grip through the open differential.
+TCS stays inactive in normal driving. It only intervenes when wheel slip is detected.
+![](attachments/Pasted%20image%2020260916210930.png)
+**Why a car needs it:**
+On low-grip surfaces (rain, snow, mud), a driven wheel can spin instead of moving the car forward. TCS prevents this by reducing power or braking the slipping wheel. This helps the car accelerate smoothly and prevents the rear from sliding out or the front from losing steering control. It also reduces tire wear caused by excessive wheelspin.
+##### Types of TCS Control
+
+|Control Type|Common Use|Advantage|Disadvantage|
+|---|---|---|---|
+|Brake torque control|Most modern cars (combined with engine control)|Fast response; can control each driven wheel independently|Brakes overheat if used heavily; wastes energy as heat|
+|Engine torque control|Most modern cars (combined with brake control)|No brake wear; smooth power reduction|Slower response; cannot control individual wheels|
+Note: For a teaching platform, TCS is **too complex to build as a working system**. It requires wheel-speed sensors, an ECU, and either engine control or hydraulic brake actuation. A demonstration using an electric motor with a simple speed sensor and controller is more realistic.
+##### Part List
+
+|Make (3D print / laser cut)|Buy|
+|---|---|
+|Sensor mounting brackets|Wheel speed sensors|
+|ECU mounting plate|Arduino or simple controller|
+|Demonstration stand|Small electric motor with speed sensor|
+##### Teaching Platform
+**3D printing / manufacturing easiness:**
+- **Easy:** brackets, mounting plates, demonstration stand — simple 3D prints.
+- **Hard:** the sensors, ECU, and brake actuation. A real TCS needs the same hydraulic hardware as ABS. Building it is not practical for a teaching platform.
+**Overall:** not recommended as a buildable component. Treat it as a **demonstration-only** system showing the concept of slip detection and power reduction.
+
+**Demonstratability:**
+- **External tools / consumables:** a simulated TCS needs only a power supply. A real TCS needs brake fluid and a hydraulic system.
+- **Intuitive to demonstrate:** the concept is simple if simulated:
+    - Spin a wheel with a motor: it accelerates freely.
+    - Introduce a "slipping" condition (low friction surface): the wheel spins faster than the reference.
+    - Show the controller reducing motor power: the wheel slows and regains grip.
+- **One caution:** real TCS operates in milliseconds. A hand-operated demo cannot show this speed; it only shows the concept.
+
+**Works with what (what else must be included):**
+- **ABS**: TCS shares the same wheel-speed sensors and often the same hydraulic unit. They work together as a combined ABS/TCS system.
+- **Differentials**: TCS can partially replace a limited-slip differential by braking a spinning wheel, which sends torque to the wheel with grip.
+- **Engine / motor**: TCS must be able to reduce torque. In an EV, this means reducing motor current; in an ICE, it means cutting fuel or closing the throttle.
+- **Steering and suspension**: TCS helps maintain steering control during acceleration. The suspension must keep the tires in contact with the road for TCS to work.
+- **FWD**: TCS prevents front wheelspin, which reduces torque steer and understeer during hard acceleration.
+- **RWD**: TCS prevents rear wheelspin, which reduces oversteer and fishtailing on slippery roads.
+- **AWD / 4x4**: TCS works on all driven wheels. On split-friction surfaces, it can brake one wheel to send torque to the others.
+- **EV configurations**: EVs need special TCS because electric motors produce maximum torque instantly. Distributed TCS (dTCS) moves the control into the motor controller for faster response (10 ms vs 100 ms).
+- **Torque vectoring**: torque vectoring is a more advanced form of wheel control. TCS prevents slip; torque vectoring actively distributes torque to improve turning
+- **ABS**: TCS is essentially "reverse ABS" — ABS prevents lock-up under braking, TCS prevents spin under acceleration.
+
+**How easy is it to design / CAD:**
+- **Modeling difficulty:** low for a demonstration stand; very high for a real system.
+- **Assembly complexity:** high if building a real hydraulic TCS. Low if simulating with a motor and controller.
+- **Availability of standard parts:** wheel speed sensors and Arduino boards are available, but a complete hydraulic TCS requires OEM-level components.
+- **CAD tips:** if simulating, model a single wheel on a stand with a motor, a speed sensor, and a simple controller. Use an LED or display to show when "slip" is detected and power is reduced.
 ## Dynamic Suspensions
