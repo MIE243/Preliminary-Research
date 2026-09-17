@@ -7,4 +7,5 @@ Type of: [[CVT]]
 
 Connects to:
 - [[4x4]]
+- [[Centrifugal Clutch]]
 - [[Clutch]]

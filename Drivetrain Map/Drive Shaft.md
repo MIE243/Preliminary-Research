@@ -23,3 +23,4 @@ Connects to:
 - [[Slip Spline Coupling]]
 - [[Suspension]]
 - [[Transfer Case]]
+- [[Transmission]]

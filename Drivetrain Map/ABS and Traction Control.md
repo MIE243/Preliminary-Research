@@ -12,6 +12,7 @@ Connects to:
 - [[Differential]]
 - [[Dual-Motor Dual-Axle EV]]
 - [[Dual-Motor Single-Axle EV]]
+- [[Dynamic Suspension]]
 - [[Electric Motor]]
 - [[Engine]]
 - [[FWD]]

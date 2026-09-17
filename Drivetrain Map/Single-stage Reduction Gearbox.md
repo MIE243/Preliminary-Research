@@ -3,8 +3,8 @@ tags:
   - type
   - links/03-04
 ---
-Type of: [[Single-Motor Single-Axle EV]]
+Type of: [[Gearbox]]
 
 Connects to:
-- [[Gearbox]]
+- [[Electric Motor]]
 - [[Single-speed EV Transmission]]

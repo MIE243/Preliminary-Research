@@ -1,8 +1,9 @@
 ---
 tags:
   - component
-  - links/10-15
+  - links/21-25
 ---
+Types: [[Air Brake]], [[Drum Brake]], [[Electric Parking Brake]], [[Hydraulic Disc Brake]], [[Regenerative Brake]]
 
 Connects to:
 - [[4x4]]
@@ -13,6 +14,10 @@ Connects to:
 - [[CV Shaft]]
 - [[Drive Shaft]]
 - [[Dual-Motor Dual-Axle EV]]
+- [[Dual-Motor Single-Axle EV]]
+- [[Dynamic Suspension]]
+- [[Electric Motor]]
+- [[Gearbox]]
 - [[RWD]]
 - [[Single-Motor Single-Axle EV]]
 - [[Steering]]

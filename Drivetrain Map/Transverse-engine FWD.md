@@ -3,9 +3,9 @@ tags:
   - type
   - links/03-04
 ---
-Type of: [[CVT]]
+Type of: [[FWD]]
 
 Connects to:
-- [[Electric Motor]]
+- [[CVT]]
 - [[Engine]]
-- [[Planetary Gearbox]]
+- [[Transmission]]

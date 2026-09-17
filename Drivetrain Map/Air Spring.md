@@ -1,8 +1,9 @@
 ---
 tags:
   - type
-  - links/01
+  - links/02
 ---
 Type of: [[Suspension]]
 
 Connects to:
+- [[Self-levelling Air Suspension]]

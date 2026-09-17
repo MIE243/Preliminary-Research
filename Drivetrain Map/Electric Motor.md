@@ -1,25 +1,36 @@
 ---
 tags:
   - component
-  - links/16-20
+  - links/26-plus
 ---
 
 Connects to:
 - [[ABS and Traction Control]]
 - [[Beam Coupling]]
 - [[Bellows Coupling]]
+- [[Brakes]]
 - [[Differential]]
 - [[Dual-Motor Dual-Axle EV]]
 - [[Dual-Motor Single-Axle EV]]
 - [[eCVT]]
 - [[Electric Power Steering]]
 - [[Engine Torque TCS]]
+- [[FWD]]
+- [[Gearbox]]
 - [[Hybrid AWD]]
+- [[In-wheel Motors EV]]
 - [[Jaw Coupling]]
+- [[Near-wheel Motors EV]]
 - [[PM Rear plus Induction Front EV]]
 - [[Quad-motor Torque Vectoring]]
+- [[Regenerative Brake]]
 - [[Single-Motor Single-Axle EV]]
+- [[Single-speed EV Transmission]]
+- [[Single-stage Reduction Gearbox]]
 - [[Torque Vectoring]]
+- [[Transmission]]
+- [[Twin Drive Unit EV]]
 - [[Two-motor Axle Torque Vectoring]]
+- [[Two-stage Reduction Gearbox]]
 - [[Wheels]]
 - [[Wound-rotor Motor EV]]

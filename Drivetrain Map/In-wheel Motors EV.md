@@ -3,8 +3,8 @@ tags:
   - type
   - links/03-04
 ---
-Type of: [[4x4]]
+Type of: [[Dual-Motor Single-Axle EV]]
 
 Connects to:
-- [[Dog Clutch]]
+- [[Electric Motor]]
 - [[Wheels]]

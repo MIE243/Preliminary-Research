@@ -6,5 +6,6 @@ tags:
 Type of: [[Differential]]
 
 Connects to:
+- [[Bevel-Hypoid Gearbox]]
 - [[Drive Shaft]]: turns drive 90° from the drive shaft to the half shafts
 - [[RWD]]: common use: RWD

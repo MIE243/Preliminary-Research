@@ -14,6 +14,7 @@ Connects to:
 - [[Differential]]
 - [[Drive Shaft]]
 - [[Dual-Motor Dual-Axle EV]]
+- [[Dual-Motor Single-Axle EV]]
 - [[FWD]]
 - [[Gearbox]]
 - [[Independent Rear RWD]]

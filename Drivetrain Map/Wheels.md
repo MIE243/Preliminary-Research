@@ -1,7 +1,7 @@
 ---
 tags:
   - component
-  - links/05-09
+  - links/10-15
 ---
 
 Connects to:
@@ -10,7 +10,12 @@ Connects to:
 - [[Brakes]]
 - [[CV Shaft]]
 - [[Differential]]
+- [[Dual-Motor Single-Axle EV]]
+- [[Dynamic Suspension]]
 - [[Electric Motor]]
+- [[FWD]]
+- [[Gearbox]]
+- [[In-wheel Motors EV]]
 - [[Manual Locking Hubs]]
 - [[Steering]]
 - [[Suspension]]

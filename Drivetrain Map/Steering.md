@@ -16,6 +16,7 @@ Connects to:
 - [[Double Cardan Joint]]
 - [[Dual-Motor Dual-Axle EV]]
 - [[Dual-Motor Single-Axle EV]]
+- [[Dynamic Suspension]]
 - [[Flex Disc Coupling]]
 - [[FWD]]
 - [[RWD]]
