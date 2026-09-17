@@ -19,4 +19,5 @@ Connects to:
 - [[Gearbox]]
 - [[Slip Spline Coupling]]
 - [[Steering]]
+- [[Suspension]]
 - [[Torque Vectoring]]

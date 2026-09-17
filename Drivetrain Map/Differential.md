@@ -23,6 +23,7 @@ Connects to:
 - [[RWD]]
 - [[Single-Motor Single-Axle EV]]
 - [[Steering]]
+- [[Suspension]]
 - [[Torque Vectoring]]
 - [[Transfer Case]]
 - [[Tripod Joint]]

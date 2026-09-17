@@ -6,6 +6,7 @@ tags:
 
 Connects to:
 - [[4x4]]
+- [[AWD]]
 - [[Bellows Coupling]]
 - [[Clutch]]
 - [[Coupling]]
@@ -18,6 +19,9 @@ Connects to:
 - [[Married Transfer Case]]: bolted straight to the transmission
 - [[Rigid Flange Coupling]]
 - [[RWD]]
+- [[Single-Motor Single-Axle EV]]
+- [[Single-speed EV (SM1ST)]]
 - [[Torque Converter]]
 - [[Transfer Case]]
+- [[Two-speed EV (SM2ST)]]
 - [[Two-speed Rear Unit EV]]
