@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Positive dog clutch</text>
+  <line x1="50" y1="220" x2="670" y2="220" stroke="#263849" stroke-width="18"/>
+  <path d="M150 125 H285 V160 H320 V280 H285 V315 H150 Z" fill="#ef5b45" stroke="#182433" stroke-width="6"/><path d="M570 125 H435 V160 H400 V280 H435 V315 H570 Z" fill="#55ad3a" stroke="#182433" stroke-width="6"/>
+  <rect x="250" y="92" width="220" height="52" rx="10" fill="#f3a712" stroke="#182433" stroke-width="5"/><path d="M300 78 H420" stroke="#263849" stroke-width="7" marker-end="url(#a)"/><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#263849"/></marker></defs>
+  <g font-family="Arial" font-size="20" fill="#182433"><text x="120" y="350">Input dog teeth</text><text x="452" y="350">Output dog teeth</text><text x="283" y="126">Sliding sleeve</text><text x="250" y="385">Locks by tooth engagement, not friction</text></g>
+</svg>

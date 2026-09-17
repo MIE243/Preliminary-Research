@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Electromagnetic friction clutch</text>
+  <line x1="55" y1="220" x2="665" y2="220" stroke="#263849" stroke-width="15"/><rect x="180" y="85" width="90" height="270" rx="18" fill="#66aee8" stroke="#182433" stroke-width="6"/><rect x="290" y="95" width="55" height="250" fill="#f3a712" stroke="#182433" stroke-width="5"/><rect x="385" y="95" width="55" height="250" fill="#ef5b45" stroke="#182433" stroke-width="5"/><rect x="460" y="85" width="90" height="270" rx="18" fill="#55ad3a" stroke="#182433" stroke-width="6"/>
+  <path d="M225 110 C315 45 440 45 505 110 M225 330 C315 395 440 395 505 330" fill="none" stroke="#b65bd6" stroke-width="8" stroke-dasharray="13 10"/><path d="M350 220 H385" stroke="#263849" stroke-width="8" marker-end="url(#a)"/><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#263849"/></marker></defs>
+  <g font-family="Arial" font-size="19" fill="#182433"><text x="183" y="385">Field coil</text><text x="285" y="385">Rotor</text><text x="365" y="75">Armature</text><text x="455" y="385">Driven hub</text></g>
+</svg>

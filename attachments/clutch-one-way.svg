@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Sprag one-way clutch</text>
+  <circle cx="360" cy="225" r="155" fill="#d9e2e8" stroke="#182433" stroke-width="7"/><circle cx="360" cy="225" r="85" fill="#fff" stroke="#182433" stroke-width="7"/>
+  <g fill="#f3a712" stroke="#182433" stroke-width="3"><path d="M340 75 l35 58 -40 12 -25 -62z"/><path d="M500 140 l-40 55 -30 -30 44 -54z"/><path d="M500 310 l-66 -6 8 -41 67 15z"/><path d="M340 375 l-25 -63 42 -6 17 65z"/><path d="M210 310 l54 -40 22 35 -51 44z"/><path d="M210 140 l68 10 -10 41 -67 -20z"/></g>
+  <path d="M260 225 A100 100 0 1 1 315 314" fill="none" stroke="#55ad3a" stroke-width="12" marker-end="url(#a)"/><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#55ad3a"/></marker></defs><text x="520" y="225" font-family="Arial" font-size="22" fill="#182433">Lock</text><text x="70" y="225" font-family="Arial" font-size="22" fill="#182433">Freewheel</text>
+</svg>

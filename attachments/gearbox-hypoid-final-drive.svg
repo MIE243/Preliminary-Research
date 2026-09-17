@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Hypoid final drive</text>
+  <ellipse cx="430" cy="210" rx="160" ry="160" fill="#55ad3a" stroke="#182433" stroke-width="8"/><ellipse cx="430" cy="210" rx="112" ry="112" fill="#fff" stroke="#182433" stroke-width="5"/>
+  <line x1="430" y1="95" x2="430" y2="325" stroke="#263849" stroke-width="12"/><circle cx="430" cy="210" r="48" fill="#d9e2e8" stroke="#182433" stroke-width="5"/>
+  <polygon points="110,285 270,250 300,305 130,340" fill="#ef5b45" stroke="#182433" stroke-width="6"/><line x1="60" y1="320" x2="210" y2="288" stroke="#263849" stroke-width="12"/>
+  <path d="M250 270 C310 245 320 225 335 190" fill="none" stroke="#f3a712" stroke-width="7" marker-end="url(#a)"/><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f3a712"/></marker></defs>
+  <g font-family="Arial" font-size="20" fill="#182433"><text x="70" y="375">Offset drive pinion</text><text x="530" y="92">Ring gear</text><text x="470" y="220">Differential</text><text x="480" y="365">Axle output</text></g>
+</svg>
