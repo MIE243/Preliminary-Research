@@ -424,26 +424,23 @@ RWD separates steering from driving: the front wheels only steer, the rear wheel
 The trade-off is extra weight, cost, a centre tunnel that takes cabin space, and worse traction in snow or mud compared to FWD or AWD.
 ##### Types of RWD Layouts
 
-| RWD Layout            | Common Use                                      | Advantage                                                | Disadvantage                                            | Image |
-| --------------------- | ----------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------- | ----- |
-| Front-engine RWD (FR) | Most classic sports cars, sedans, pickup trucks | Good weight distribution; simple layout; easy to service | Long propshaft; heavy; centre tunnel takes cabin space  |       |
-| Mid-engine RWD (MR)   | Supercars, some sports cars                     | Excellent weight distribution; sharp handling            | Very little cargo or rear seat space; complex packaging |       |
-| Rear-engine RWD (RR)  | Porsche 911, some city cars, buses              | Compact drivetrain; good traction under acceleration     | Rear-biased weight; tricky handling at the limit        |       |
-| Solid axle RWD        | Trucks, muscle cars, some SUVs                  | Strong; simple; cheap; good for heavy loads              | Heavy; poor ride comfort; limited geometry control      |       |
-| Independent rear RWD  | Modern sports cars, luxury sedans               | Better ride and handling; precise camber control         | More complex; more parts; higher cost                   |       |
-
-> Note: For a teaching platform, **front-engine RWD with a solid rear axle or a simple independent rear** is the easiest to build and demonstrate.
-
+| RWD Layout            | Common Use                                      | Advantage                                                | Disadvantage                                            | Image                                                |
+| --------------------- | ----------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------- |
+| Front-engine RWD (FR) | Most classic sports cars, sedans, pickup trucks | Good weight distribution; simple layout; easy to service | Long propshaft; heavy; centre tunnel takes cabin space  | ![](attachments/Rear%20Wheel%20Drive(FR).png)        |
+| Mid-engine RWD (MR)   | Supercars, some sports cars                     | Excellent weight distribution; sharp handling            | Very little cargo or rear seat space; complex packaging | ![](attachments/Pasted%20image%2020260916200603.png) |
+| Rear-engine RWD (RR)  | Porsche 911, some city cars, buses              | Compact drivetrain; good traction under acceleration     | Rear-biased weight; tricky handling at the limit        | ![](attachments/Pasted%20image%2020260916200636.png) |
+| Solid axle RWD        | Trucks, muscle cars, some SUVs                  | Strong; simple; cheap; good for heavy loads              | Heavy; poor ride comfort; limited geometry control      |                                                      |
+| Independent rear RWD  | Modern sports cars, luxury sedans               | Better ride and handling; precise camber control         | More complex; more parts; higher cost                   |                                                      |
 ##### Part List
 
-|Make (3D print / laser cut)|Buy|
-|---|---|
-|Chassis / frame|Electric motor or small engine|
-|Motor mounts, gearbox mounts|Gearbox / transmission (or simple gear reduction)|
-|Propshaft bearing supports, mounts|Drive shaft (or steel rod / tube)|
-|Differential housing / case|Differential gear set (bevel gears)|
-|Half shaft couplers, wheel hubs|Bearings, ball joints, fasteners|
-|Suspension arms, brackets|Wheels and tires|
+| Make (3D print / laser cut)        | Buy                                               |
+| ---------------------------------- | ------------------------------------------------- |
+| Chassis / frame                    | Electric motor or small engine                    |
+| Motor mounts, gearbox mounts       | Gearbox / transmission (or simple gear reduction) |
+| Propshaft bearing supports, mounts | Drive shaft (or steel rod / tube)                 |
+| Differential housing / case        | Differential gear set (bevel gears)               |
+| Half shaft couplers, wheel hubs    | Bearings, ball joints, fasteners                  |
+| Suspension arms, brackets          | Wheels and tires                                  |
 #### Teaching Platform
 **3D printing / manufacturing easiness:**
 - **Easy:** chassis, mounts, brackets, spacers, differential housing — all simple 3D prints or laser-cut parts.
@@ -475,6 +472,77 @@ The trade-off is extra weight, cost, a centre tunnel that takes cabin space, and
 - **Torque vectoring**: in RWD, done with a torque vectoring differential or independent rear motors.
 - **ABS and traction control**: these systems brake individual wheels to control slip. In RWD, traction control is important because the rear wheels can lose grip under acceleration.
 ## All-Wheel Drive
+
+#### What it is
+##### Description
+All-wheel drive (AWD) is a drivetrain layout in which all four wheels can receive engine torque. Unlike 4x4, AWD is usually designed for on-road use and can vary the torque split between the front and rear axles automatically.
+
+**How it works (roughly):**
+Engine → clutch/torque converter → gearbox → centre coupling or centre differential → front and rear differentials → half shafts → all four wheels
+
+In many modern AWD cars, the centre coupling is normally disengaged or sends most torque to one axle, and only sends torque to the other axle when slip is detected. This saves fuel compared to permanent AWD.
+![](attachments/Pasted%20image%2020260916201248.png)
+**Why a car needs it:**
+AWD improves traction by driving all four wheels instead of two. On low-grip surfaces (rain, snow, gravel), more driven wheels means more grip for acceleration and less wheelspin. This helps everyday driving in bad weather and lets high-power cars put power down without spinning.
+
+The trade-off is extra weight, cost, complexity, and slightly higher fuel consumption compared to FWD or RWD.
+##### Types of AWD Layouts
+
+| AWD Layout           | Common Use                             | Advantage                                                           | Disadvantage                                                       | Image                                                |
+| -------------------- | -------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------------- |
+| Part-time AWD        | Some SUVs and crossovers               | Simple; saves fuel when not needed                                  | Only engages when slip is detected; reactive rather than proactive | ![](attachments/Pasted%20image%2020260916201350.png) |
+| Full-time AWD        | Subaru, Audi Quattro, some luxury cars | Always drives all four wheels; consistent traction                  | More complex; higher fuel consumption                              | ![](attachments/Pasted%20image%2020260916201341.png) |
+| Torque-vectoring AWD | High-performance cars                  | Can send more torque to the outside wheel to help turn              | Very complex; expensive                                            |                                                      |
+| Hybrid AWD           | Some hybrid and electric cars          | No mechanical centre coupling; rear axle driven by a separate motor | Only works when the motor has power; limited continuous output     |                                                      |
+ Note: For a teaching platform, **part-time AWD with a simple centre coupling** is the easiest to build and demonstrate.
+##### Part List
+
+|Make (3D print / laser cut)|Buy|
+|---|---|
+|Chassis / frame|Electric motor or small engine|
+|Motor mounts, gearbox mounts|Gearbox / transmission (or simple gear reduction)|
+|Centre coupling housing, mounts|Centre coupling or centre differential|
+|Front and rear differential housings|Differential gear sets (bevel gears)|
+|Propshaft supports, half shaft couplers|Drive shafts, bearings, fasteners|
+|Suspension arms, brackets|Wheels and tires|
+#### Teaching Platform
+
+**3D printing / manufacturing easiness:**
+- **Easy:** chassis, mounts, brackets, differential housings — all simple 3D prints or laser-cut parts.
+- **Medium:** propshafts and half shafts carry torque. A 3D printed shaft with a steel core works for low-speed demo.
+- **Hard:** differential gear sets and the centre coupling. Printed gears wear quickly; buy these instead.
+
+**Overall:** more parts than RWD or FWD, but each part is still simple. The main challenge is fitting two differentials and a centre coupling into the chassis.
+
+**Demonstratability:**
+- **External tools / consumables:** none for a hand-operated demo. With an electric motor, only a power supply is needed.
+- **Intuitive to demonstrate:** yes, but more complex than RWD:
+    - Run the motor: all four wheels rotate.
+    - Hold one wheel: the others keep turning, and the centre coupling sends more torque to the axle with grip.
+    - Compare with RWD: with only two driven wheels, one wheel losing grip can stop the car. With AWD, the other axle still drives.
+    - Show the centre coupling: with it locked, front and rear axles turn together; with it open, they can turn at different speeds.
+**Works with what (what else must be included):**
+- **Gearboxes / transmissions / torque converters**: the gearbox output goes to the centre coupling or centre differential, not directly to one axle.
+- **Couplings, drive shafts, CV shafts**: AWD needs a propshaft to the rear axle and half shafts to all four wheels. If the front wheels steer, the front half shafts need CV joints.
+- **Differentials**: AWD needs at least two differentials — one on each axle — plus a centre coupling or centre differential to split torque between them.
+- **Transfer cases**: in a 4x4, the transfer case does the same job as the centre coupling but is usually selectable and has a low-range gear. AWD is essentially a permanent or automatic version of this.
+- **Brakes and clutches**: the clutch connects the engine to the gearbox. The brakes mount on all four knuckles or axle ends.
+- **Steering and suspension**: the front wheels steer and drive, so the front knuckles need CV joints and must fit around the steering linkage.
+- **FWD**: not applicable. AWD drives all four wheels.
+- **RWD**: an AWD car can be based on a RWD layout with an added front drive system.
+- **AWD**: the layout described here.
+- **4x4**: similar layout, but the transfer case is selectable and often has a low range. 4x4 is designed for off-road use; AWD is designed for on-road use.
+- **Single-motor, single-axle EV**: not applicable. An AWD EV needs at least two motors, or one motor with a mechanical centre coupling.
+- **Dual-motor, single-axle EV**: not applicable. Both motors drive the same axle.
+- **Dual-motor, dual-axle EV**: one motor per axle. This is the electric equivalent of AWD, with no mechanical centre coupling needed.
+- **Torque vectoring**: in AWD, torque vectoring can send more torque to the outside wheel to help the car turn. It can be done with a special centre coupling or with independent motors.
+- **ABS and traction control**: these systems brake individual wheels to control slip. In AWD, traction control works with the centre coupling to send torque to the axle with grip.
+
+**How easy is it to design / CAD:**
+- **Modeling difficulty:** medium to high. The layout needs careful alignment: propshaft in line with gearbox output and rear differential pinion; front differential aligned with the front half shafts; centre coupling positioned between the gearbox and both axles.
+- **Assembly complexity:** high. More parts than RWD or FWD, and the centre coupling adds a step. The front axle must accommodate both steering and drive.
+- **Availability of standard parts:** good. Small motors, gearboxes, differential gear sets, centre couplings, bearings, shafts, and wheels are available from hobby suppliers.
+- **CAD tips:** model the chassis first, place the motor and gearbox as reference components, then position the centre coupling and both differentials. Use the propshafts as alignment axes, and keep the front and rear axles parallel.
 
 ## 4x4 (4-Wheel) Drive
 
@@ -544,6 +612,72 @@ Works with what
 
 ## Single-Motor, Single-Axle (FWD — SM1ST, SM2ST, etc.)
 
+### What it is
+
+#### Description
+Single-motor, single-axle is an EV configuration where one electric motor drives one axle. The motor can be mounted on the front axle (FWD) or rear axle (RWD). "SM1ST" typically refers to a single-motor, single-speed transmission layout, while "SM2ST" refers to a single-motor, two-speed transmission layout.
+
+**How it works (roughly):**
+Battery → inverter → electric motor → reduction gearbox → differential → half shafts → wheels
+- The battery stores energy as DC current. The inverter converts DC to AC and controls motor speed. The electric motor produces torque across a wide speed range (from zero to around 18,000 rpm). A single-speed reduction gearbox (or two-speed in SM2ST) reduces motor speed and multiplies torque. The differential allows left and right wheels to rotate at different speeds when cornering. Half shafts carry torque to the driven wheels.
+![](attachments/Pasted%20image%2020260916204323.png)
+**Why a car needs it / why it exists:**
+This is the simplest and most common EV drivetrain layout. Electric motors have a wide efficient operating range, so a single-speed gearbox is usually enough. A two-speed (SM2ST) improves efficiency but adds complexity and cost.
+
+Compared to dual-motor configurations, single-motor is lighter, cheaper, and simpler. It is used in many mainstream EVs: Tesla Model 3 RWD, Hyundai Ioniq 5 RWD, and Smart #1 all use a single rear motor with a single-speed transmission.
+#### Types of Single-Motor Layouts
+
+| Layout               | Common Use                           | Advantage                                           | Disadvantage                                               |
+| -------------------- | ------------------------------------ | --------------------------------------------------- | ---------------------------------------------------------- |
+| Single-motor FWD     | Entry-level EVs, conversions         | Simple; compact; low cost                           | Traction limits under hard acceleration; torque steer risk |
+| Single-motor RWD     | Tesla Model 3, Ioniq 5 RWD, Smart #1 | Better traction under acceleration; no torque steer | Slightly more complex packaging than FWD                   |
+| Single-speed (SM1ST) | Most production EVs                  | Simplest; lightest; cheapest; reliable              | Motor operates outside optimal efficiency at some speeds   |
+| Two-speed (SM2ST)    | Some performance EVs                 | Better efficiency and acceleration balance          | More complex; added cost and weight                        |
+Note: For a teaching platform, **single-motor RWD with single-speed** is the clearest and simplest to demonstrate.
+#### Part List
+
+|Make (3D print / laser cut)|Buy|
+|---|---|
+|Motor mounts, brackets|Electric motor (BLDC or PMSM)|
+|Reduction gear housing|Reduction gear set (or buy a complete gearbox)|
+|Differential housing / case|Differential gear set (bevel gears)|
+|Chassis mounting plate|Bearings, fasteners|
+|Wheel hubs, half shaft couplers|Wheels and tires|
+#### Teaching Platform
+**3D printing / manufacturing easiness:**
+- **Easy:** motor mounts, brackets, housings — all simple 3D prints or laser-cut parts.
+- **Medium:** the reduction gearbox. A simple spur gear pair can be 3D printed for low-speed demo, but printed gears wear quickly under load.
+- **Hard:** the electric motor and differential gear set. Buy these; printed versions are unreliable.
+**Overall:** easy to manufacture, as long as the motor and gears are bought and only the structure is printed.
+**Demonstratability:**
+- **External tools / consumables:** none required. If using an electric motor, only a power supply (battery or bench supply) is needed.
+- **Intuitive to demonstrate:** yes. The power flow is simple and visible:
+    - Apply power: the motor spins, the reduction gear turns, the differential drives the half shafts, and the wheels rotate.
+    - Hold one wheel: the other spins twice as fast (open differential behaviour).
+    - Reverse polarity: the motor spins the other way, and the car moves backward.
+    - Compare single-speed vs two-speed: if you build an SM2ST, show how shifting changes wheel speed for the same motor rpm.
+**Works with what (what else must be included):**
+- **Gearboxes / transmissions / torque converters**: not needed in the traditional sense. A single-speed reduction gear replaces the multi-speed gearbox. A two-speed version (SM2ST) adds one shift mechanism.
+- **Couplings, drive shafts, CV shafts**: the motor output goes through the reduction gear to the differential, then half shafts to the wheels. If the driven wheels steer (FWD), CV joints are needed.
+- **Differentials**: required. The differential allows left and right wheels to rotate at different speeds when cornering.
+- **Transfer cases**: not used in single-axle configuration. Only needed for AWD.
+- **Brakes and clutches**: no clutch needed (electric motor can start from zero rpm). Regenerative braking can replace some mechanical braking.
+- **Steering and suspension**: if the driven axle is also the steering axle (FWD), the knuckle must accommodate both steering and drive, and the half shafts need CV joints.
+- **FWD**: the motor drives the front wheels, which also steer. The knuckle is complex (steering + drive).
+- **RWD**: the motor drives the rear wheels, which only drive. The front wheels only steer, so the front knuckle is simpler.
+- **AWD**: not applicable. AWD requires either dual motors (one per axle) or a mechanical centre coupling.
+- **4x4**: not applicable. 4x4 requires a transfer case and two driven axles.
+- **Single-motor, single-axle EV**: the layout described here.
+- **Dual-motor, single-axle EV**: two motors drive the same axle, one per wheel. No mechanical differential needed.
+- **Dual-motor, dual-axle EV**: one motor per axle. No centre coupling needed, but each axle has its own motor.
+- **Torque vectoring**: not possible with a single motor and open differential. Requires independent motors or a special differential.
+- **ABS and traction control**: these systems brake individual wheels to control slip. In a single-motor EV, traction control reduces motor torque when a wheel slips.
+**How easy is it to design / CAD:**
+- **Modeling difficulty:** low. The layout is simple: motor → reduction gear → differential → half shafts. Align the motor shaft with the reduction gear input, and the differential output with the half shafts.
+- **Assembly complexity:** low. Fewer parts than any other EV configuration. The main alignment is between the motor, gearbox, and differential.
+- **Availability of standard parts:** good. Small electric motors, gear sets, differentials, bearings, and wheels are available from hobby suppliers.
+- **CAD tips:** model the chassis first, place the motor as a reference, then position the reduction gear and differential. Keep the half shafts equal length if the differential is centred. Leave adjustment slots for motor mounting to tension any belt or chain drive.
+
 ## Dual-Motor, Single-Axle
 
 ## Dual-Motor, Dual-Axle
@@ -554,4 +688,72 @@ Works with what
 
 ## ABS and Traction Control
 
+### Anti-Lock Braking System (ABS)
+
+#### What it is
+
+##### Description
+
+ABS is an electronic safety system that prevents the wheels from locking up during hard braking. It allows the driver to keep steering while braking, which a locked wheel cannot do.
+**How it works (roughly):**
+ABS monitors wheel speed and rapidly modulates brake pressure:
+**Wheel speed sensors → ECU → hydraulic valves and pump → brake calipers**
+- **Wheel speed sensors** monitor each wheel’s rotation speed.
+- **ECU (Electronic Control Unit)** detects when a wheel is decelerating too fast, meaning it is about to lock.
+- **Hydraulic valves** reduce brake pressure to that wheel, then re-apply it.
+- **Pump** restores pressure after the valves release it.
+- This cycle repeats dozens of times per second, faster than a human can pump the brakes.
+In normal braking, ABS does nothing. The valves stay open and brake fluid flows normally. ABS only activates when a wheel starts to lock.
+
+Youtube: [DON'T SUBSCRIBE | Understanding Anti-lock Braking System (ABS) !](https://www.youtube.com/watch?v=98DXe3uKwfc) 4:00-4:45
+![](attachments/Pasted%20image%2020260916205523.png)
+**Why a car needs it:**
+A locked wheel slides instead of rolling, and a sliding tire cannot steer. ABS lets the driver brake hard and still steer around an obstacle. On most surfaces, it also shortens stopping distance. On loose surfaces like gravel or deep snow, stopping distance may increase slightly, but steering control is maintained.
+##### Types of ABS
+
+| ABS Type                    | Common Use                        | Advantage                                                                 | Disadvantage                                             | Image |
+| --------------------------- | --------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------- | ----- |
+| Four-channel, four-sensor   | Most modern passenger cars        | Each wheel controlled independently; best control                         | Can cause yaw on split-friction surfaces                 |       |
+| Three-channel, three-sensor | Many passenger cars               | Front wheels independent; rear wheels controlled together; good stability | Rear wheels share one channel; less precise rear control |       |
+| One-channel, one-sensor     | Older trucks, some light vehicles | Simple; low cost                                                          | Only controls rear wheels; front wheels can still lock   |       |
+Note: For a teaching platform, ABS is usually **too complex to build and not necessary**. It requires wheel speed sensors, an ECU, and hydraulic valves. A simple mechanical brake system demonstrates the core braking concept without ABS.
+
+##### Part List
+
+| Make (3D print / laser cut)         | Buy                                                |
+| ----------------------------------- | -------------------------------------------------- |
+| Sensor mounting brackets            | Wheel speed sensors                                |
+| ECU mounting plate                  | ABS ECU (or use a simple Arduino-based controller) |
+| Valve block housing (if simulating) | Solenoid valves                                    |
+| —                                   | Hydraulic pump, brake lines, brake fluid           |
+#### Teaching Platform
+**3D printing / manufacturing easiness:**
+- **Easy:** brackets, mounting plates, and a demonstration stand are all simple prints.
+- **Hard:** the hydraulic and electronic components. A real ABS needs brake fluid, sealed valves, and a controller. This is beyond what most teaching platforms need.
+**Overall:** not recommended as a buildable component. If included, treat it as a **demonstration-only** system using a motor and controller to show the concept of rapid pressure modulation.
+
+**Demonstratability:**
+- **External tools / consumables:** a real ABS needs brake fluid and a power supply. A simulated version needs only a power supply.
+- **Intuitive to demonstrate:** the concept is intuitive if simplified:
+    - Spin a wheel by hand: it rotates freely.
+    - Apply a “locked” brake: the wheel stops and cannot be steered.
+    - Apply “ABS” pulsing: the wheel slows but keeps rotating, and steering is possible.
+- **One caution:** real ABS is hard to demonstrate at low speed because the wheel needs to be rotating fast enough for lock-up to occur. A motor-driven wheel is better than hand-spinning.
+
+**Works with what (what else must be included):**
+- **Brakes and clutches**: ABS works with the hydraulic brake system. It needs brake calipers, brake lines, and a master cylinder.
+- **Wheel speed sensors**: required at each controlled wheel. These are the primary input for ABS.
+- **ECU**: processes sensor data and controls the valves.
+- **Hydraulic valves and pump**: modulate brake pressure.
+- **Steering and suspension**: ABS allows steering during braking, which is its main benefit. The suspension must keep the tires in contact with the road for ABS to work.
+- **FWD / RWD / AWD / 4x4**: ABS works on all layouts. It controls individual wheel brakes regardless of which wheels are driven.
+- **EV configurations**: ABS works the same on EVs. Regenerative braking must be blended with ABS to avoid conflicts.
+- **Torque vectoring**: ABS and torque vectoring both brake individual wheels, but for different purposes. ABS prevents lock-up; torque vectoring improves turning.
+- **Traction control**: shares the same sensors and hydraulic unit as ABS. Traction control prevents wheel spin during acceleration; ABS prevents lock-up during braking [](http://drive.xcar.com.cn/term/201003/news_239_1.html).
+
+**How easy is it to design / CAD:**
+- **Modeling difficulty:** low for the physical brackets and stand. High for the hydraulic and electronic system.
+- **Assembly complexity:** high if building a real hydraulic ABS. Low if building a simulated demonstration.
+- **Availability of standard parts:** wheel speed sensors, Arduino boards, and small solenoid valves are available, but building a working hydraulic system is still complex.
+- **CAD tips:** if simulating, model a single wheel on a stand with a motor, a speed sensor, and a solenoid valve controlled by an Arduino. Show the pulsing brake pressure on an LED or small display.
 ## Dynamic Suspensions
