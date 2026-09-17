@@ -45,7 +45,7 @@ The five entries below are representative architectures selected for comparison;
 | Two-stage compound reduction | EV e-axles, compact reducers and teaching rigs needing a larger overall ratio | Multiplies two stage ratios in a compact package; each gear pair remains easy to understand | More bearings and alignment points than one stage; efficiency losses and backlash accumulate | ![Compound gear train](attachments/gearbox-compound-reduction.png) |
 | Parallel-shaft, constant-mesh multi-ratio | Manual transmissions, DCT gear-train halves | Several ratios using familiar gear pairs; power flow is visible | Needs accurate shaft spacing, selectors and axial packaging; more gears rotate even when not selected | ![Parallel-shaft manual gearbox cutaway](attachments/transmission-manual-cutaway.jpg) |
 | Planetary / epicyclic | Conventional automatic transmissions, hybrid power-split devices | Compact and coaxial; several ratios by holding different members; load shared by multiple planets | Ring gear and carrier are harder to manufacture; ratio combinations and clutch logic are less intuitive | ![Planetary gearset schematic](attachments/transmission-planetary-gearset.svg) |
-| Bevel / hypoid final-drive gearbox | Rear-drive axles, differentials and transfer/final-drive units | Turns the power path through approximately 90° while providing final reduction; hypoid offset can improve packaging | Curved tooth geometry, contact pattern, bearing preload and lubrication are difficult to manufacture and set correctly[^24] | ![Technical drawing of a hypoid gear pair](attachments/gearbox-hypoid-final-drive.png) |
+| Bevel / hypoid final-drive gearbox | Rear-drive axles, differentials and transfer/final-drive units | Turns the power path through approximately 90° while providing final reduction; hypoid offset can improve packaging | Curved tooth geometry, contact pattern, bearing preload and lubrication are difficult to manufacture and set correctly[^24] | ![Automotive differential ring-and-pinion gear set](attachments/gearbox-hypoid-final-drive-photo.jpg) |
 
 #### Part List
 
@@ -133,7 +133,7 @@ These four systems cover the transmission principles assigned to this section.
 | --- | --- | --- | --- | --- |
 | Manual synchromesh | Manual passenger cars, sports cars, trucks | Efficient; direct driver control; internal power path is comparatively easy to trace | Driver must operate clutch and lever; shift interrupts torque; synchronizers and linkages require accurate fits | ![Manual transmission cutaway](attachments/transmission-manual-cutaway.jpg) |
 | Torque-converter automatic | Most conventional automatic passenger cars and many trucks | Smooth launch; shifts under load; controller chooses ratios automatically | Many precision parts; needs fluid pump, clutch packs, valve/solenoid control and cooling | ![Eight-speed automatic transmission cutaway](attachments/transmission-automatic-cutaway.jpg) |
-| Dual-clutch transmission (DCT) | Performance and efficient automated vehicles | Preselects the next gear; fast shifts; mostly mechanical power path | Two clutches, concentric shafts, actuators and control timing make design difficult; clutch heat/wear at low speed | ![Dual-clutch transmission schematic](attachments/transmission-dual-clutch.svg) |
+| Dual-clutch transmission (DCT) | Performance and efficient automated vehicles | Preselects the next gear; fast shifts; mostly mechanical power path | Two clutches, concentric shafts, actuators and control timing make design difficult; clutch heat/wear at low speed | ![Colour-coded dual-clutch transmission showing its two input shafts and power paths](attachments/transmission-dual-clutch-two-paths.jpg) |
 | Single-speed EV reduction transmission | Most battery-electric vehicles | Few parts; compact, efficient and no shift mechanism | One ratio must satisfy launch torque and maximum motor speed; does not demonstrate gear changing | ![Integrated EV drive unit containing motor, inverter and reduction gear](attachments/transmission-ev-drive-unit.jpg) |
 
 #### Part List
@@ -311,11 +311,11 @@ Use the labelled cross-section plus a purchased used/cutaway converter. If motio
 - [Manual transmission cutaway](https://commons.wikimedia.org/wiki/File:Engine_and_Gearbox_cutaway-001.jpg) by NJR ZA, CC BY-SA 3.0.
 - [Planetary gearset schematic](https://commons.wikimedia.org/wiki/File:Planetary_gear_set_schematic.svg) by DaveRcWiki, CC0.
 - [Eight-speed automatic transmission cutaway](https://commons.wikimedia.org/wiki/File:Lexus_IS_F_08.JPG) by Hatsukari715, public domain.
-- [Dual-clutch transmission schematic](https://commons.wikimedia.org/wiki/File:Dual-clutch_transmission.svg) by Xavax/C-Lover, public domain.
+- [Two-shaft DCT gearbox layout](https://www.gearbox-schematics.com/basics/dct-home/dct-gearbox/) by Gearbox Schematics, used for educational explanation with source attribution.
 - [Aisin integrated electric drive unit](https://commons.wikimedia.org/wiki/File:Aisin_Xin1_Electric_Drive_Unit.jpg) by TTTNIS, CC0.
 - [Torque-converter cross-section](https://commons.wikimedia.org/wiki/File:Torque_converter_a_cross_section.png) by Toshinori baba, CC BY-SA 4.0.
 - [Compound gear train](https://commons.wikimedia.org/wiki/File:Example_of_a_Compound_Gear_Train.png) by Manuel Bieling, CC0.
-- [Hypoid gear technical drawing](https://commons.wikimedia.org/wiki/File:Hypoid_bevel_gear-tech_drawing.png) by Jonasz, CC BY-SA 3.0 / GFDL.
+- [Hypoid gear pair](https://commons.wikimedia.org/wiki/File:Hypoid_gear.jpg) by Sam novo, public domain.
 
 ---
 
@@ -357,8 +357,8 @@ These five rows deliberately mix energy-conversion and actuation categories so t
 | Hydraulic disc brake | Front brakes on most passenger cars; often all four wheels | Good heat rejection; pads are accessible; clamping action is easy to see and demonstrate | Rotor and caliper must be aligned; a realistic hydraulic model needs fluid, seals and bleeding | ![Animated hydraulic disc-brake operation](attachments/brake-disc.gif) |
 | Drum brake | Rear brakes on some small cars and trucks; parking-brake duty | Compact parking-brake integration; large friction area; self-energising shoe geometry can reduce actuation force | Enclosed drum retains heat; springs and adjuster are less visible and more complicated to assemble | ![Leading-trailing and other drum-brake shoe arrangements](attachments/brake-drum-types.svg) |
 | Regenerative brake | Battery-electric and hybrid vehicles | Recovers energy; reduces friction-pad wear; motor torque is electronically controllable | Braking depends on motor, inverter, battery limits and vehicle speed; friction brakes are still required | ![Electric-vehicle regenerative braking system](attachments/brake-regenerative.png) |
-| Compressed-air service brake | Heavy trucks, buses and trailers | Stored air provides robust multi-axle actuation; leakage does not immediately remove all braking capability | Compressor, dryer, reservoirs, valves and chambers add weight and response delay; a working model needs pressure-rated hardware | ![Commercial-vehicle compressed-air brake system](attachments/brake-air-system-online.svg) |
-| Electric parking brake (EPB) | Modern passenger-car rear disc or drum brakes | Compact cabin control; automatic apply/release and integration with hill-hold functions | Needs motor, reduction gear, sensors, wiring and fail-safe release; it is primarily a holding brake, not a substitute for the service brake | ![Electronic parking-brake control in a Volkswagen Touran](attachments/brake-electronic-parking.jpg) |
+| Compressed-air service brake | Heavy trucks, buses and trailers | Stored air provides robust multi-axle actuation; leakage does not immediately remove all braking capability | Compressor, dryer, reservoirs, valves and chambers add weight and response delay; a working model needs pressure-rated hardware | ![English-labelled tractor-trailer air-brake system showing the compressor, reservoirs, valves and brake chambers](attachments/brake-air-system-english.jpg) |
+| Electric parking brake (EPB) | Modern passenger-car rear disc or drum brakes | Compact cabin control; automatic apply/release and integration with hill-hold functions | Needs motor, reduction gear, sensors, wiring and fail-safe release; it is primarily a holding brake, not a substitute for the service brake | ![Rear brake caliper with an integrated electric parking-brake actuator](attachments/brake-electronic-parking-caliper.jpg) |
 
 #### Part List
 
@@ -554,8 +554,8 @@ Build a large, guarded **single-plate dry clutch** with two supported shafts, a 
 - [Single-plate diaphragm clutch](https://commons.wikimedia.org/wiki/File:Embrague2.png) by Enrique A. Chaparro, Free Art License.
 - [Multiple Disk Clutch](https://commons.wikimedia.org/wiki/File:Multiple_Disk_Clutch.gif) by Oguraclutch, public domain.
 - [Centrifugal clutch patent drawing](https://commons.wikimedia.org/wiki/File:US_Patent_598314_detail_centrifugal_clutch.png) by W. A. Crowdus, public domain.
-- [Commercial-vehicle compressed-air brake diagram](https://commons.wikimedia.org/wiki/File:Paineilmajarrut.svg), CC BY-SA 3.0 / GFDL.
-- [Volkswagen Touran electronic parking brake](https://commons.wikimedia.org/wiki/File:Elektrische_Feststellbremse_VW_Touran.jpg) by Abby M., CC BY-SA 3.0.
+- [Air brake system components and location](https://www.dmv.ca.gov/portal/handbook/commercial-driver-handbook/section-5-air-brakes/) from the California Department of Motor Vehicles Commercial Driver's Handbook.
+- [Volkswagen electric parking-brake caliper](https://www.bitautomobile.com/vw-electric-brake-caliper-3c0615404b-product/) product photograph from BIT Automobile.
 - [Dog clutch used in a Baja SAE four-wheel-drive system](https://commons.wikimedia.org/wiki/File:Dog_Clutch.jpg) by Ael150, CC0.
 - [Sprag one-way bearing](https://commons.wikimedia.org/wiki/File:Sprag_one-way_bearing.jpg) by NASA Goddard Space Center, public domain.
 - [Ogura electromagnetic clutch cutaway](https://commons.wikimedia.org/wiki/File:A-2_Ogura_VCEH_clutch.jpg) by Oguraclutch, CC BY-SA 3.0 / GFDL.
