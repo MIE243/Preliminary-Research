@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
-  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Active anti-roll control</text>
-  <polygon points="150,105 560,75 585,195 175,225" fill="#66aee8" stroke="#182433" stroke-width="7"/><line x1="205" y1="215" x2="170" y2="320" stroke="#263849" stroke-width="9"/><line x1="530" y1="190" x2="555" y2="320" stroke="#263849" stroke-width="9"/>
-  <circle cx="145" cy="330" r="55" fill="#263849"/><circle cx="575" cy="330" r="55" fill="#263849"/><path d="M185 295 C270 350 450 350 535 295" fill="none" stroke="#f3a712" stroke-width="15"/><rect x="320" y="295" width="80" height="55" rx="10" fill="#ef5b45" stroke="#182433" stroke-width="5"/>
-  <path d="M245 145 L245 75 M465 125 L465 55" stroke="#55ad3a" stroke-width="11" marker-end="url(#a)"/><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#55ad3a"/></marker></defs><text x="360" y="400" text-anchor="middle" font-family="Arial" font-size="18" fill="#182433">Actuator twists the split bar to oppose body roll</text>
-</svg>

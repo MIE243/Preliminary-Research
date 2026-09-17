@@ -42,10 +42,10 @@ The five entries below are representative architectures selected for comparison;
 | Gearbox Type | Common Use | Advantage | Disadvantage | Image |
 | --- | --- | --- | --- | --- |
 | Single-stage spur/helical reduction | EV drive units, final reductions, simple teaching rigs | Few parts; efficient; easiest to understand, print and CAD | Only one ratio; external gears reverse direction; helical gears add axial bearing load | ![Spur reduction gears](attachments/gearbox-spur-reduction.svg) |
-| Two-stage compound reduction | EV e-axles, compact reducers and teaching rigs needing a larger overall ratio | Multiplies two stage ratios in a compact package; each gear pair remains easy to understand | More bearings and alignment points than one stage; efficiency losses and backlash accumulate | ![Two-stage compound reduction schematic](attachments/gearbox-compound-reduction.svg) |
+| Two-stage compound reduction | EV e-axles, compact reducers and teaching rigs needing a larger overall ratio | Multiplies two stage ratios in a compact package; each gear pair remains easy to understand | More bearings and alignment points than one stage; efficiency losses and backlash accumulate | ![Compound gear train](attachments/gearbox-compound-reduction.png) |
 | Parallel-shaft, constant-mesh multi-ratio | Manual transmissions, DCT gear-train halves | Several ratios using familiar gear pairs; power flow is visible | Needs accurate shaft spacing, selectors and axial packaging; more gears rotate even when not selected | ![Parallel-shaft manual gearbox cutaway](attachments/transmission-manual-cutaway.jpg) |
 | Planetary / epicyclic | Conventional automatic transmissions, hybrid power-split devices | Compact and coaxial; several ratios by holding different members; load shared by multiple planets | Ring gear and carrier are harder to manufacture; ratio combinations and clutch logic are less intuitive | ![Planetary gearset schematic](attachments/transmission-planetary-gearset.svg) |
-| Bevel / hypoid final-drive gearbox | Rear-drive axles, differentials and transfer/final-drive units | Turns the power path through approximately 90° while providing final reduction; hypoid offset can improve packaging | Curved tooth geometry, contact pattern, bearing preload and lubrication are difficult to manufacture and set correctly[^24] | ![Hypoid final-drive schematic](attachments/gearbox-hypoid-final-drive.svg) |
+| Bevel / hypoid final-drive gearbox | Rear-drive axles, differentials and transfer/final-drive units | Turns the power path through approximately 90° while providing final reduction; hypoid offset can improve packaging | Curved tooth geometry, contact pattern, bearing preload and lubrication are difficult to manufacture and set correctly[^24] | ![Technical drawing of a hypoid gear pair](attachments/gearbox-hypoid-final-drive.png) |
 
 #### Part List
 
@@ -115,8 +115,6 @@ A vehicle transmission is the complete system that accepts power from the engine
 - A **manual transmission** uses a driver-operated clutch and shift lever. Constant-mesh gears rotate on the shafts; synchronizers match speed before a sleeve locks the chosen gear to the output shaft.[^2]
 - A **torque-converter automatic** uses a torque converter for launch, planetary gearsets for ratios and hydraulically applied clutches/brakes to select the power path. A transmission control unit commands valves or solenoids.[^3][^4]
 - A **dual-clutch transmission (DCT)** has two manual-like gear-train halves and two clutches. One half carries the current gear while the next gear can be preselected on the other; the controls swap clutches for a rapid shift.[^5]
-- A **belt/chain CVT** moves the halves of two variable pulleys so the belt runs at different effective radii. This changes ratio continuously without selecting fixed gear pairs.[^25]
-- A **power-split e-CVT** is mechanically different: a planetary device connects the engine, generator and wheel/motor path, while electrical control of the motor-generators changes the effective ratio.[^26]
 - A **single-speed EV transmission** normally combines one fixed reduction gearset, bearings, differential/final drive and lubrication in a compact drive unit.
 
 ##### Why a car needs a transmission
@@ -129,15 +127,13 @@ A vehicle transmission is the complete system that accepts power from the engine
 
 ##### Representative transmission systems
 
-These six systems cover the main operating principles relevant to the project. A belt/chain CVT and a hybrid power-split e-CVT are shown separately because the name “CVT” does not mean that their mechanisms are the same.
+These four systems cover the transmission principles assigned to this section.
 
 | Transmission Type | Common Use | Advantage | Disadvantage | Image |
 | --- | --- | --- | --- | --- |
 | Manual synchromesh | Manual passenger cars, sports cars, trucks | Efficient; direct driver control; internal power path is comparatively easy to trace | Driver must operate clutch and lever; shift interrupts torque; synchronizers and linkages require accurate fits | ![Manual transmission cutaway](attachments/transmission-manual-cutaway.jpg) |
 | Torque-converter automatic | Most conventional automatic passenger cars and many trucks | Smooth launch; shifts under load; controller chooses ratios automatically | Many precision parts; needs fluid pump, clutch packs, valve/solenoid control and cooling | ![Eight-speed automatic transmission cutaway](attachments/transmission-automatic-cutaway.jpg) |
 | Dual-clutch transmission (DCT) | Performance and efficient automated vehicles | Preselects the next gear; fast shifts; mostly mechanical power path | Two clutches, concentric shafts, actuators and control timing make design difficult; clutch heat/wear at low speed | ![Dual-clutch transmission schematic](attachments/transmission-dual-clutch.svg) |
-| Belt- or chain-type CVT | Small and midsize combustion vehicles, scooters and some hybrids | Adjustable pulleys provide a continuous ratio range and keep the engine near an efficient speed[^25] | Requires high belt clamping force, hydraulic control and cooling; belt/pulley wear limits torque capacity | ![Belt and variable-pulley CVT schematic](attachments/transmission-cvt.svg) |
-| Power-split e-CVT | Full-hybrid vehicles such as Toyota-style hybrid systems | A planetary power-split device plus motor-generators varies engine speed smoothly without a belt or stepped shifts[^26] | Requires two motor-generators, inverter, high-voltage battery and complex control; power flow is less intuitive | ![Planetary power-split e-CVT schematic](attachments/transmission-power-split-ecvt.svg) |
 | Single-speed EV reduction transmission | Most battery-electric vehicles | Few parts; compact, efficient and no shift mechanism | One ratio must satisfy launch torque and maximum motor speed; does not demonstrate gear changing | ![Integrated EV drive unit containing motor, inverter and reduction gear](attachments/transmission-ev-drive-unit.jpg) |
 
 #### Part List
@@ -153,7 +149,7 @@ For a simplified selectable-ratio transmission demonstrator:
 | Motor, transmission and load mounting brackets | Optical tachometers/encoders (optional) |
 | Ratio labels, power-flow arrows and safety guard | Adjustable friction load or small brake |
 
-A realistic automatic or DCT would additionally require clutch packs, seals, hydraulic passages, a pump, valves/solenoids, speed sensors and an electronic controller. A CVT adds variable pulleys and a steel belt/chain; an e-CVT adds motor-generators, power electronics and hybrid control. Those systems are better shown with a cutaway or schematic than reproduced as a working student-built mechanism.
+A realistic automatic or DCT would additionally require clutch packs, seals, hydraulic passages, a pump, valves/solenoids, speed sensors and an electronic controller. Those systems are better shown with a cutaway or schematic than reproduced as a working student-built mechanism.
 
 #### Teaching Platform
 
@@ -165,8 +161,6 @@ A realistic automatic or DCT would additionally require clutch packs, seals, hyd
 | Simplified dog-shift manual | **Moderate** | Several ratios plus shift sleeve/fork and axial retention |
 | True synchromesh manual | **Hard** | Friction cones, blocker rings, splines and tight clearances |
 | DCT | **Very hard** | Two clutches, two gear-train halves, concentric shafts and actuators |
-| Belt/chain CVT | **Very hard** | Variable pulleys, belt clamping, hydraulic pressure and wear-sensitive contact surfaces |
-| Power-split e-CVT | **Very hard** | Planetary geometry, two motor-generators, inverter and coordinated control software |
 | Hydraulic planetary automatic | **Very hard** | Multiple clutch packs, fluid circuits, valve control and precise shift timing |
 
 ##### Demonstratability
@@ -177,7 +171,6 @@ A realistic automatic or DCT would additionally require clutch packs, seals, hyd
 - A removable clutch model can show why torque must be interrupted before a manual shift.
 - A DCT schematic can show odd/even gear paths, but a realistic working model needs two controlled clutches and synchronized actuators.
 - A conventional automatic is difficult to see internally while running. A cutaway plus removable locking pins on a separate planetary module communicates the gear logic more clearly than a sealed hydraulic replica.
-- A low-load pulley-and-elastic-belt model can demonstrate CVT ratio change, but it does not reproduce the clamping force, steel belt construction or lubrication of a vehicle CVT. An e-CVT is clearest as a colour-coded planetary module plus motor-speed animation.
 - No fluid is needed for the recommended manual/dog-shift model. A realistic automatic needs transmission fluid, a pump, control pressure and cooling.
 
 ##### Works with what
@@ -187,8 +180,6 @@ A realistic automatic or DCT would additionally require clutch packs, seals, hyd
 - **Manual:** clutch, shift linkage and driver input.
 - **Torque-converter automatic:** torque converter, automatic-transmission fluid, oil pump, clutch packs, valve body/solenoids, cooler and transmission controller.
 - **DCT:** two clutches, electromechanical or electrohydraulic actuators, speed/position sensors and controller.
-- **Belt/chain CVT:** variable pulleys, steel belt/chain, hydraulic pump and valves, launch device, controller, lubricant and cooler.
-- **Power-split e-CVT:** planetary power-split device, engine, MG1, MG2, inverter, high-voltage battery, final drive and hybrid controller.
 - **EV reduction:** traction motor, inverter/controller, final drive/differential and lubricated bearings/gears.
 - **Teaching rig:** clear guard, low-speed drive and adjustable output load.
 
@@ -197,7 +188,7 @@ A realistic automatic or DCT would additionally require clutch packs, seals, hyd
 - **Easy:** single-speed EV reduction transmission.
 - **Moderate:** simplified two-speed dog-shift manual with large printed components.
 - **Hard:** true synchromesh because selector travel, cone engagement, dog teeth, splines and detents must all align.
-- **Very hard:** DCT, hydraulic automatic, production CVT or e-CVT because CAD must coordinate many coaxial components, clutches or variable pulleys, actuators, motor-generators and fluid/electrical hardware.
+- **Very hard:** DCT or hydraulic automatic because CAD must coordinate many coaxial components, clutches, actuators and fluid/control hardware.
 
 ##### Recommended transmission demonstrator
 
@@ -313,8 +304,6 @@ Use the labelled cross-section plus a purchased used/cutaway converter. If motio
 [^6]: ZF PowerLine maintenance guide, [8-speed automatic transmission](https://www.zf.com/products/media/automotive/cv/literature_downloads_wna/truck_solutions/PowerLine_Maintenance_Guide.pdf), describing a torque converter with lock-up clutch, downstream planetary gearset, oil system and cooler connections.
 [^7]: SAE Technical Paper 960721, [The Flow Field Inside an Automotive Torque Converter](https://doi.org/10.4271/960721), reporting measured three-dimensional, unsteady flow in the pump, turbine and stator.
 [^24]: Dana, [Beam Axles](https://www.dana.com/product/light-vehicle/beam-axles/), describing automotive hypoid gearing, differential options and axle applications.
-[^25]: Nissan Motor Corporation, [XTRONIC CVT](https://www.nissan-global.com/EN/INNOVATION/TECHNOLOGY/ARCHIVE/NEW_CVT/), explaining how adjustable pulley width changes the steel belt's running radius and continuously varies the ratio.
-[^26]: Toyota Motor Corporation, [Toyota Introduces New Passenger Vehicle Hybrid System](https://global.toyota/en/detail/7889139), explaining the planetary power-split device, motor, generator and electronically controlled continuously variable operation.
 
 #### Image credits
 
@@ -325,7 +314,8 @@ Use the labelled cross-section plus a purchased used/cutaway converter. If motio
 - [Dual-clutch transmission schematic](https://commons.wikimedia.org/wiki/File:Dual-clutch_transmission.svg) by Xavax/C-Lover, public domain.
 - [Aisin integrated electric drive unit](https://commons.wikimedia.org/wiki/File:Aisin_Xin1_Electric_Drive_Unit.jpg) by TTTNIS, CC0.
 - [Torque-converter cross-section](https://commons.wikimedia.org/wiki/File:Torque_converter_a_cross_section.png) by Toshinori baba, CC BY-SA 4.0.
-- Two-stage compound-reduction, hypoid final-drive, belt/chain CVT and power-split e-CVT diagrams created specifically for this research document.
+- [Compound gear train](https://commons.wikimedia.org/wiki/File:Example_of_a_Compound_Gear_Train.png) by Manuel Bieling, CC0.
+- [Hypoid gear technical drawing](https://commons.wikimedia.org/wiki/File:Hypoid_bevel_gear-tech_drawing.png) by Jonasz, CC BY-SA 3.0 / GFDL.
 
 ---
 
@@ -367,8 +357,8 @@ These five rows deliberately mix energy-conversion and actuation categories so t
 | Hydraulic disc brake | Front brakes on most passenger cars; often all four wheels | Good heat rejection; pads are accessible; clamping action is easy to see and demonstrate | Rotor and caliper must be aligned; a realistic hydraulic model needs fluid, seals and bleeding | ![Animated hydraulic disc-brake operation](attachments/brake-disc.gif) |
 | Drum brake | Rear brakes on some small cars and trucks; parking-brake duty | Compact parking-brake integration; large friction area; self-energising shoe geometry can reduce actuation force | Enclosed drum retains heat; springs and adjuster are less visible and more complicated to assemble | ![Leading-trailing and other drum-brake shoe arrangements](attachments/brake-drum-types.svg) |
 | Regenerative brake | Battery-electric and hybrid vehicles | Recovers energy; reduces friction-pad wear; motor torque is electronically controllable | Braking depends on motor, inverter, battery limits and vehicle speed; friction brakes are still required | ![Electric-vehicle regenerative braking system](attachments/brake-regenerative.png) |
-| Compressed-air service brake | Heavy trucks, buses and trailers | Stored air provides robust multi-axle actuation; leakage does not immediately remove all braking capability | Compressor, dryer, reservoirs, valves and chambers add weight and response delay; a working model needs pressure-rated hardware | ![Compressed-air brake system schematic](attachments/brake-air-system.svg) |
-| Electric parking brake (EPB) | Modern passenger-car rear disc or drum brakes | Compact cabin control; automatic apply/release and integration with hill-hold functions | Needs motor, reduction gear, sensors, wiring and fail-safe release; it is primarily a holding brake, not a substitute for the service brake | ![Caliper-integrated electric parking brake schematic](attachments/brake-electronic-parking.svg) |
+| Compressed-air service brake | Heavy trucks, buses and trailers | Stored air provides robust multi-axle actuation; leakage does not immediately remove all braking capability | Compressor, dryer, reservoirs, valves and chambers add weight and response delay; a working model needs pressure-rated hardware | ![Commercial-vehicle compressed-air brake system](attachments/brake-air-system-online.svg) |
+| Electric parking brake (EPB) | Modern passenger-car rear disc or drum brakes | Compact cabin control; automatic apply/release and integration with hill-hold functions | Needs motor, reduction gear, sensors, wiring and fail-safe release; it is primarily a holding brake, not a substitute for the service brake | ![Electronic parking-brake control in a Volkswagen Touran](attachments/brake-electronic-parking.jpg) |
 
 #### Part List
 
@@ -468,9 +458,9 @@ The six mechanisms below engage torque in different ways: friction, centrifugal 
 | Single-plate dry diaphragm clutch | Manual-transmission passenger cars and light trucks                                  | Compact; efficient when fully engaged; operation and release mechanism are easy to understand | Friction lining wears; poor control causes heat, judder or stalling; needs axial release travel                    | ![Single-plate diaphragm clutch in engaged and released positions](attachments/clutch-single-plate.png) |
 | Multi-plate wet or dry clutch     | Motorcycles, dual-clutch transmissions, automatic transmissions and performance cars | High torque capacity in a small diameter; several interfaces share the load                   | More plates, tight tolerances and heat management; a wet clutch needs oil, sealing and drag control                | ![Animated multi-plate clutch operation](attachments/clutch-multi-plate.gif)                            |
 | Centrifugal clutch                | Scooters, small utility vehicles and simple automatic drives                         | Engages automatically as speed rises; no clutch pedal or external release actuator            | Engagement speed depends on springs, mass and wear; slipping creates heat; guarded rotation is required for a demo | ![Centrifugal clutch patent drawing](attachments/clutch-centrifugal.png)                                |
-| Positive dog clutch | Gear selectors, disconnect units and hybrid/EV driveline couplers | Near-zero slip and high efficiency once teeth are engaged; operation is visually clear | Cannot smoothly launch a vehicle; tooth speeds must be matched and engagement shock controlled[^29] | ![Positive dog-clutch schematic](attachments/clutch-dog.svg) |
-| Sprag or roller one-way clutch | Automatic transmissions, starter drives and hybrid power paths | Automatically locks in one direction and freewheels in the other with little control hardware | Direction-specific; wedging geometry, race hardness and tolerances are difficult to manufacture[^30] | ![Sprag one-way clutch schematic](attachments/clutch-one-way.svg) |
-| Electromagnetic friction clutch | Engine-driven accessories, pumps, compressors and remotely controlled disconnects | Fast electrical control with no mechanical linkage; easy to switch from a controller | Coil consumes power and produces heat; air gap and friction wear must be controlled[^31] | ![Electromagnetic friction-clutch schematic](attachments/clutch-electromagnetic.svg) |
+| Positive dog clutch | Gear selectors, disconnect units and hybrid/EV driveline couplers | Near-zero slip and high efficiency once teeth are engaged; operation is visually clear | Cannot smoothly launch a vehicle; tooth speeds must be matched and engagement shock controlled[^29] | ![Automotive dog clutch used in a Baja SAE four-wheel-drive system](attachments/clutch-dog.jpg) |
+| Sprag or roller one-way clutch | Automatic transmissions, starter drives and hybrid power paths | Automatically locks in one direction and freewheels in the other with little control hardware | Direction-specific; wedging geometry, race hardness and tolerances are difficult to manufacture[^30] | ![NASA sprag one-way bearing](attachments/clutch-one-way.jpg) |
+| Electromagnetic friction clutch | Engine-driven accessories, pumps, compressors and remotely controlled disconnects | Fast electrical control with no mechanical linkage; easy to switch from a controller | Coil consumes power and produces heat; air gap and friction wear must be controlled[^31] | ![Cutaway electromagnetic clutch](attachments/clutch-electromagnetic.jpg) |
 
 #### Part List
 
@@ -564,7 +554,11 @@ Build a large, guarded **single-plate dry clutch** with two supported shafts, a 
 - [Single-plate diaphragm clutch](https://commons.wikimedia.org/wiki/File:Embrague2.png) by Enrique A. Chaparro, Free Art License.
 - [Multiple Disk Clutch](https://commons.wikimedia.org/wiki/File:Multiple_Disk_Clutch.gif) by Oguraclutch, public domain.
 - [Centrifugal clutch patent drawing](https://commons.wikimedia.org/wiki/File:US_Patent_598314_detail_centrifugal_clutch.png) by W. A. Crowdus, public domain.
-- Compressed-air brake, electric parking brake, dog clutch, one-way clutch and electromagnetic clutch diagrams created specifically for this research document.
+- [Commercial-vehicle compressed-air brake diagram](https://commons.wikimedia.org/wiki/File:Paineilmajarrut.svg), CC BY-SA 3.0 / GFDL.
+- [Volkswagen Touran electronic parking brake](https://commons.wikimedia.org/wiki/File:Elektrische_Feststellbremse_VW_Touran.jpg) by Abby M., CC BY-SA 3.0.
+- [Dog clutch used in a Baja SAE four-wheel-drive system](https://commons.wikimedia.org/wiki/File:Dog_Clutch.jpg) by Ael150, CC0.
+- [Sprag one-way bearing](https://commons.wikimedia.org/wiki/File:Sprag_one-way_bearing.jpg) by NASA Goddard Space Center, public domain.
+- [Ogura electromagnetic clutch cutaway](https://commons.wikimedia.org/wiki/File:A-2_Ogura_VCEH_clutch.jpg) by Oguraclutch, CC BY-SA 3.0 / GFDL.
 
 ---
 
@@ -868,9 +862,9 @@ The five rows separate systems by what they actively change: damper force, ride 
 | --- | --- | --- | --- | --- |
 | Semi-active variable damping | Passenger cars, performance cars and motorcycles | Fast, relatively energy-efficient and easier to package than a fully active system | Cannot independently support or lift the body; still needs good passive springs and dampers | ![Magnetorheological fluid particles forming chains under a magnetic field](attachments/dynamic-suspension-semi-active.gif) |
 | Self-levelling air or hydropneumatic suspension | Luxury cars, SUVs and load-carrying vehicles | Maintains ride height and can change clearance or effective spring behaviour | Compressor/pump, valves, seals and fluid or air lines add cost, leakage risk and maintenance | ![Hydropneumatic suspension operating diagram](attachments/dynamic-suspension-hydropneumatic.png) |
-| Fully active individual-wheel suspension | High-end performance and luxury vehicles | Can add force at each wheel to control roll, pitch and heave during a disturbance | High power demand, actuator/control complexity, cost and safety burden | ![Original fully active suspension control-loop diagram](attachments/dynamic-suspension-active-control.svg) |
-| Active anti-roll control | Performance cars, luxury cars and high-centre-of-gravity vehicles | Directly counters body roll in corners while reducing the need for a permanently stiff passive anti-roll bar | Adds high-force actuators, 48 V or hydraulic supply, sensors and fail-safe requirements | ![Active anti-roll control schematic](attachments/suspension-active-anti-roll.svg) |
-| Predictive road-preview suspension | Flagship luxury vehicles with camera-based chassis control | Prepares each corner before a detected bump, reducing body movement without waiting for impact | Camera visibility and road classification limit performance; sensing, calibration and actuators are expensive | ![Predictive road-preview suspension schematic](attachments/suspension-road-preview.svg) |
+| Fully active individual-wheel suspension | High-end performance and luxury vehicles | Can add force at each wheel to control roll, pitch and heave during a disturbance | High power demand, actuator/control complexity, cost and safety burden | ![Porsche Active Ride hydraulic pump and damper](attachments/dynamic-suspension-active-control.jpg) |
+| Active anti-roll control | Performance cars, luxury cars and high-centre-of-gravity vehicles | Directly counters body roll in corners while reducing the need for a permanently stiff passive anti-roll bar | Adds high-force actuators, 48 V or hydraulic supply, sensors and fail-safe requirements | ![Porsche PDCC Sport active anti-roll system](attachments/suspension-active-anti-roll.jpg) |
+| Predictive road-preview suspension | Flagship luxury vehicles with camera-based chassis control | Prepares each corner before a detected bump, reducing body movement without waiting for impact | Camera visibility and road classification limit performance; sensing, calibration and actuators are expensive | ![Audi A8 predictive active suspension system components](attachments/suspension-road-preview.jpg) |
 
 #### Rough parts list for a vehicle system
 
@@ -956,5 +950,6 @@ Build a guarded, low-speed **side-by-side quarter-car rig**. Both sides use the 
 
 - [Magnetorheological fluid chain formation](https://commons.wikimedia.org/wiki/File:MRF_Kettenbildung.gif) by INVENTUS Engineering GmbH, CC BY-SA 3.0.
 - [Hydropneumatic suspension diagram](https://commons.wikimedia.org/wiki/File:Sus_hydropneumatic_english.png) by Teccirio, CC BY 2.5.
-- Fully active suspension control-loop diagram created specifically for this research document.
-- Active anti-roll and predictive road-preview diagrams created specifically for this research document.
+- [Porsche Active Ride pump-and-damper photograph](https://newsroom.porsche.com/en/2024/innovation/porsche-active-ride-panamera-christophorus-409-34747.html), Porsche Newsroom.
+- [Porsche PDCC Sport active anti-roll illustration](https://newsroom.porsche.com/en/christophorus/porsche-christophorus-panamera-pdcc-sport-system-13424.html), Porsche Newsroom.
+- [Audi A8 predictive active suspension system illustration](https://www.audi.se/sv/kopa-aga/teknik-funktioner/korupplevelse/), Audi Sverige.

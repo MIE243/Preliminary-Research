@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
-  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Belt / chain CVT</text>
-  <path d="M180 115 C300 75 420 75 540 115 L540 305 C420 345 300 345 180 305 Z" fill="none" stroke="#f3a712" stroke-width="16"/>
-  <g fill="#55ad3a" stroke="#182433" stroke-width="5"><path d="M115 85 L180 145 L180 275 L115 335 Z"/><path d="M245 85 L180 145 L180 275 L245 335 Z"/></g>
-  <g fill="#ef5b45" stroke="#182433" stroke-width="5"><path d="M475 85 L540 160 L540 260 L475 335 Z"/><path d="M605 85 L540 160 L540 260 L605 335 Z"/></g>
-  <line x1="65" y1="210" x2="295" y2="210" stroke="#263849" stroke-width="12"/><line x1="425" y1="210" x2="655" y2="210" stroke="#263849" stroke-width="12"/>
-  <g font-family="Arial" font-size="20" fill="#182433"><text x="127" y="392">Driving pulley</text><text x="490" y="392">Driven pulley</text><text x="300" y="72">Steel belt / chain</text><text x="265" y="355">Pulley halves move axially</text></g>
-</svg>

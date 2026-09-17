@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
-  <rect width="720" height="420" fill="#fff"/><text x="360" y="36" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#182433">Two-stage compound reduction</text>
-  <line x1="75" y1="150" x2="645" y2="150" stroke="#263849" stroke-width="10"/><line x1="75" y1="295" x2="645" y2="295" stroke="#263849" stroke-width="10"/>
-  <g fill="#ef5b45" stroke="#182433" stroke-width="5"><circle cx="165" cy="150" r="48"/><circle cx="305" cy="295" r="86"/></g>
-  <g fill="#55ad3a" stroke="#182433" stroke-width="5"><circle cx="305" cy="150" r="40"/><circle cx="500" cy="295" r="120"/></g>
-  <line x1="305" y1="150" x2="305" y2="295" stroke="#f3a712" stroke-width="13"/><circle cx="305" cy="150" r="12" fill="#182433"/><circle cx="305" cy="295" r="12" fill="#182433"/>
-  <g font-family="Arial" font-size="20" fill="#182433"><text x="118" y="85">Input</text><text x="274" y="92">Compound shaft</text><text x="480" y="390">Output</text><text x="190" y="235">Stage 1</text><text x="395" y="235">Stage 2</text></g>
-</svg>
